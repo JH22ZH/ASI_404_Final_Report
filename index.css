@@ -4,15 +4,53 @@ body {
   padding: 0;
   font-size: 18px;
   font-family: var(--sl-font-sans);
+  background-color: #f2f2f2;
 }
 
 .content {
+  position: relative;
+  z-index: 1;
   max-width: 800px;
-  margin: auto;
-  padding: 10%;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.side-collage {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 220px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.side-collage-left {
+  left: 0;
+}
+
+.side-collage-right {
+  right: 0;
+}
+
+.side-collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 p {
   text-align: justify;
   font-size: 1.1rem;
+}
+
+@media (max-width: 1400px) {
+  .side-collage {
+    display: none;
+  }
+
+  .content {
+    margin: 0 auto;
+    padding: 10%;
+  }
 }
