@@ -47,13 +47,14 @@
     <img src="assets/side-collage-right.png" alt="Development collage right">
   </div>
   <div class="content">
-    <h1>ASI-404 Mobile Manipulator for the IDP Hub</h1>
-
+    <h1>CDE4301, ASI-404</h1>
+    <h1>Mobile Manipulator for the IDP Hub</h1>
+    <h1>(Final report)</h1>
     <!-- This is the team member component use to display details about your team members -->
     <div class="team-member-wrapper">
-      <team-member avatar="assets/Jason.png" name="Jason Ho" department="Mechanical Engineering"
+      <team-member avatar="assets\grpmempic\Jason.png" name="Jason Ho" department="Mechanical Engineering"
         year="25/26"></team-member>
-      <team-member avatar="assets/fc.png" name="Quek Fang Chen" department="Mechanical Engineering"
+      <team-member avatar="assets\grpmempic\fc.png" name="Quek Fang Chen" department="Mechanical Engineering"
         year="25/26"></team-member>
 
     </div>
@@ -74,19 +75,28 @@
               <a href="#Intro_11">1.1 Context</a>
             </sl-tree-item>
             <sl-tree-item>
-              <a href="#Intro_12">1.2 Problem Statement</a>
+              <a href="#Intro_12">1.2 Stakeholders and location</a>
             </sl-tree-item>
             <sl-tree-item>
-              <a href="#Intro_13">1.3 Value Proposition</a>
+              <a href="#Intro_13">1.3 Problem analysis and problem statement</a>
             </sl-tree-item>
             <sl-tree-item>
-              <a href="#Intro_14">1.4 Changes from Interim</a>
+              <a href="#Intro_14">1.4 Value Proposition</a>
             </sl-tree-item>
             <sl-tree-item>
               <a href="#Intro_15">1.5 Subsystems to develop</a>
+              <sl-tree-item>
+              <a href="#Intro_151">1.5.1 Design specifications</a>
+              </sl-tree-item>
+              <sl-tree-item>
+              <a href="#Intro_152">1.5.2 Subsystem indentification</a>
+              </sl-tree-item>
             </sl-tree-item>
             <sl-tree-item>
-              <a href="#Intro_16">1.6 Work Allocation</a>
+              <a href="#Intro_16">1.6 Key changes from interim</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Intro_17">1.7 Work Allocation</a>
             </sl-tree-item>
           </sl-tree-item>
         </sl-tree-item>
@@ -114,7 +124,7 @@
             <a href="#EE_31">3.1 Research</a>
           </sl-tree-item>
           <sl-tree-item>
-            <a href="#EE_32">3.2 Tool Changer System design</a>
+            <a href="#EE_32">3.2 End Effector System design</a>
             <sl-tree-item>
               <a href="#EE_321">3.2.1 Electrical</a>
             </sl-tree-item>
@@ -123,7 +133,7 @@
             </sl-tree-item>
           </sl-tree-item>
           <sl-tree-item>
-            <a href="#EE_33">3.3 End Effector System design</a>
+            <a href="#EE_33">3.3  System design</a>
             <sl-tree-item>
               <a href="#EE_331">3.3.1 Mechanical</a>
             </sl-tree-item>
@@ -256,7 +266,7 @@
       <div id="Intro_1">
         <h2> 1 Introduction </h2>
         <p>
-          This project is on developing a mobile manipulator for NUS’s Innovation & Design Hub to relieve staff workload. It integrates mechanical, electrical, and software design to create a unified robot system with a user-friendly GUI control and seamless system integration.
+          This project is on developing a mobile manipulator for NUS’s Innovation & Design Hub to relieve staff workload. It integrates mechanical, electrical, and software design to create a unified robot system with a user-friendly GUI control and seamless system integration. Note that this report is on the overall development, integration and validation of the mobile manipulator system, with more focus on the technical development. The interim report, which has more details on the problem analysis, value proposition and subsystem identification can be found in the interim report. <a href="https://jh22zh.github.io/ASI_404/">Link to Interim Report</a>
         </p>
       </div>
 
@@ -271,46 +281,22 @@
           The team had an interest in knowing where the National University of Singapore can benefit from such a system. To explore this, the team decided to choose the Innovation and Design Hub as the testing ground. 
         </p>
 
-        <p>
-          The Hub was chosen as a location of interest as it is one of the largest workspaces within NUS with high student traffic from various disciplines to use the facilities to do discussions, fabrication or tinker. 
-        </p>
       </div>
 
       <div id="Intro_12">
-        <h3>1.2 The Innovation and Design Hub</h3>
+        <h3>1.2 Location and stakeholders</h3>
         <p>
-          Before starting any design of the system, the team needed to understand the space and operations within the Hub. 3 distinct areas were noted down from the floor plan in Figure 2, and these are the Tinkering Corner, Sandbox and ILounge. 
+          The Hub was chosen as a location of interest as it is one of the largest workspaces within NUS with high student traffic from various disciplines to use the facilities to do discussions, fabrication or tinker.
+        </p>
+        <p>
+          The project involves the Hub Technical Staff seen in Figure 6, How Yee Teng (primary) and Patrick Tan Shoong Chin (secondary), as well as the Hub Technical Assistants. To gather insights, data collection through surveys and observations helped the team to understand their roles and contributions as well as understanding what problems the staff faced on the ground.
         </p>
         <image-component tag="image" source="assets/FloorPlan.png"
           subtitle="Fig 2: Floor Plan of the Hub"></image-component>
-
-      <div id="Intro_121">
-        <h3>1.2.1 Tinkering Corner</h3>
-        <p>
-          The Tinkering Corner (Location in Figure 3) is where staff and students have access to machines to do fabrication such as 3D printing and laser cutting. The space is also utilised for classes and workshops.  
-        </p>
-
-        <!-- This is an example of how you might use the image component -->
-        <image-component tag="image" source="assets/tinkcorner.png"
-          subtitle="Fig 3: iDP suggested pathway"></image-component>
-
-      </div>
-      <div id="Intro_122">
-        <h3>1.2.2 Sandbox</h3>
-        <p>
-          The Sandbox (Location in Figure 4) is the ‘classroom’ area of the Hub. It is frequently booked for events, classes and workshops. Students also come here to study or have discussions. 
-        </p>
-        <image-component tag="image" source="assets/Sandbox.png"
-          subtitle="Fig 4: Floor Plan of the Hub"></image-component>
       </div>
 
       <div id="Intro_123">
         <h3>1.2.3 ILounge</h3>
-        <p>
-          Like Sandbox, this space is used for classes and discussion amongst students. (Location in Figure 5) 
-        </p>
-        <image-component tag="image" source="assets/lo.png"
-          subtitle="Fig 5: Floor Plan of the Hub"></image-component>
         <h3>1.3 Interactive Robot Model</h3>
         <p>
           The 3D model below allows users to inspect the mobile manipulator system interactively. 
@@ -351,175 +337,97 @@
           Figure X: Interactive 3D model of the ASI-404 mobile manipulator
         </p>
       </div>
-      
-    </div>
 
-    <div>
-
-      <!-- This is an example of what a section might look like -->
-      <div id="PA_2">
-        <h2> 2 Problem Analysis</h2>
-      </div>
-
-      <div id="PA_21">
-        <h3>2.1 Stakeholders</h3>
+      <div id="Intro_13">
+        <h3>1.3 Problem Analysis and Problem Statement</h3>
         <p>
-          The project involves the Hub Technical Staff seen in Figure 6, How Yee Teng (primary) and Patrick Tan Shoong Chin (secondary), as well as the Hub Technical Assistants. To gather insights, data collection through surveys and observations helped the team to understand their roles and contributions as well as understanding what problems the staff faced on the ground. 
+          To ascertain the problems further, we drafted up a problem identification table utilising the 5W1H template in Figure 10.
         </p>
-        <image-component size="large" tag="image" source="assets/stafix.png"
-          subtitle="Fig 6: IDP Staff Members"></image-component>
-      </div>
-
-      <div id="PA_22">
-        <h3>2.2 User Survey</h3>
+        <image-component tag="image" source="assets/articles.png"
+          subtitle="Fig 1: A collage of articles showing an increasing interest in Warehouse Automation"></image-component>
         <p>
-          User surveys conducted by the team were to collect information such as the taskings that the staff members need to conduct daily, the frequency of each task (Figure 7) and their thoughts on how to improve their current workload.
+          From our previous presentation, the problem statement defined by the team was stated that several redundant tasks are slowing down the work of the Hub staff and reducing efficiency in the Hub during the school semester. There is a need to streamline or automate the tasks. 
         </p>
-        <image-component size="large" tag="image" source="assets/UserSurvey.png"
-          subtitle="Fig 7: User Survey on tasks done"></image-component>
-
         <p>
-          Staff report that even single-item pickups disrupt their work: tools are dispersed across the Hub, and requests often arrive mid-task, forcing pauses or delays. Students also pile used items on a table, leaving staff to restock before the 6 pm close, creating a rushed end-of-day.
+          Our design statement then for the project:
         </p>
-
         <p>
-          To understand staff workload, we tracked Hub footfall for one month and compiled historical data on major tasks (Figures 8–9). Both series show steady growth in recent months, signaling rising demands without added manpower.
-        </p>
-        <image-component size="medium" tag="image" source="assets/Avgfootfall.png"
-          subtitle="Fig 8: Average daily footfall of the Hub from opening to closing"></image-component>
-        <image-component tag="image" source="assets/graphs.png"
-          subtitle="Fig 9: Graphs showing the rise in both bookings and fabrication hours that the staff must handle."></image-component>
-
-      </div>
-
-      <div id="PA_23">
-        <h3>2.3 Problem description</h3>
-        <p>
-          To ascertain the problems further, we drafted up a problem identification table utilising the 5W1H template in Figure 10. 
-        </p>
-        <image-component size="medium" tag="image" source="assets/5W1h.png"
-          subtitle="Fig 10: Problem Identification"></image-component>
-        
-        <p>
-          Staff surveys and observations show a consistent strain in balancing time-critical tasks with student support. Accordingly, we framed a problem statement that captures these operational challenges faced by Hub staff.
+          To build a system that is mobile, to travel around the Hub’s environment, can manipulate and interact with the Hub’s objects and is autonomous, the staff do not need to act as a middleman.
         </p>
       </div>
 
-      <div id="PA_24">
-        <h3>2.4 Problem Statement</h3>
+      <div id="Intro_14">
+        <h3>1.4 Value Proposition</h3>
         <p>
-          Several redundant tasks are slowing down the work of the Hub Staff and reducing efficiency in the Hub during the school semester. There is a need to streamline or automate these tasks.
+          To assist in handling tasks that cannot be handled by software changes due to the physical nature of interaction, a physical solution can be created that will be able to aid the staff in handling work as proposed in the Value Proposition Canvas in Figure 11.
         </p>
+        <image-component tag="image" source="assets/articles.png"
+          subtitle="Fig 1: A collage of articles showing an increasing interest in Warehouse Automation"></image-component>
+        <p>
+          The team will develop an autonomous mobile manipulator that combines navigation and manipulation: it can move through the Hub, pick and handle objects, and deliver them to staff—without requiring constant monitoring or extra devices.
+        </p>
+
       </div>
 
-      <div id="PA_25">
-        <h3>2.5 Design Statement</h3>
-        <p>
-          To build a system that is mobile, to travel around the Hub’s environment, can manipulate and interact with the Hub’s objects and is autonomous, the staff do not need to act as a middleman
-        </p>
+      <div id="Intro_15">
+        <h3>1.5 Subsystems to develop</h3>
       </div>
 
-      <div id="PA_26">
-        <h3>2.6 Value Proposition</h3>
-        <image-component tag="image" source="assets/vpc.png"
-          subtitle="Fig 11: Value Proposition Canvas"></image-component>
+      <div id="Intro_151">
+        <h3>1.5.1 Design Specifications</h3>
         <p>
-          To assist in handling tasks that cannot be handled by software changes due to the physical nature of interaction, a physical solution can be created that will be able to aid the staff in handling work as proposed in the Value Propostion Canvas in Figure 11. 
+          Based on the derived problem statements and key problems identified by the staff, the design specifications were prepared. Given our limited manpower, budget of $1600 SGD and time for development of less than a year, we decided to scope down to 2 distinct tasks that the system must achieve that assists with the staff.
         </p>
-        <p>
-          The team will develop an autonomous mobile manipulator that combines navigation and manipulation: it can move through the Hub, pick and handle objects, and deliver them to staff—without requiring constant monitoring or extra devices. 
-        </p>
-      </div>
-
-      <div id="PA_27">
-        <h3>2.7 Concept Development</h3>
-        <image-component tag="image" source="assets/condev.png"
-          subtitle="Fig 12: Concept Development"></image-component>
-        <p>
-          In Figure 12, the team compared candidate concepts across hardware complexity, cost, scalability, and task fit. A traditional mobile manipulator emerged as best: it supports quick end-effector swaps, adapts well to the environment, and remains statically stable—even during power loss or emergencies.
-        </p>
-      </div>
-      
-      <div id="PA_28">
-        <h3>2.8 Design Specifications</h3>
-        <p>
-          Based on the derived problem statements and key problems identified by the staff, the design specifications were prepared. Given our limited manpower, budget of $1600 SGD and time for development of less than a year, we decided to scope down to 3 distinct tasks that the system must achieve that assists with the staff.
-        </p>
-        <p>
-          Task 1.	The system must be able to perform tool collection  
-        </p>
-         <p>
-          Task 2.	The system must be capable of point-to-point delivery 
-        </p>
-         <p>
-          Task 3.	To supplement controls to the system, a user interface must be created 
-        </p>
-      </div>
-
-      <div id="PA_281">
-        <h4>2.8.1 Task 1: Tool Collection</h4>
-        <image-component tag="image" source="assets/ploc.png"
-          subtitle="Fig 13: Location of Pegboard in the Hub"></image-component>
+        <image-component tag="image" source="assets/Sandbox.png"
+          subtitle="PLACEHOLDER"></image-component>
         <p>
           For task 1, the robot is to grab tools from the pegboard shown in Figure 13, put it into an onboard basket and deliver it to a table. End-effector system with tool changer capabilities enables picking tools of different geometries.
         </p>
+        <image-component tag="image" source="assets/Sandbox.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          For task 2, for the staff to control and monitor signs onboard for the system to function, a user interface is to create that can link commands from the user to the relevant commands for the hardware to perform the task. A sequence diagram for the user interface is shown in Figure 15.
+        </p>
+        <image-component tag="image" source="assets/Sandbox.png"
+          subtitle="PLACEHOLDER"></image-component>
       </div>
 
-      <div id="PA_282">
-        <h4>2.8.2 Task 2: Point - to - point delivery</h4>
-        <image-component tag="image" source="assets/delRoute.png"
-          subtitle="Fig 14: P2P Delivery Route"></image-component>
+      <div id="Intro_152">
+        <h3>1.5.2 Subsystem Identification</h3>
         <p>
-          For task 2, the robot is to travel to the storeroom shown in Figure 14 where several components are located to return items that the students have borrowed throughout the day. The onboard basket can be detached from the system to return items as a set. 
+          Based on the taskings that the robot must accomplish, we have identified the key subsystems that need to be developed to bring the system to a minimum viable product, shown in Figures n and X.
+        </p>
+        <image-component tag="image" source="assets/Sandbox.png"
+          subtitle="PLACEHOLDER"></image-component>
+      </div>
+
+      <div id="Intro_16">
+        <h3>1.6 Key changes from interim</h3>
+        <p>
+          Previously, a task 2, point – to – point delivery was to be implemented but due to time, cost and manpower constraints on the development, this was shelved as a potential future works addition to the system.
+        </p>
+        <p>
+          The system will be able to deliver items around the hub but will not be able to return then back, the mechanical complexity is to be scaled back to allow for more development time towards the software and main hardware deliverables. 
+        </p>
+        <p>
+          To complement the pick and place operations such that there is consistent feedback to the system, the team opted to implement computer vision to the system with depth data, to guide the system to pick up the tools with high precision and repeatability.
         </p>
       </div>
 
-      <div id="PA_283">
-        <h4>2.8.3 Task 3: User Interface</h4>
-        <image-component tag="image" source="assets/task3.png"
-          subtitle="Fig 15: User sequence diagram of GUI"></image-component>
+      <div id="Intro_17">
+        <h3>1.7 Work Allocation</h3>
         <p>
-          For task 3, for the staff to control and monitor signs onboard for the system to function, a user interface is to create that can link commands from the user to the relevant commands for the hardware to perform the task. A sequence diagram for the user interface is shown in Figure 15.
+          The updated work allocation amongst the team members is shown in Figure 
         </p>
-      </div>
-
-      <div id="PA_29">
-        <h3>2.9 Subsystem Identification</h3>
-        <p>
-          Based on the taskings that the robot must accomplish, we have identified the key subsystems that need to be developed to bring the system to a minimum viable product, shown in Figures 16 and 17. 
-        </p>
-        <image-component tag="image" source="assets/sub1.png"
-          subtitle="Fig 16: Subsystems Part 1"></image-component>
-          <image-component tag="image" source="assets/sub2.png"
-          subtitle="Fig 17: Subsystems Part 2"></image-component>
-      </div>
-
-      <div id="PA_210">
-        <h3>2.10 Design Methodology</h3>
-        <p>For the design methodology, the team intends to adopt the framework seen in Figure 18 that covers research, iterative design, execution and finally evaluation of results until all goals are achieved.  </p>
-        <image-component size= "medium"tag="image" source="assets/Design Methodology.drawio.svg"
-          subtitle="Fig 18: Design Methodology Framework"></image-component>
-      </div>    
-
-      <div id="PA_211">
-        <h3>2.11 Work Allocation</h3>
-        <p>
-          The work allocation amongst the team members is shown in Figure 19.
-        </p>
-        <image-component size="medium" tag="image" source="assets/workalloc.png"
-          subtitle="Fig 19: Work Allocation"></image-component>
-      </div>      
+        <image-component tag="image" source="assets/Sandbox.png"
+          subtitle="PLACEHOLDER"></image-component>
+      </div>     
     </div>
 
-
-
-
-    <br />
-    <br />
     <sl-divider></sl-divider>
     <div>
       <div id="F_3">
-        <h2>3 Mechanical Subsystem - Frame (Fang Chen)</h2>
+        <h2>2 Robot Frame Design (UNDER HEAVY CHANGES, IGNORE NUMBERING ISSUES FOR NOW)</h2>
         <p>
           The scope of this subsystem is to design a structure to integrate the AMR and Cobot mechanically. 
         </p>
@@ -745,156 +653,9 @@
 
     </div>
 
-    <br />
-    <br />
-    <sl-divider></sl-divider>
-    <div>
-      <div id="EE-4">
-        <h2>4 Mechanical Subsystem - End-Effector (Jason)</h2>
-        <p>
-          To design the End Effectors for the system, design constraints must be established in terms of the actuation mode of choice, overall maximum size and the maximum mass before further analysis on the approach can be done. 
-        </p>
-      </div>
-
-      <div id="EE-41">
-        <h3>4.1 Actuation mode</h3>
-        <p>
-          To narrow down the ideal Actuation mode for the system, we evaluated the main types of actuation methods against various criteria for the system through the Concept Screening technique seen in Figure 44.
-        </p>
-        <image-component tag="image" source="assets/ActMode.png"
-          subtitle="Fig 44: Actuation mode concept screening"></image-component>
-          <p>
-          Given the AMR’s payload limits and internal space constraints, hardware requirements received higher weight. Based on the concept screening and system needs, electric actuation was selected for the end effector.
-        </p>
-      </div>
-
-      <div id="EE-42">
-        <h3>4.2 Size and Mass Constraints</h3>
-        <p>
-          The size and mass constraints of the system are decided by the following factors:
-        </p>
-        <p>
-          Cobot End Effector Payload Capacity: 5kg
-        </p>
-        <p>
-          Ideal end effector centre of gravity: Within 135mm from the end connection of J6, max width of 200mm.
-        </p>
-        <p>
-          Allocated space on the robot structure: 600mm x 135mm x 200mm (See Figure 45)
-        </p>
-        <image-component size="medium" tag="image" source="assets/manspace.png"
-          subtitle="Fig 45: Space allocated for End Effectors"></image-component>
-      </div>
-      <div id="EE-43">
-        <h3>4.3 End Effector Analysis (Task 1: Tool pick and place)</h3>
-        <p>
-          Given the task requirements, one end effector must pick tools from the pegboard, shown in Figure 46. Tool size and mass were measured to define the end effector’s design requirements as shown in Figure 47.
-        </p>
-        <image-component tag="image" source="assets/collagetools.png"
-          subtitle="Fig 46: A collage showing the various types of tools that the system must interact with."></image-component>
-        <image-component size="small" tag="image" source="assets/summdatapoints.png"
-          subtitle="Fig 47: Table showing the various data points of the manipulator."></image-component>
-      </div>
-
-      <div id="EE-431">
-        <h4>4.3.1 Design challenges</h4>
-        <p>
-          The clamping interface must secure tools with varied, non-linear surfaces and materials (plastic, rubber, steel) whose friction affects required clamping force. Because approach angles may be imperfect, the gripper must tolerate misalignment from positional error without dropping the tool. (Figure 48)
-          <image-component size="small" tag="image" source="assets/endeffector/robotdeviat.png"
-          subtitle="Fig 48: Misalignment due to AMR inaccuracy"></image-component>
-        </p>
-      </div>
-
-      <div id="EE-44">
-        <h3>4.4 End Effector Design</h3>
-        <p>
-          With the design constraints known, design specifications for both the gripper and tool changer unit are specified.(Figure 49)
-        </p>
-        <image-component size="large" tag="image" source="assets/endeffds.png"
-          subtitle="Fig 49: End Effector design specifications"></image-component>
-      </div>
-
-      <div id="EE-45">
-        <h3>4.5 Grippers</h3>
-        <p>
-          To choose the ideal gripper mechanisms, the team used a concept screening chart to evaluate different designs against key metrics shown in Figure 50.
-        </p>
-        <image-component tag="image" source="assets/grippercc.png"
-          subtitle="Fig 50: Gripper concept selection"></image-component>
-        <p>
-          Based on the metric scoring, the rack and pinion and lead screw approach were both chosen to further prototype and explore.
-        </p>
-        <p>
-          To handle misalignment and limit contact pressure on curved surfaces, we explored compliant fingers—specifically the Festo Fin Ray design (Figure 51). Its flexible, fin-like ribbed structure passively wraps around objects, redirecting contact forces into closing forces rather than peeling. The result is gentle, adaptive gripping of irregular or fragile parts, high misalignment tolerance, and simpler actuation/control than rigid parallel jaws.
-        </p> 
-        <image-component size = "medium" tag="image" source="assets/finray.png"
-          subtitle="Fig 51: Example of the fin ray gripper finger from Festo"></image-component>   
-      </div>
-
-      <div id="EE-46">
-        <h3>4.6 Tool Changers</h3>
-        <p>
-          As the system will be interacting with various tools, a singular gripper design may be unable to carry or support all types of objects. As a result, the team aims to implement a tool changing system onboard the Cobot to facilitate end-effector changes. Due to the actuation mode being limited to being electric, the team narrowed down 3 concepts that can be explored and evaluated those against metricsa as seen in Figure 52.
-        </p>
-        <image-component size = "large" tag="image" source="assets/toolcc.png"
-          subtitle="Fig 52: Tool Changer concept selection"></image-component>
-        <p>
-          Due to the limited space and mass constraints on the system, the Compactness/Weight criterion was weighted highly. Based on the scoring, the Permanent Electromagnet was chosen to be the concept to be explored further.
-        </p>
-      </div>
-
-      <div id="EE-47">
-        <h3>4.7 Prototypes</h3>
-      </div>
-
-      <div id="EE-471">
-        <h4>4.7.1 Gripper</h4>
-        <p>
-          Before analysis can be done, an approximate normal force acting on the gripper jaw was established at 10N based on supporting a load of 15N with rubber contact against metal at a coefficient of friction of 0.69. <a href="#Appendix_E">(Refer to Appendix E2 and E3)</a>
-        </p>
-        <p>
-          To test the Fin Ray design, an inspired gripper was designed and simulated it in SolidWorks via Nonlinear analysis, using TPU-85A as the material. The goal of the analysis was to locate the ideal gripping section that will allow the gripper to wrap around the object as seen in Figure 53. The full analysis can be seen in <a href="#Appendix_E">Appendix E4.</a>
-        </p>
-        <image-component tag="image" source="assets/gripperdefor.png"
-          subtitle="Fig 53: Nonlinear Analysis of the deformation of a custom Fin-Ray Gripper Finger from TPU-85A (Deformation Scale: 1)"></image-component>
-        <p>
-          To test the Rack and Pinion concept with the Fin Ray gripper fingers, a 3D-printed prototype was built using PLA with TPU-85A for the fingers to test the deformation and gripping strength. (Figure 54)
-        </p>
-        <image-component tag="image" source="assets/PrototypeGrip.png"
-          subtitle="Fig 54: Prototype Gripper to test concept"></image-component>
-        <video-component tag="rv5as" source="https://www.youtube.com/embed/fclm4pnb_6M?si=5E44gjACVjbD-pGQ"
-          subtitle="Video: Gripper Prototype"></video-component>
-        <image-component tag="image" source="assets/protoexploded.png"
-          subtitle="Fig 55: Prototype Gripper Exploded View"></image-component>
-        <p>
-          Since this is a prototype, it was designed with parts that facilitate swapping of finger geometries (Figure 55) to test clamping force. Initial tests seen in the video below show favourable results in carrying objects up to 900g. Further tests will be conducted to validate different gripper profiles and geometries.
-        </p>
-        <video-component tag="rv5as" source="https://www.youtube.com/embed/jkIgj_byj0M?si=hPrCOvXW5gwAxdUJ"
-          subtitle="Video: Gripper testing with tools"></video-component>
-      </div>
-
-      <div id="EE-472">
-        <h4>4.7.2 Tool Changer</h4>
-        <p>
-          To test the permanent electromagnet concept, calculations<a href="#Appendix_E">(Refer to Appendix E8)</a>guided the selection of the magnet and target material to maximize holding force.
-        </p>
-        <p>
-          The electromagnet used was a permanent electromagnet with a 24V demagnetisation (release) input with 30kg rated strength. For the magnetic material, S275 Ferritic Steel was chosen with 6mm thickness to improve flux and holding force. (Figure 56)
-        </p>
-        <p>
-          Initial tests indicate that the magnet can sustain 10kgs of load for a sustained period. Future works into the next semester will focus on creating the tool changer system with the mechanical body and electrical connections.  
-        </p>
-        <image-component size="small" tag="image" source="assets/Magnet.png"
-          subtitle="Fig 56: Electromagnet and steel"></image-component>
-      </div>
-    </div>
-
-    <br />
-    <br />
-    <sl-divider></sl-divider>
     <div>
       <div id="ES-5">
-        <h2>5 Electrical Subsystem - Electrical Integration (Fang Chen)</h2>
+        <h2>Electrical Subsystem - TO MERGE WITH FRAME DEV CHAPTER</h2>
         <p>
           The scope of this subsystem is to design and implement the circuitry used to integrate AMR and Cobot together.
         </p>
@@ -931,16 +692,265 @@
       </div>
     </div>
 
+    
     <br />
     <br />
     <sl-divider></sl-divider>
     <div>
-      <div id="SS-6">
-        <h2>6 Software Subsystems (Jason)</h2>
+      <div id="EE-3">
+        <h2>3: End effector & tool changer systems</h2>
+        <p>
+          To design the End Effectors for the system, design constraints must be established in terms of the actuation mode of choice, overall maximum size and the maximum mass before further analysis on the approach can be done. 
+        </p>
       </div>
 
-      <div id="SS-61">
-        <h3>6.1 Software Strategy</h3>
+      <div id="EE-31">
+        <h3>3.1 Research</h3>
+        <p>
+          To narrow down the ideal Actuation mode for the system, we evaluated the main types of actuation methods against various criteria for the system through the Concept Screening technique seen in Figure 44.
+        </p>
+        <image-component tag="image" source="assets/ActMode.png"
+          subtitle="Fig 44: Actuation mode concept screening"></image-component>
+          <p>
+          Given the AMR’s payload limits and internal space constraints, hardware requirements received higher weight. Based on the concept screening and system needs, electric actuation was selected for the end effector.
+        </p>
+        <p>
+          Due to the wide variety of tools that the robot is required to grasp, careful consideration had to be given to the gripper design. An additional factor was the storage fixtures used for the tools. Feedback from stakeholders indicated that the existing tool holders were not to be modified, making them a key design constraint. Although compliant gripper systems can handle a broad range of object geometries, the conditions imposed by the pegboard storage arrangement made the development of a truly universal end effector impractical. As a result, the team elected to develop a system that allows the robot to automatically exchange end effectors according to the tool being handled, thereby enabling more reliable and optimised pickup performance across all tool types.
+        </p>
+         <p>
+          When evaluating commercially available tool changer mechanisms, the method of actuation was a major consideration. Many existing systems rely on pneumatic or hydraulic actuation. While these approaches offer high payload capacity, this advantage was not particularly relevant given that the collaborative robot used in this project has a maximum payload limit of 5 kg. From a system integration standpoint, such mechanisms also presented additional challenges, as they are often controlled through proprietary hardware or require the use of a programmable logic controller (PLC). The team did not have access to such hardware, nor was compatibility with the main system computer guaranteed.
+        </p>
+         <p>
+          Another important consideration concerned the interface connections provided by the tool changer mechanism. Available interfaces were generally limited to simple Boolean inputs and outputs, such as on/off actuation signals, together with basic power delivery. Although this level of interfacing was functionally sufficient, it introduced challenges in terms of control integration. Neither the collaborative robot nor the autonomous mobile robot provided dedicated native control for such mechanisms, and the intended system architecture centred on ROS 2 as the primary control framework running from the main onboard computer.
+        </p>
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          Evaluation of the available computing hardware, specifically the UNO-238 V2 Industrial Mini PC, showed that the system only provided 3.3 V GPIO logic and CAN Bus 2.0B as accessible hardware interfaces. In this context, CAN Bus was considered more suitable than conventional serial communication due to its robustness in electrically noisy environments. Unlike standard serial communication, which is more susceptible to noise-induced corruption, CAN Bus uses differential signalling, making it significantly more resistant to electromagnetic interference. This was especially important because signal transmission needed to be routed through the robot arm structure, where the cobot’s AC servo drive systems could generate electromagnetic interference capable of disrupting less robust communication methods.
+        </p>
+        <p>
+          For the end effector itself, a rack-and-pinion gripper mechanism with swappable fingers was selected for the pick-and-place tasks associated with the required tool set. This design was chosen primarily due to time constraints, while also aligning with the direction validated during the interim presentation. The rack-and-pinion arrangement provided a straightforward and mechanically reliable solution, while the interchangeable fingers allowed the gripper to be adapted to the geometry of different tools without requiring a complete redesign of the grasping mechanism.
+        </p>
+
+      </div>
+
+      <div id="EE-32">
+        <h3>3.2 End effector</h3>
+      </div>
+
+      <div id="EE-321">
+        <h3>3.2.1 Mechanical Development</h3>
+        <p>
+          Regarding the mechanical design of the end effector, the body was redesigned to further optimise its overall size, with particular emphasis placed on enclosing the mechanism’s dynamic components, namely the rack-and-pinion assembly. This was done to reduce the likelihood of pinch injuries should a user place their fingers near the moving regions of the mechanism during operation. In addition, the overall length of the end effector was reduced to minimise the distance of its centre of mass from the robot flange. As discussed previously, the effective payload capacity of the cobot decreases as the centre of mass of the mounted end effector shifts further away from the flange. Compactness was therefore an important design objective.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          Most critically, the gripper attachment interface was redesigned to incorporate a universal mounting feature, allowing direct attachment to the slave side of the tool changer. This modification was essential in enabling automatic end effector exchange within the overall system. Further details of this interface are presented in Section 3.3.1.
+        </p>
+        <p>
+          The method of swapping gripper fingers was also improved, such that each finger could be secured to the rack using only two M3 × 25 mm screws. This reduced the complexity of finger replacement and improved maintainability during iterative testing and operation.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+         <p>
+          Following successful preliminary evaluation of the compliant gripper finger design, this concept was retained in the updated iteration. Experimental testing showed that the compliant fingers were able to successfully grasp screwdrivers, wrenches, and pliers. However, due to the mounting geometry and handling requirements of the mallet, a different gripper finger configuration was required to achieve reliable pickup. For this tool, the selected approach involved lifting the mallet while maintaining its orientation throughout the transfer process until deposition, thereby ensuring stable handling.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+      </div>
+
+      <div id="EE-322">
+        <h3>3.2.2 Electrical Development</h3>
+        <p>
+          For the electrical subsystem, the DS3218MG servo motor was selected primarily for its suitable torque characteristics for the intended gripping application. As the servo has a maximum rated input voltage of 6.4 V, an LM2596 buck converter was incorporated to step down the available 12 V supply to an appropriate operating voltage. At the same time, retaining a 12 V supply rail preserves the option of integrating higher-torque actuators in future revisions, such as the Dynamixel AX-12A, should greater actuation capability be required.
+        </p>
+        <p>
+          To control the opening and closing motions of the gripper, an STM32F103C8T6 microcontroller was used. The tool-side circuit board, which formed part of the tool changer electronics, was designed to house the control circuitry and embedded firmware responsible for end effector actuation. Further details of this implementation are provided in the following section.
+        </p>
+      </div>
+
+      <div id="EE-33">
+        <h3>3.3 Tool Changer</h3>
+      </div>
+
+      <div id="EE-331">
+        <h3>3.3.1 Electrical Development</h3>
+        <p>
+          As the electrical subsystem of the tool changer imposed several constraints on the overall mechanical implementation, it is addressed first in this section. Based on the available system peripherals, the power requirements of the end effector prototype, and the results obtained from preliminary testing of the 24 V electromagnet, a set of design deliverables was established for the control board.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          To further reduce the bill of materials cost, an additional requirement was introduced whereby the same board design could be configured as either the master board or the slave board. In the master configuration, the board is mounted on the cobot side and is responsible for power delivery and control of the tool changer release mechanism. In the slave configuration, the board is mounted on the end effector side and is responsible for receiving commands from the system to control the actuators and sensor peripherals associated with the attached tool. This approach reduced the need for multiple unique board designs and simplified manufacturing and integration.
+        </p>
+        <p>
+          After evaluating the range of microcontrollers available on the market, the STM32F103 was selected because it satisfied the functional requirements of the system while maintaining relatively low cost and manageable design complexity. The device provides sufficient digital I/O and integrated peripherals for the intended application, including CAN communication, UART communication, timer functions, and general-purpose control signals.
+        </p>
+        <p>
+          Based on the system requirements, an interaction architecture was then defined between the control boards and the Mini PC, such that the Mini PC serves as the primary computation and supervisory control unit, while the control boards handle local peripheral interfacing, power switching, and actuator-level control.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          For the CAN Bus communication circuit, the SN65HVD232 transceiver was selected due to its compatibility with 3.3 V microcontroller logic and its suitability for direct integration with the STM32-based control architecture. In addition, the device is widely used in embedded CAN applications and is supported by substantial reference material and implementation examples, which reduced development risk and simplified hardware validation.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          Following the interim presentation, the selected electromagnet required a 24 V supply, while the gripper subsystem only required 12 V operation. As the STM32F103 operates using 3.3 V logic, dedicated switching circuits were required to allow the low-voltage control signals from the microcontroller to safely and reliably switch the higher-voltage loads.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          For the 24 V electromagnet, a low-side switching circuit based on an N-channel MOSFET was implemented. In this topology, the MOSFET is positioned between the load and ground, such that enabling the MOSFET completes the current path through the electromagnet. Since the STM32 microcontroller operates at 3.3 V logic, its GPIO output is insufficient to directly provide the higher gate drive voltage required to fully enhance the selected N-channel MOSFET. A transistor driver stage consisting of an NPN transistor and a PNP transistor was therefore used as a level-shifting interface. 
+        </p>
+        <p>
+          The 3.3 V GPIO signal first drives the NPN transistor, which then controls the PNP transistor connected to the 12 V rail. When activated, the PNP transistor pulls the MOSFET gate toward 12 V, thereby providing a substantially higher gate-to-source voltage than could be achieved directly from the microcontroller output. This ensures full enhancement of the MOSFET, resulting in a lower R_(DS(on))and reduced power dissipation. A flyback diode was connected across the electromagnet to clamp the reverse voltage generated during turn-off, protecting the switching device against inductive overvoltage.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          For switching the 12 V supply to the end effector, a high-side switching circuit based on a P-channel MOSFET was used. In this case, the MOSFET is placed on the positive supply rail, allowing the load to be disconnected from the 12 V source when required. Because the source terminal of the P-channel MOSFET sits near 12 V during operation, the microcontroller’s 3.3 V logic output alone is insufficient to directly pull the gate to the required level for effective switching. To address this, an NPN transistor was introduced to pull the MOSFET gate toward ground when commanded, producing a sufficiently negative V_GSto turn the P-channel MOSFET on. When the transistor is turned off, the gate is pulled back toward the source potential, turning the MOSFET off. This arrangement allowed the microcontroller to control the 12 V output rail safely using its 3.3 V logic levels.
+        </p>
+        <p>
+          To support repeated mechanical coupling and decoupling between the robot side and tool side control boards, a pogo-pin contact interface was adopted. Spring-loaded pogo pins were assigned to the tool side, while corresponding pogo pads were placed on the robot side. This allowed electrical connection to be established automatically during tool docking without requiring manual cable connection, while also improving serviceability and modularity of the overall tool changing system.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          From these requirements, a hardware block diagram was developed to define the major functional sections of the circuit board and to map the selected components to each subsystem requirement.
+        </p>
+         <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          Considering the tight dimensional constraints imposed by the mechanical design of the tool changing system, the control board dimensions were fixed at 30 mm × 40 mm × 10 mm in length, width, and height respectively. Under these constraints, the use of off-the-shelf development boards, prebuilt modules, or prototype perfboard construction was not suitable for the deployed prototype. As a result, a custom printed circuit board was designed in KiCad, based on circuit simulation, calculation, and validation carried out using LTspice and SMath Solver.
+        </p>
+        <p>
+          The final control board integrates the STM32F103C8T6 microcontroller, the low-side and high-side switching circuits, and an onboard CAN Bus 2.0B transceiver into a single compact design. In the tool-side configuration, the board additionally supports up to six timer-based input/output channels, allowing it to control end effectors with as many as six servos.
+        </p>
+         <model-viewer
+          src="assets\3dmodels\toolchanger_end_effector_side_of_pcb.glb"
+          alt="3D model of the ASI-404 mobile manipulator"
+          camera-controls
+          auto-rotate
+          shadow-intensity="0.4"
+          exposure="0.5"
+          style="width: 100%; height: 600px; background-color: #f5f5f5; border-radius: 12px;">
+        </model-viewer>
+
+        <p>
+          To validate the functionality of the fabricated control boards, firmware was first successfully uploaded through the onboard debugger interface, after which the LED peripherals were tested to confirm basic microcontroller operation. Following this, communication tests were conducted to verify the functionality of the CAN circuitry by transmitting signals from the Robot-side board to the Tool-side board, with the onboard debugging LEDs serving as visual indicators of successful data exchange. Finally, the MOSFET and transistor switching circuits were tested to confirm correct switching of the 12 V supply and the electromagnet, both of which were validated successfully. Upon completion of these electrical tests, the boards were integrated into the mechanical housings for the Robot-side and Tool-side assemblies, as described in the following section.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+
+      </div>
+
+      <div id="EE-332">
+        <h3>3.3.2 Mechanical Development</h3>
+        <p>
+          Regarding the mechanical design of the tool changing system, 3 key portions of the system need to be developed, namely:
+        </p>
+        <p>
+          -	The Robot Side unit
+        </p>
+        <p>
+          -	The End Effector Side unit
+        </p>
+        <p>
+          -	The Tool Holder
+        </p>
+      </div>
+
+      <div id="EE-333">
+        <h3>3.3.3 The Robot Side Unit</h3>
+         <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          The Robot side tool unit is meant to house the electromagnet and corresponding circuit board, with a major consideration for the alignment of the Tool side unit when docking. Successful, repeatable alignment of the tool side unit is crucial for both mechanical and electrical connections.
+        </p>
+        <p>
+          The docking interface was designed with chamfered alignment features to improve passive self-alignment between the robot-side and tool-side units. Tapered ends were applied to the tool-side alignment pins, while chamfered entry features were incorporated into the mating holes on the robot-side interface. The purpose of these lead-in geometries was to compensate for minor positional errors in the robot approach by guiding the mating parts into alignment during contact. 
+        </p>
+        <p>
+          This design reduces sensitivity to small lateral misalignments by converting initial contact forces into corrective guiding forces, allowing the interface to self-center before full engagement of the electromagnetic and electrical connection surfaces. As a result, the mechanism achieves more reliable and repeatable docking, while also reducing the risk of collision, jamming, and localized wear at the mating interface. The selected chamfer geometry was sufficient to tolerate approximately ±1 mm of positioning error during insertion.
+        </p>
+        <p>
+          The mounting of the camera was done on the robot side for the detection of the tools and assisting in grabbing. Further elaboration on the exact software is shown in section 4. In terms of the mechanical mounting, consideration was given to the camera’s RGB and Depth FOV, to ensure that the camera image was not blocked when the Tool side with the end effector was docked together. 
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+      </div>
+
+      <div id="EE-334">
+        <h3>3.3.4 The End Effector Side Unit</h3>
+        <p>
+          For the tool side unit, the primary design considerations involve the mounting of the corresponding steel plate, of which the validation was done from the interim presentation period, with the calculations seen in Appendix AAA alongside the placement of the dowel pins. The corresponding tool changer circuit system is mounted here as well. 
+        </p>
+        <p>
+          Mounting holes are placed at the underside of the holder for customisability in gripper placements and options. Additionally, the edges of the holder are designed to double function as the supports on the tool holder. Further elaboration on this is seen in section ()
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+      </div>
+
+      <div id="EE-336">
+        <h3>3.3.6 The Tool Holder</h3>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          The tool changer holder was created with the following considerations in mind:
+        </p>
+        <p>
+          -	Robot approach for docking/undocking
+        </p>
+        <p>
+          -	Part complexity
+        </p>
+        <p>
+          The tool pickup strategy was intentionally designed as a vertical lift followed by linear forward clearance, rather than using an angled holder. This approach decouples load transfer from disengagement, resulting in more predictable tool extraction, reduced sideloading, improved repeatability, and simpler tolerance management. While an angled holder may appear to assist release geometrically, it would also introduce greater dependence on precise alignment and could increase the risk of rubbing, wedging, and inconsistent extraction. The selected method therefore offered a more robust and controllable solution for reliable autonomous tool exchange.
+        </p>
+        <p>
+          In this application, robustness and repeatability were prioritized over passive geometric assistance. The chosen holder geometry ensures the robot executes a deterministic extraction sequence that is easier to validate and better suited to autonomous operation.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+         The retaining “fingers” of the tool holder were intentionally designed to constrain the tool in the X and Y directions. This was necessary because the end effector behaves as a separate rigid body with respect to the main robotic platform. During AMR motion, especially under sharp angular turning, inertial loading acting on the gripper can generate lateral displacement relative to the holder. Without sufficient constraint, this could result in unintended disengagement of the tool from its storage interface. The addition of X- and Y-axis constraint therefore improves retention security during dynamic operation.  
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+      </div>
+
+      <div id="EE-34">
+        <h3>3.4 Overall integration and testing</h3>
+        <video-component tag="toolchanger" source="https://www.youtube.com/embed/R4gRMEHpWVc?si=i9v4UlkKUjpJGsDo"
+          subtitle="Video: Tool Changer and End Effector Mechanisms and Electrical Integration test"></video-component>
+      </div>
+      
+    </div>
+
+    <br />
+    <br />
+    <sl-divider></sl-divider>
+    
+
+    <br />
+    <br />
+    <sl-divider></sl-divider>
+    <div>
+      <div id="SCS-5">
+        <h2>5 Software Control Stack</h2>
+      </div>
+
+      <div id="SS-51">
+        <h3>5.1 Updated software strategy and architecture</h3>
         <p>
           To ensure completion of the 3 main tasks assigned, an understanding must be done on how the stakeholders would interact with the system and make it perform the desired tasks.
         </p>
@@ -966,127 +976,135 @@
         </p>
         <image-component tag="image" source="assets/software/softsub.png"
           subtitle="Fig 63: Software Subsystems to develop"></image-component>
-      </div>
-
-      <div id="SS-611">
-        <h4>6.1.1 Software Sequence for Task 1</h4>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
         <p>
-          For the system to complete Task 1, a detailed sequence flowchart in Figure 64 was created to show the software flow of the system from receiving a command from the user to completing the task.
-        </p>
-        <image-component size="small" tag="image" source="assets/software/Task Process flow chart.drawio.svg"
-          subtitle="Fig 64: Task 1 Software Sequence Flowchart"></image-component>
-      </div>
-
-      <div id="SS-612">
-        <h4>6.1.2 Software Sequence for Task 2</h4>
-        <p>
-          For the system to complete Task 2, a detailed sequence flowchart in Figure 65 was created to show the software flow of the system from receiving a command from the user to completing the task.
-        </p>
-        <image-component size="small" tag="image" source="assets/software/T2 PF Upd.svg"
-          subtitle="Fig 65: Task 2 Software Sequence Flowchart"></image-component>
-      </div>
-
-      <div id="SS-62">
-        <h3>6.2 AMR to Cobot Communication</h3>
-        <p>
-          To allow the AMR and the Cobot to establish communication, the team decided to use the ROS2 Framework as developing a custom software to fully integrate both systems would be challenging given the closed-source nature of the AMR and Cobot. 
-        </p>
-      </div>
-      <div id="SS-63">
-        <h3>6.3 Task planning and motion control</h3>
-        <p>
-          To make the system work as a unified robot system, the robot software must know how to establish the parsing of commands from the user to clear instructions to the hardware. 
-        </p>
-        <p>
-          A software container diagram using the C4 model notation in Figure 66 was used to show the communication between nodes to create the Robot Software System.
-        </p>
-        <image-component tag="image" source="assets/C4 Model Diagram.drawio.svg"
-          subtitle="Fig 66: Container Diagram showing robot software system (Open image in new tab to see in detail)"></image-component>
-      </div>
-
-      <div id="SS-631">
-        <h4>6.3.1 Safety Interfacing</h4>
-        <image-component size = "medium" tag="image" source="assets/Safety Diagram for System.svg"
-          subtitle="Fig 67: Safety Interfaces between the AMR and Cobot"></image-component>
-        <p>
-          Both the AMR and cobot include collision safeguards as shown in Figure 67. The software system interlocks their motion, cobot commands are sent only when the AMR is stationary, and vice versa. During cobot operation, an ellipsoidal “protective bubble” enforces a safe zone; any trajectory that breaches it is terminated immediately.
+          PLACEHOLDER
         </p>
       </div>
 
-      <div id="SS-632">
-        <h4>6.3.2 Cobot Trajectory Planner</h4>
+      <div id="SS-52">
+        <h3>5.2 Moveit2 Trajectory Planner</h3>
         <p>
-          For the Cobot to reach a desired position in space, a positional command made of Vectors and Quaternions must be sent to establish both relative position and orientation, which is called a “frame”. To move between 2 frames with a specified trajectory and constraints would require a trajectory planner. 
+          The MoveIt2 trajectory planning node is responsible for generating feasible manipulator motion trajectories for the robotic arm. Its purpose is to translate target poses or motion goals into executable arm movements that respect the robot’s kinematic structure, joint limits, and safety constraints. In the developed system, this node is essential for actions such as moving the Cobot to predefined standby positions, approaching a tool holder, aligning with an object, executing pickup or placement motions, and returning the arm to a safe home configuration.
         </p>
         <p>
-          Custom planner development was out of scope, so we used MoveIt2 planners compatible with the cobot driver: OMPL, CHOMP, and PILZ. We evaluated them for our use case and compared their performance across key metrics (See Figure 68).
-        </p>
-        <image-component tag="image" source="assets/plannerscoring.png"
-          subtitle="Fig 68: Selection of ideal trajectory planner for Cobot"></image-component>
-        <p>
-          We scored planners 1–3 (3 = best), penalizing stochastic/unpredictable behavior and heavy compute. PILZ ranked highest because it deterministically picks the shortest feasible path, respects velocity limits, and delivers repeatable, predictable motion.
+          One of the main reasons for using MoveIt2 is its ability to handle inverse kinematics and motion planning in a standardized framework. In a practical system, commanding the robot to move from one pose to another is not simply a matter of assigning Cartesian coordinates. The software must determine whether the target can be reached, which joint configuration should be used, and whether the resulting motion is smooth and safe. MoveIt2 provides this capability while also supporting collision checking, trajectory generation, and planning scene integration when required. This significantly reduces the need for manual low-level trajectory derivation and improves the reliability of arm motion.
         </p>
         <p>
-          The planner was defined for use in the test_rv5as.py node such that any input commands will move the robot system accordingly.
+          From the interim presentation, various trajectory planners were tested and the PILZ trajectory planner was selected for stable trajectory planning and ability for linear trajectory application.
         </p>
-        <video-component tag="rv5as" source="https://www.youtube.com/embed/KA9xv9ImLKU?si=9OjTVHjppiz-rvyo"
-          subtitle="Video: Cobot MoveIt2 testing with PILZ"></video-component>
-      </div>
-      <div id="SS-633">
-        <h4>6.3.3 Waypoint finding</h4>
+         <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
         <p>
-          For the AMR to reach a desired waypoint, an API call to the Waypoints API will allow for requesting a specific goal point for the robot to travel too that can also be saved via another API call to the Goal API. A map of the Hub environment was created via SLAM mapping to allow the AMR to localise itself and plan a path to the desired waypoint.
+          The diagram above shows how the node, called the Master Cobot Action Node, interacts with the other software subsystems in the overall architecture. The node’s endpoints feature Ros2 services that allow for the control and data reading of the cobot during its execution. The sequencer node, the node that handles the direct systems, mainly interacts via this service calls which are sequence requests. 
         </p>
-        <video-component tag="amr" source="https://www.youtube.com/embed/yUhf1zvPS7Y?si=vLAjFvF9QwQqjgCw"
-          subtitle="Video: AMR Waypoint Testing"></video-component>
+        <p>
+          Within the Cobot Node, a stored database of movements are located that when referenced by the Sequencer, will lead to its execution. Throughout the execution of the sequences, feedback on the trajectory planning is also obtained via the MoveIt2 action server. The joint position and cartesian coordinates of the end effector are constantly updated and the sequencer can parse this information for utilisation in other moves, such as computing the new position to travel after the depth data, which is seen in section ()
+        </p>
+
       </div>
 
-
-      <div id="SS-64">
-        <h3>6.4 End Effector Firmware and Control</h3>
+      <div id="SS-53">
+        <h3>5.3 AMR control stack</h3>
         <p>
-          To control the end-effector, the current proposed plan is to utilise the ROS2 system as the higher-level control whilst a Microcontroller will act as the lower-level control that deals with the motors, sensors and other peripherals on the end-effector unit. (Figure 69)
+          The SESTO node is responsible for managing communication with the SESTO Magnus Lite AMR platform and providing the rest of the software system with an interface for navigation-related and control functions. Its primary function is to accept location-based commands from the sequencer and convert them into navigation requests that can be understood by the mobile platform. This involves calling external APIs, sending requests to the base controller, or continuously polling platform status to monitor progress. 
         </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          From the diagram above, the main interactions with the software architecture involve the SESTO node accepting service and action requests from the sequencer. These service cand action request are directly tied to API calls that are done to the SESTO’s onboard API server to execute the motions. The table below shows the endpoints utilised for the system.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          The SESTO node also contributes to execution reliability by returning status information back to the sequencer. Once a navigation goal is issued, the sequencer does not simply assume the movement has completed. Instead, it relies on the SESTO node to monitor whether the platform is travelling, has arrived, or has encountered an issue. This is especially important in integrated workflows where downstream actions, such as tool pickup or delivery, should only begin once the base is correctly positioned. Without this feedback mechanism, the system could attempt manipulator operations at the wrong location, leading to failed or unsafe execution.
+        </p>
+        <p>
+          When the AMR reaches its destination, it will enter in Station-Lock mode, where no navigation requests will be accepted until specifically released. This is used as an intermediary safety layer to prevent any navigation requests from being submitted which may lead to unsafe conditions if the arm also were to be moving simultaneously. The release of this Station-Lock is done via the API endpoint /amrs/release/station.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          For the creation of new waypoints, this can also be done using API calls to the system but for convenience, the Fleet Server UI seen in figure x, onboard the AMR was utilised as the GUI overlay shows the location of the endpoints, leading to easier implementation. Each key point can then be referenced in the API calls.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          In figure x to n shows the physical locations of these waypoints.  
+        </p>
+        <p>
+          The navigation accuracy is noted to be a point of concern, repeatability tests were done which shows that after 50 navigation attempts to the same defined location, the AMR can drift about +- 20mm in both X and Y directions. This poses an issue during the pick and place as hardcoded motions will not suffice to grab the items as the whole system can drift far enough that the gripper will miss outright. This inaccuracy issue is solved via the utilisation of computer vision as mentioned in section 4 and in section 5.4.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
 
-        <!-- This is an example of how you might use the table component -->
-        <image-component size="small" tag="image" source="assets/manipfirm.png"
-          subtitle="Fig 69: End Effector Proposed Control"></image-component>
       </div>
 
-      <div id="SS-65">
-        <h3>6.5 Graphical User Interface (GUI)</h3>
+      <div id="SS-54">
+        <h3>5.4: CAN Bus Communication</h3>
         <p>
-          Based on Task 3, a user interface is to be created to allow the stakeholders to send requests to the system to perform tasks. 
+          The CAN bus node provides the low-level hardware communication interface between the ROS2 software stack, and the physical end-effector or peripheral devices connected over the CAN network. The CAN bus node interfaces with the drivers and corresponding CAN peripherals onboard the UNO 238 V2 MiniPC.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          In the context of the robotics system, the CAN node mainly interfaces with the tool changer unit circuits boards, seen in section 3. The interaction between the CAN node and the peripherals can then be illustrated in the diagram below:
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          The CAN Node itself opens various services that the sequencer can call. These services are for the control of the tool changer’s electromagnet, power delivery and the gripper’s open and close command. Upon calling any of these services, the CAN Node transmits a CAN frame that can be seen in the diagram below:
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          In this CAN frame, the commands for the electromagnet, power delivery and gripper state are seen in the bit 6, 5 and 4 fields whilst bit 3 to 0 are reserved for other command structures. 
         </p>
         <p>
-          Although both the AMR and Cobot have their own respective GUIs for control, to create a unified robot system would mean a singular user interface that allows for control of both systems.
+          Whilst the Tool side control board can also receive CAN frames from the MiniPC, a separated form of control was done instead, with the Robot side control board managing the commands from the MiniPC and monitors the state of the Tool side control board. This is so that in the event of any loss of connection on the tool side, the Robot side can notify the MiniPC. 
         </p>
-        <p>
-          The final GUI vision in Figure 70 is a single, unified interface that controls both the Cobot and the AMR. Built for staff and makers, it enables task execution without any coding, using clear workflows and teach-by-demonstration tools. A dedicated teaching mode streamlines adding goals and waypoints, making everyday operation fast and intuitive.
-        </p>
-        <image-component size="large" tag="image" source="assets/Dashboard.png"
-          subtitle="Figure 70: Final vision for GUI"></image-component>
 
-        <!-- This is an example of how you might use the table component -->
       </div>
 
-      <div id="SS-651">
-        <h4>6.5.1 Current work on GUI</h4>
-        <p>
-          An Engineering GUI prototype has been created to test basic functionalities such as sending movement commands to the Cobot. (Figure 71). The attached videos show the Cobot being controlled via the GUI in both real and simulated environments.
-        </p>
-        <image-component size="large" tag="image" source="assets/Engineering UI.png"
-          subtitle="Figure 71: Prototype Gripper Exploded View"></image-component>
-        <!-- This is an example of how you might use the video component -->
-        <video-component tag="rv5as" source="https://www.youtube.com/embed/4XbvGf5GQhY?si=m-EPjrZX_p1QXRXx"
-          subtitle="Video: RV5AS Pick and Place with GUI Control"></video-component>
-
-        <video-component tag="gui" source="https://www.youtube.com/embed/-wPyXYcXmuc?si=SwsnxnJa3JSAdvIq"
-          subtitle="Video: GUI Control in simulation"></video-component>
-
-        <!-- This is an example of how you might use the table component -->
+      <div id="SS-55">
+        <h3>5.5: Computer Vision</h3>
       </div>
 
+      <div id="SS-56">
+        <h3>5.6: Sequencer</h3>
+        <p>
+          The sequencer node forms the core supervisory layer of the robotic software architecture. Its primary function is to coordinate the execution of tasks across the different subsystems and ensure that operations occur in the correct order. In a multi-node robotic application, individual components such as navigation, motion planning, end-effector control, and user interaction may all function correctly on their own, but the overall system will not behave reliably unless these components are synchronized. The sequencer was therefore implemented to serve as the central decision-making and orchestration layer.
+        </p>
+        <p>
+          From a functional perspective, the sequencer receives higher-level requests that correspond to complete robotic actions, such as performing a delivery, retrieving a tool, returning to a home pose, or executing a pickup sequence. Rather than directly controlling motors or actuators, the sequencer breaks each high-level task into a series of ordered sub-operations. These sub-operations are then issued to the relevant nodes using ROS2 services, actions, or topic-based communication depending on the nature of the task. This design allows the logic of the task flow to be managed in one place, while hardware-specific or subsystem-specific details remain isolated in their own nodes.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          In the diagram above, the sequencer node interfaces with all the relevant hardware control nodes. Since the sequencer can control all items with proper logic, it plays a critical role in fault handling and recovery. In practical robotic systems, failures such as missing tools, unsuccessful grasps, delayed status updates, or unexpected subsystem states are common. To address this, the sequencer includes conditional branches that alter the execution flow based on returned results. For instance, if a requested screwdriver is not detected at the pickup location, the sequencer can record that outcome, skip the failed pickup, and proceed to inspect the next valid request instead of remaining stuck in an incomplete state. If no valid items remain, the node can trigger a safe homing or recovery procedure. This makes the overall system more robust and better suited for semi-structured real-world operation.
+        </p>
+      </div>
+
+      <div id="SS-57">
+        <h3>5.7: Webserver and User interface</h3>
+        <p>
+          The webserver node functions as the primary human-machine interface for the robotic system. Its role is to allow users to interact with the robot through a browser-based interface rather than requiring direct access to ROS2 commands, terminals, or internal software tools. This is especially important in application-oriented robotic systems where the end users may not be robotics developers and need a simple method to initiate tasks and observe system status.
+        </p>
+        <p>
+          From a functional standpoint, the webserver accepts user inputs such as delivery requests, task selections, or other operation commands. These inputs are then passed into the backend control logic, where they are interpreted and relayed to the sequencer or relevant subsystem. In this way, the webserver does not directly command the robot at the hardware level but instead serves as a structured interface between user intent and robotic execution.
+        </p>
+        <image-component tag="image" source="assets/xe.png"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          In the UI, the user has the option to select multiple tools for delivery. They can then select which table do they want the deliveries to be delivered to. Upon clicking the Send Request button, the commands are then sent over to the sequencer node, where the system then decides how to control the hardware to complete the order. 
+        </p>
+      </div>
+
+      <div id="SS-55">
+        <h3>5.8: Overall software functionality</h3>
+      </div>
+  
     </div>
 
     <br />
