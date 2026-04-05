@@ -7,6 +7,40 @@ body {
   background-color: #f2f2f2;
 }
 
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+.my-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.my-table th,
+.my-table td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.my-table th {
+  background-color: #0b5d6b;
+  color: white;
+}
+
+.my-table td {
+  background-color: #222;
+  color: white;
+}
+
 .content {
   position: relative;
   z-index: 1;

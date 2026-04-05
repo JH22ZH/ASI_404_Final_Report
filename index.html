@@ -194,6 +194,15 @@
           </sl-tree-item>
           <sl-tree-item>
             <a href="#SC-62">6.2 Edge case testing</a>
+            <sl-tree-item>
+              <a href="#SC-621">6.2.1: Tool availability and pickup failures</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="##SC-622">6.2.2: Motion and manipulation failures</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="##SC-623">6.2.3: Communication and control failures</a>
+            </sl-tree-item>
           </sl-tree-item>
         </sl-tree-item>
 
@@ -1110,6 +1119,146 @@
     <br />
     <br />
     <sl-divider></sl-divider>
+    <div>
+      <div id="SC-6">
+        <h2>6 Edge case testing and safety considerations</h2>
+        <p>
+          This section is to document both the safety features implemented onboard the robot to protect operators and people in the environment alongside edge case handling behaviour should the system encounter them. 
+        </p>
+      </div>
+
+      <div id="SC-61">
+        <h3>6.1 Safety implementation</h3>
+        
+        <image-component tag="image" source="assets/wdadw"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          Onboard the AMR and Cobot, there are integrated safety peripherals that prevent the system from injuring or harming users. One of the main changes that the team did to improve the safety further was to merge the estop logic to both the AMR and Cobot. This allows for the system to be shut down fully. The following videos showcase these safety peripherals during the use of the system. 
+        </p>
+      </div>
+
+      <div id="SC-62">
+        <h3>6.2 Edge case testing</h3>
+        <p>
+          Beyond normal operating conditions, the robotic system must also be capable of handling edge cases that occur during task execution. In practice, these conditions may arise from missing tools, unsuccessful perception results, communication irregularities, or failures in intermediate action steps. To address this, the system logic was designed with explicit handling pathways for such scenarios, allowing the robot to respond in a controlled and deterministic manner. Depending on the nature of the fault, the system may attempt an alternative sequence, skip the affected task, notify the supervisory interface, or return to a predefined safe state. This behaviour is important in ensuring operational robustness, safety, and continuity of service.
+        </p>
+      </div>
+      <div id="SC-621">
+        <h3>6.2.1 Tool availability and pickup edge cases</h3>
+        <p>
+          This subsection addresses edge cases that occur when a requested tool is unavailable, incorrectly positioned, or cannot be successfully picked up by the robot.
+        </p>
+        <table class="my-table">
+        <tr>
+          <th>Trigger condition:</th>
+          <th>Affected task:</th>
+          <th>Identified by:</th>
+          <th>System response</th>
+        </tr>
+        <tr>
+          <td>Screwdriver requested not detected in CV scanning.</td>
+          <td>Tool pickup</td>
+          <td>Computer vision model</td>
+          <td>
+            If other tools are requested, the system will process those orders.
+            Else, the sequencer node updates the webserver that delivery has failed.
+            Robot returns to idle.
+          </td>
+        </tr>
+        <tr>
+          <td>Screwdriver requested is slanted in the holder.</td>
+          <td>Tool pickup</td>
+          <td>N.A</td>
+          <td>
+            The system attempts to pickup the tool with the skewed position.
+            If the tool drops out, the system will continue as per normal.
+          </td>
+        </tr>
+      </table>
+      </div>
+
+      <div id="SC-622">
+        <h3>6.2.2 Motion and manipulation edge cases</h3>
+        <p>
+          This subsection considers edge cases arising during robot motion or physical interaction with tools and fixtures.
+        </p>
+        <table class="my-table">
+        <tr>
+          <th>Trigger condition:</th>
+          <th>Affected task:</th>
+          <th>Identified by:</th>
+          <th>System response</th>
+        </tr>
+        <tr>
+          <td>The Cobot impacts a person or object.</td>
+          <td>Any sequence.</td>
+          <td>Onboard torque sensors on the Cobot.</td>
+          <td>
+            The Cobot will immediately enter alarm state and terminate any further goals for movement.
+            System will need to be restarted.
+          </td>
+        </tr>
+        <tr>
+          <td>The AMR detects an obstacle blocking the goal.</td>
+          <td>Any navigation sequence.</td>
+          <td>AMR’s onboard LIDAR and camera.</td>
+          <td>
+            The AMR will sound out to the obstacle to clear the area and reattempts navigation.
+            If the obstacle is not cleared after 5 attempts, the AMR will cancel the task and return to park position.
+          </td>
+        </tr>
+      </table>
+      </div>
+
+      <div id="SC-623">
+        <h3>6.2.3 Communication and control edge cases</h3>
+        <p>
+          This subsection describes faults related to data exchange and coordination between the various subsystems of the robot platform.
+        </p>
+        <table class="my-table">
+          <tr>
+            <th>Trigger condition:</th>
+            <th>Affected task:</th>
+            <th>Identified by:</th>
+            <th>System response:</th>
+          </tr>
+          <tr>
+            <td>The master action node fails to obtain a successful trajectory calculation</td>
+            <td>Any movement sequence with the Cobot.</td>
+            <td>Feedback from the MoveIt Action Server</td>
+            <td>
+              The master action node informs the sequencer node, which then terminates any existing requests.
+              A warning is then sounded for an operator to check the system.
+            </td>
+          </tr>
+          <tr>
+            <td>The webserver node loses connection with the sequencer node.</td>
+            <td>Any tasks.</td>
+            <td>Feedback monitoring in webserver node.</td>
+            <td>
+              The webserver node will notify the user on the debug console that the sequencer node has timed out and that the robot may require maintenance.
+            </td>
+          </tr>
+          <tr>
+            <td>The sesto node receives an error from the Sesto’s navigation API.</td>
+            <td>Any navigation goal requests to the sesto node.</td>
+            <td>Feedback from the sesto node.</td>
+            <td>
+              The sequencer node will terminate the order and request for an operator to check the robot.
+            </td>
+          </tr>
+          <tr>
+            <td>The CAN Bus node does not receive feedback for the can transmission.</td>
+            <td>During gripper selection.</td>
+            <td>CAN Node feedback.</td>
+            <td>
+              The sequencer node will terminate the order and request for an operator to check the robot.
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
     <div>
       <div id="P-7">
         <h2>7 Project Plan and Future Work </h2>
