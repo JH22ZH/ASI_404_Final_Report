@@ -41,6 +41,62 @@ th, td {
   color: white;
 }
 
+.requirements-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.requirements-table th,
+.requirements-table td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.requirements-table th {
+  background-color: #f07f2f;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.requirements-table td {
+  background-color: #ead6d1;
+  color: black;
+  font-weight: bold;
+}
+
+.api-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.api-table th,
+.api-table td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.api-table th {
+  background-color: #0f6482;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.api-table td {
+  background-color: #d3d7dc;
+  color: black;
+}
+
+.api-table td:nth-child(2) {
+  text-align: center;
+  font-weight: bold;
+}
+
 .content {
   position: relative;
   z-index: 1;
