@@ -864,7 +864,8 @@
       <div id="EE-333">
         <h3>3.3.3 The Robot Side Unit</h3>
          <image-component tag="image" source="assets\For grippers\Robot side with Camera.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="PLACEHOLDER" width="40px"
+  height="auto"></image-component>
         <p>
           The Robot side tool unit is meant to house the electromagnet and corresponding circuit board, with a major consideration for the alignment of the Tool side unit when docking. Successful, repeatable alignment of the tool side unit is crucial for both mechanical and electrical connections.
         </p>
@@ -1176,6 +1177,10 @@
 
       <div id="SS-55">
         <h3>5.8: Overall software functionality</h3>
+        <video-component tag="toolchanger" source="https://www.youtube.com/embed/z7QtXw3824A?si=i-uDyGqe4bisUB3b"
+          subtitle="Video: Tool Changer and End Effector Mechanisms and Electrical Integration test"></video-component>
+        <video-component tag="toolchanger" source="https://www.youtube.com/embed/ea6Gtco5GJM?si=ClvRYERWCisZuPnH"
+          subtitle="Video: Tool Changer and End Effector Mechanisms and Electrical Integration test"></video-component>
       </div>
   
     </div>
@@ -1325,24 +1330,76 @@
     </div>
     <div>
       <div id="P-7">
-        <h2>7 Project Plan and Future Work </h2>
+        <h2>7 User validation and conclusion</h2>
       </div>
 
       <div id="P-71">
-        <h3>7.1 Gantt Chart</h3>
+        <h3>7.1 User validation</h3>
         <p>
+          Following the completion of system development, user validation testing was carried out to evaluate how well the system performed when operated by intended users. The purpose of this testing was not only to verify that the system could complete its intended tasks, but also to assess its usability, clarity of operation, and overall user experience. This chapter describes the testing procedure, presents the results observed during the trials, and discusses the feedback obtained from users after interacting with the system. 
         </p>
-        <image-component tag="image" source="assets/ganttchart.png"
+        <p>
+          Two stages of validation were carried out, the preliminary user validation and primary user validation. 
+        </p>
+      </div>
+
+      <div id="P-711">
+        <h3>7.1.1 Preliminary user validation</h3>
+        <p>
+          Prior to the main user validation session, a preliminary user validation test was conducted with the primary stakeholder. The purpose of this initial evaluation was to obtain direct feedback on the prototype system before its deployment to the wider user group. As the stakeholder possessed a strong understanding of the intended application and operational requirements, this stage provided an opportunity to identify minor issues in workflow, interface clarity, and system behaviour that could be improved before the primary user validation was carried out.
+        </p>
+        <p>
+          During this preliminary validation, the stakeholder interacted with the system and assessed its operation in relation to its intended use case. Feedback was collected through direct observation and discussion, focusing on areas such as usability, task flow, clarity of interaction, and practical suitability. The comments obtained were then used to introduce small refinements to the system to improve its readiness for broader user testing.
+        </p>
+        <image-component tag="image" source="assets\uservalidation\Preliminary.png"
           subtitle="Figure 72: Gantt Chart to show timeline of development"></image-component>
       </div>
 
-      <div id="P-72">
-        <h3>7.2 Future work</h3>
-        <image-component tag="image" source="assets/fc/sec 7.1 Fig  56.png"
-          subtitle="Figure 73: Further developments on the frame structure"></image-component>
+      <div id="P-712">
+        <h3>7.1.2 Primary user validation</h3>
         <p>
-          Future work will focus on completing both the frame and end-effector mechanical design, electronics development for the end-effector, further software development for task planning and GUI creation, and extensive testing of the integrated robot system to ensure reliability and safety.
+          Following the preliminary refinement stage, the system was subjected to primary user validation involving the intended user group. The objective of this stage was to evaluate the system under more realistic user-facing conditions and to assess its usability, effectiveness, and user acceptance after the initial refinements had been incorporated.
         </p>
+        <image-component tag="image" source="assets\uservalidation\Primary Collage 1.png"
+          subtitle="Figure 72: Gantt Chart to show timeline of development"></image-component>
+        <image-component tag="image" source="assets\uservalidation\Primary Collage 2.png"
+          subtitle="Figure 73: Gantt Chart to show timeline of development"></image-component>
+        <p>
+          During this round of feedback, key feedback points obtained from the students and stakeholders were on points such as the user experience, suitability for the intended environment and workflow, maintainability of the system and general improvements and recommendations for future works. The summary of each feedback can be found in the table below. 
+        </p>
+        <table class="summary-table">
+        <tr>
+          <th>User Experience</th>
+          <th>Integration of system into Hub’s workflow</th>
+          <th>Maintainability of the system</th>
+          <th>General improvements and recommendations</th>
+        </tr>
+        <tr>
+          <td>
+            Users thought the controls were intuitive and straightforward.
+            But the waiting time within the system and the lack of visual updates led some users to think that the robot may be stuck.
+          </td>
+          <td>
+            Overall reception was positive that the prototype showed high promise in being able to reduce/minimise redundant tasks for the staff.
+          </td>
+          <td>
+            The system’s maintainability was well received by the staff in terms of the hardware accessibility.
+            However, software maintainability and error logging still need high development effort to reach the same ease.
+          </td>
+          <td>
+            Speed and efficiency for the robot’s motions were the main primary improvement for the stakeholders.
+            Another key improvement is having the robot link up to an inventory management system in the Hub with proper end effectors for picking other tools and inventory in the storeroom.
+          </td>
+        </tr>
+      </table>
+      </div>
+
+      <div id="P-72">
+        <h2>7.2 Future works and improvements to the system</h2>
+      </div>
+
+      <div id="P-73">
+        <h2>7.3 Conclusion</h2>
       </div>
 
     </div>

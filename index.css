@@ -97,6 +97,31 @@ th, td {
   font-weight: bold;
 }
 
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summary-table th,
+.summary-table td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.summary-table th {
+  background-color: #0f5c73;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.summary-table td {
+  background-color: #222;
+  color: white;
+}
+
 .content {
   position: relative;
   z-index: 1;
