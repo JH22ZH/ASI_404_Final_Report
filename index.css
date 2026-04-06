@@ -121,7 +121,39 @@ th, td {
   background-color: #222;
   color: white;
 }
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
+.team-table th,
+.team-table td {
+  border: 1px solid white;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.team-table th {
+  background-color: #f07f2f;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.team-table td {
+  background-color: #e4c8c1;
+  color: black;
+}
+
+.team-table ul {
+  margin: 4px 0 10px 20px;
+  padding: 0;
+}
+
+.team-table li {
+  margin: 2px 0;
+}
 .content {
   position: relative;
   z-index: 1;
