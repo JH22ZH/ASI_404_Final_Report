@@ -136,10 +136,13 @@
   <sl-tree-item>
     <a href="#EE-32">3.2 End Effector System design</a>
     <sl-tree-item>
-      <a href="#EE-321">3.2.1 Electrical</a>
+      <a href="#EE-321">3.2.1 Mechanical development</a>
     </sl-tree-item>
     <sl-tree-item>
-      <a href="#EE-322">3.2.2 Mechanical</a>
+      <a href="#EE-322">3.2.2 Electrical development</a>
+    </sl-tree-item>
+    <sl-tree-item>
+      <a href="#EE-323">3.2.3 Integration and Testing</a>
     </sl-tree-item>
   </sl-tree-item>
   <sl-tree-item>
@@ -739,12 +742,12 @@
       <div id="EE-321">
         <h3>3.2.1 Mechanical Development</h3>
         <image-component tag="image" source="assets\For grippers\Exploded view annotated of gripper.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Exploded view annotated of gripper"></image-component>
         <p>
           Regarding the mechanical design of the end effector, the body was redesigned to further optimise its overall size, with particular emphasis placed on enclosing the mechanism’s dynamic components, namely the rack-and-pinion assembly. This was done to reduce the likelihood of pinch injuries should a user place their fingers near the moving regions of the mechanism during operation. In addition, the overall length of the end effector was reduced to minimise the distance of its centre of mass from the robot flange. As discussed previously, the effective payload capacity of the cobot decreases as the centre of mass of the mounted end effector shifts further away from the flange. Compactness was therefore an important design objective.
         </p>
         <image-component tag="image" source="assets\For grippers\Prototype vs Gripper.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Final prototype gripper (On the left), Initial Prototype (On the right)"></image-component>
         <p>
           Most critically, the gripper attachment interface was redesigned to incorporate a universal mounting feature, allowing direct attachment to the slave side of the tool changer. This modification was essential in enabling automatic end effector exchange within the overall system. Further details of this interface are presented in Section 3.3.1.
         </p>
@@ -752,7 +755,7 @@
           The method of swapping gripper fingers was also improved, such that each finger could be secured to the rack using only two M3 × 25 mm screws. This reduced the complexity of finger replacement and improved maintainability during iterative testing and operation.
         </p>
         <image-component tag="image" source="assets\For grippers\Swappable fingers.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Swappable Fingers"></image-component>
          <p>
           Following successful preliminary evaluation of the compliant gripper finger design, this concept was retained in the updated iteration. Experimental testing showed that the compliant fingers were able to successfully grasp screwdrivers, wrenches, and pliers. However, due to the mounting geometry and handling requirements of the mallet, a different gripper finger configuration was required to achieve reliable pickup. For this tool, the selected approach involved lifting the mallet while maintaining its orientation throughout the transfer process until deposition, thereby ensuring stable handling.
         </p>
@@ -779,6 +782,27 @@
         <p>
           To control the opening and closing motions of the gripper, an STM32F103C8T6 microcontroller was used. The tool-side circuit board, which formed part of the tool changer electronics, was designed to house the control circuitry and embedded firmware responsible for end effector actuation. Further details of this implementation are provided in the following section.
         </p>
+      </div>
+
+      <div id="EE-323">
+        <h3>3.2.3 Integration and Testing</h3>
+        <image-component tag="image" source="assets\For grippers\Undergoing trials.png"
+          subtitle="Figure n: Grippers undergoing trials"></image-component>
+        <p>
+          The integration of the electrical subsystem with the mechanical components was a critical phase in the development process. This involved ensuring that all electrical connections were properly made and that the control circuitry functioned as intended. Initial testing focused on validating the functionality of the gripper mechanism, including the opening and closing motions on the specified tools for pickup. Figure n above showcases the grippers undergoing trials. The videos below show the testing of the gripper with the compliant fingers and the mallet configuration, demonstrating successful grasping and handling of the tools.
+        </p>
+        <video-component tag="cantest" source="https://www.youtube.com/embed/zzv4f3nGRJY?si=GBp7xDPt-xhqSi9w"
+          subtitle="Video: Grasping test with screwdrivers"></video-component>
+          <video-component tag="cantest" source="https://www.youtube.com/embed/DWrguW84aJk?si=w9EXov35dl6pHtMb"
+          subtitle="Video: Mallet pickup test"></video-component>
+        <p>
+          In terms of pick reliability and repeatability, the gripper was able to achieve consistent performance across multiple trials with the compliant fingers for screwdrivers. The mallet configuration also showed reliable handling, although the specific geometry of the mallet required careful positioning to ensure a secure grip. Overall, the integrated end effector system met the functional requirements for tool handling within the intended application context.
+        </p>
+        <p>
+          However, for the compliant fingers, the gripper was not able to achieve a reliable grasp on the screwdrivers when the gripper is offset from the ideal grasping position. This is because the compliant fingers rely on deformation to conform to the tool geometry, and significant offsets can lead to insufficient contact and grip strength. It is because of this that the computer vision subsystem was implemented to provide feedback on the gripper position relative to the target tool, allowing for adjustments to be made to ensure a successful grasp. Future iterations of the gripper design could also explore modifications to the finger geometry or material properties to improve robustness against positional offsets.
+        </p>
+        <image-component tag="image" source="assets\For grippers\example of failed grasps.png"
+          subtitle="Figure n: Example of failed grasps"></image-component>
       </div>
 
       <div id="EE-33">
@@ -814,17 +838,17 @@
           Based on the system requirements, an interaction architecture was then defined between the control boards and the Mini PC, such that the Mini PC serves as the primary computation and supervisory control unit, while the control boards handle local peripheral interfacing, power switching, and actuator-level control.
         </p>
         <image-component tag="image" source="assets\Interaction between MiniPC and toolchanger circuitry.drawio.svg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure x: Interaction diagram between Mini PC and Tool Changer Circuitry"></image-component>
         <p>
           For the CAN Bus communication circuit, the SN65HVD232 transceiver was selected due to its compatibility with 3.3 V microcontroller logic and its suitability for direct integration with the STM32-based control architecture. In addition, the device is widely used in embedded CAN applications and is supported by substantial reference material and implementation examples, which reduced development risk and simplified hardware validation.
         </p>
         <image-component tag="image" source="assets\For toolchanger PCB\CAN Transceivers.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure x: CAN Transceivers"></image-component>
         <p>
           Following the interim presentation, the selected electromagnet required a 24 V supply, while the gripper subsystem only required 12 V operation. As the STM32F103 operates using 3.3 V logic, dedicated switching circuits were required to allow the low-voltage control signals from the microcontroller to safely and reliably switch the higher-voltage loads.
         </p>
         <image-component tag="image" source="assets\For toolchanger PCB\NChannel Low Side Switching of Electromagnet.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure x: N-channel Low Side Switching of Electromagnet circuit"></image-component>
         <p>
           For the 24 V electromagnet, a low-side switching circuit based on an N-channel MOSFET was implemented. In this topology, the MOSFET is positioned between the load and ground, such that enabling the MOSFET completes the current path through the electromagnet. Since the STM32 microcontroller operates at 3.3 V logic, its GPIO output is insufficient to directly provide the higher gate drive voltage required to fully enhance the selected N-channel MOSFET. A transistor driver stage consisting of an NPN transistor and a PNP transistor was therefore used as a level-shifting interface. 
         </p>
@@ -832,7 +856,7 @@
           The 3.3 V GPIO signal first drives the NPN transistor, which then controls the PNP transistor connected to the 12 V rail. When activated, the PNP transistor pulls the MOSFET gate toward 12 V, thereby providing a substantially higher gate-to-source voltage than could be achieved directly from the microcontroller output. This ensures full enhancement of the MOSFET, resulting in a lower R_(DS(on))and reduced power dissipation. A flyback diode was connected across the electromagnet to clamp the reverse voltage generated during turn-off, protecting the switching device against inductive overvoltage.
         </p>
         <image-component tag="image" source="assets\For toolchanger PCB\PChannel High Side switching of end effector power.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure x: P-channel High Side Switching of End Effector Power circuit"></image-component>
         <p>
           For switching the 12 V supply to the end effector, a high-side switching circuit based on a P-channel MOSFET was used. In this case, the MOSFET is placed on the positive supply rail, allowing the load to be disconnected from the 12 V source when required. Because the source terminal of the P-channel MOSFET sits near 12 V during operation, the microcontroller’s 3.3 V logic output alone is insufficient to directly pull the gate to the required level for effective switching. To address this, an NPN transistor was introduced to pull the MOSFET gate toward ground when commanded, producing a sufficiently negative V_GSto turn the P-channel MOSFET on. When the transistor is turned off, the gate is pulled back toward the source potential, turning the MOSFET off. This arrangement allowed the microcontroller to control the 12 V output rail safely using its 3.3 V logic levels.
         </p>
@@ -840,15 +864,20 @@
           To support repeated mechanical coupling and decoupling between the robot side and tool side control boards, a pogo-pin contact interface was adopted. Spring-loaded pogo pins were assigned to the tool side, while corresponding pogo pads were placed on the robot side. This allowed electrical connection to be established automatically during tool docking without requiring manual cable connection, while also improving serviceability and modularity of the overall tool changing system.
         </p>
         <image-component tag="image" source="assets/For toolchanger PCB/Pogo Pin DIP.jpg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure x: Pogo Pins"></image-component>
         <p>
           From these requirements, a hardware block diagram was developed to define the major functional sections of the circuit board and to map the selected components to each subsystem requirement.
         </p>
          <image-component tag="image" source="assets\Hardware Diagram for Toolchanger boards etc.drawio.svg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure x: Hardware Diagram for Toolchanger Boards"></image-component>
         <p>
           Considering the tight dimensional constraints imposed by the mechanical design of the tool changing system, the control board dimensions were fixed at 30 mm × 40 mm × 10 mm in length, width, and height respectively. Under these constraints, the use of off-the-shelf development boards, prebuilt modules, or prototype perfboard construction was not suitable for the deployed prototype. As a result, a custom printed circuit board was designed in KiCad, based on circuit simulation, calculation, and validation carried out using LTspice and SMath Solver.
         </p>
+        <p>
+          The board development was done iteratively, starting with the design and testing of individual circuit sections such as the CAN transceiver interface, the MOSFET switching circuits, and the microcontroller firmware. After validating each section independently, the full circuit was integrated into a single board design, which was then fabricated and assembled for final testing and deployment. The figure below shows the iterative prototypes developed during the design process, leading up to the final integrated control board design.
+        </p>
+         <image-component tag="image" source="assets\For toolchanger PCB\Prototype Boards.png"
+          subtitle="Figure x: Iterative Prototypes for Tool Changer Control Board"></image-component>
         <p>
           The final control board integrates the STM32F103C8T6 microcontroller, the low-side and high-side switching circuits, and an onboard CAN Bus 2.0B transceiver into a single compact design. In the tool-side configuration, the board additionally supports up to six timer-based input/output channels, allowing it to control end effectors with as many as six servos.
         </p>
@@ -863,16 +892,16 @@
         </model-viewer>
 
         <image-component tag="image" source="assets\For toolchanger PCB\Front view annotated.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure x: Front View of the Tool Changer Control Board"></image-component>
         
         <image-component tag="image" source="assets\For toolchanger PCB\Back view annotated.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure x: Back View of the Tool Changer Control Board"></image-component>
 
         <p>
           To validate the functionality of the fabricated control boards, firmware was first successfully uploaded through the onboard debugger interface, after which the LED peripherals were tested to confirm basic microcontroller operation. Following this, communication tests were conducted to verify the functionality of the CAN circuitry by transmitting signals from the Robot-side board to the Tool-side board, with the onboard debugging LEDs serving as visual indicators of successful data exchange. Finally, the MOSFET and transistor switching circuits were tested to confirm correct switching of the 12 V supply and the electromagnet, both of which were validated successfully. Upon completion of these electrical tests, the boards were integrated into the mechanical housings for the Robot-side and Tool-side assemblies, as described in the following section.
         </p>
         <image-component tag="image" source="assets\For toolchanger PCB\testingboards.jpg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure x: Testing the Control Boards"></image-component>
         
         <video-component tag="cantest" source="https://www.youtube.com/embed/2dQB4g_SVxs?si=tBOHJKejRftSuvOc"
           subtitle="Video: CAN bus communication test"></video-component>
@@ -898,7 +927,7 @@
       <div id="EE-333">
         <h3>3.3.3 The Robot Side Unit</h3>
          <image-component tag="image" source="assets\For grippers\Robot side with Camera.png"
-          subtitle="PLACEHOLDER" width="40px"
+          subtitle="Figure n: Robot Side Unit with Camera" width="40px"
   height="auto"></image-component>
         <p>
           The Robot side tool unit is meant to house the electromagnet and corresponding circuit board, with a major consideration for the alignment of the Tool side unit when docking. Successful, repeatable alignment of the tool side unit is crucial for both mechanical and electrical connections.
@@ -907,17 +936,17 @@
           The docking interface was designed with chamfered alignment features to improve passive self-alignment between the robot-side and tool-side units. Tapered ends were applied to the tool-side alignment pins, while chamfered entry features were incorporated into the mating holes on the robot-side interface. The purpose of these lead-in geometries was to compensate for minor positional errors in the robot approach by guiding the mating parts into alignment during contact. 
         </p>
         <image-component tag="image" source="assets\For grippers\Side view of locating pins and chamfers.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Section View of Locating Pins and Chamfers"></image-component>
         <p>
           This design reduces sensitivity to small lateral misalignments by converting initial contact forces into corrective guiding forces, allowing the interface to self-center before full engagement of the electromagnetic and electrical connection surfaces. As a result, the mechanism achieves more reliable and repeatable docking, while also reducing the risk of collision, jamming, and localized wear at the mating interface. The selected chamfer geometry was sufficient to tolerate approximately ±1 mm of positioning error during insertion.
         </p>
         <image-component tag="image" source="assets\For grippers\Free Body Diagram of the Alignment pins working.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Free Body Diagram of the Alignment Pins Working"></image-component>
         <p>
           The mounting of the camera was done on the robot side for the detection of the tools and assisting in grabbing. Further elaboration on the exact software is shown in section 4. In terms of the mechanical mounting, consideration was given to the camera’s RGB and Depth FOV, to ensure that the camera image was not blocked when the Tool side with the end effector was docked together. 
         </p>
         <image-component tag="image" source="assets\For grippers\FOV Consideration of the Camera mount (Annotated).png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: FOV Consideration of the Camera Mount"></image-component>
       </div>
 
       <div id="EE-334">
@@ -929,13 +958,18 @@
           Mounting holes are placed at the underside of the holder for customisability in gripper placements and options. Additionally, the edges of the holder are designed to double function as the supports on the tool holder. Further elaboration on this is seen in section ()
         </p>
         <image-component tag="image" source="assets\For grippers\Tool Side of Toolchanger.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Tool Side of Tool Changer"></image-component>
+          <p>
+            PLACEHOLDER
+          </p>
+        <image-component tag="image" source="assets\For grippers\High flexibility in the mounting.png"
+          subtitle="Figure n: High Flexibility in Mounting"></image-component>
       </div>
 
       <div id="EE-336">
         <h3>3.3.6 The Tool Holder</h3>
         <image-component tag="image" source="assets\For grippers\Tool changer holder.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Tool Holder"></image-component>
         <p>
           The tool changer holder was created with the following considerations in mind:
         </p>
@@ -952,14 +986,14 @@
           In this application, robustness and repeatability were prioritized over passive geometric assistance. The chosen holder geometry ensures the robot executes a deterministic extraction sequence that is easier to validate and better suited to autonomous operation.
         </p>
         <image-component tag="image" source="assets\For grippers\Docking sequence for tool attachment.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Docking Sequence for Tool Attachment"></image-component>
         <image-component tag="image" source="assets\For grippers\Docking sequence for tool return.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Docking Sequence for Tool Return"></image-component>
         <p>
          The retaining “fingers” of the tool holder were intentionally designed to constrain the tool in the X and Y directions. This was necessary because the end effector behaves as a separate rigid body with respect to the main robotic platform. During AMR motion, especially under sharp angular turning, inertial loading acting on the gripper can generate lateral displacement relative to the holder. Without sufficient constraint, this could result in unintended disengagement of the tool from its storage interface. The addition of X- and Y-axis constraint therefore improves retention security during dynamic operation.  
         </p>
         <image-component tag="image" source="assets\For grippers\Holder constrains in X and Y.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Holder Constraints in X and Ys"></image-component>
         <model-viewer
           src="assets\3dmodels\toolchanger_master_assembly.glb"
           alt="3D model of the ASI-404 mobile manipulator"
@@ -983,6 +1017,9 @@
 
       <div id="EE-34">
         <h3>3.4 Overall integration and testing</h3>
+        <p>
+          After the individual development of the end effector and tool changer subsystems, the final phase of this section involved the integration of all components into a cohesive system, followed by comprehensive testing to validate functionality and performance. This process included mechanical assembly, electrical wiring, firmware deployment, and system-level validation through a series of test scenarios designed to evaluate the reliability and effectiveness of the tool changing mechanism under realistic operating conditions.
+        </p>
         <video-component tag="toolchanger" source="https://www.youtube.com/embed/R4gRMEHpWVc?si=i9v4UlkKUjpJGsDo"
           subtitle="Video: Tool Changer and End Effector Mechanisms and Electrical Integration test"></video-component>
         <video-component tag="mallet" source="https://www.youtube.com/embed/DWrguW84aJk?si=bgm2AMRRX14WOO9n"
@@ -1417,7 +1454,7 @@
           From the interim presentation, various trajectory planners were tested and the PILZ trajectory planner was selected for stable trajectory planning and ability for linear trajectory application.
         </p>
          <image-component tag="image" source="assets\Master action node interactions.drawio.svg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Master Cobot Action Node Interactions"></image-component>
         <p>
           The diagram above shows how the node, called the Master Cobot Action Node, interacts with the other software subsystems in the overall architecture. The node’s endpoints feature Ros2 services that allow for the control and data reading of the cobot during its execution. The sequencer node, the node that handles the direct systems, mainly interacts via this service calls which are sequence requests. 
         </p>
@@ -1433,7 +1470,7 @@
           The SESTO node is responsible for managing communication with the SESTO Magnus Lite AMR platform and providing the rest of the software system with an interface for navigation-related and control functions. Its primary function is to accept location-based commands from the sequencer and convert them into navigation requests that can be understood by the mobile platform. This involves calling external APIs, sending requests to the base controller, or continuously polling platform status to monitor progress. 
         </p>
         <image-component tag="image" source="assets\Sesto Communication.drawio.svg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: SESTO Node Communication"></image-component>
         <p>
           From the diagram above, the main interactions with the software architecture involve the SESTO node accepting service and action requests from the sequencer. These service cand action request are directly tied to API calls that are done to the SESTO’s onboard API server to execute the motions. The table below shows the endpoints utilised for the system.
         </p>
@@ -1501,12 +1538,12 @@
           When the AMR reaches its destination, it will enter in Station-Lock mode, where no navigation requests will be accepted until specifically released. This is used as an intermediary safety layer to prevent any navigation requests from being submitted which may lead to unsafe conditions if the arm also were to be moving simultaneously. The release of this Station-Lock is done via the API endpoint /amrs/release/station.
         </p>
         <image-component tag="image" source="assets\sesto\Sesto at station lock.jpg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Sesto at Station Lock"></image-component>
         <p>
           For the creation of new waypoints, this can also be done using API calls to the system but for convenience, the Fleet Server UI seen in figure x, onboard the AMR was utilised as the GUI overlay shows the location of the endpoints, leading to easier implementation. Each key point can then be referenced in the API calls.
         </p>
         <image-component tag="image" source="assets\software\Sesto Fleet Server.jpg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Sesto Fleet Server"></image-component>
         <p>
           In figure x to n shows the physical locations of these waypoints.  
         </p>
@@ -1514,7 +1551,7 @@
           The navigation accuracy is noted to be a point of concern, repeatability tests were done which shows that after 50 navigation attempts to the same defined location, the AMR can drift about +- 20mm in both X and Y directions. This poses an issue during the pick and place as hardcoded motions will not suffice to grab the items as the whole system can drift far enough that the gripper will miss outright. This inaccuracy issue is solved via the utilisation of computer vision as mentioned in section 4 and in section 5.4.
         </p>
         <image-component tag="image" source="assets\software\Sesto inaccuracy.jpg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Sesto Navigation Inaccuracy"></image-component>
 
       </div>
 
@@ -1524,17 +1561,17 @@
           The CAN bus node provides the low-level hardware communication interface between the ROS2 software stack, and the physical end-effector or peripheral devices connected over the CAN network. The CAN bus node interfaces with the drivers and corresponding CAN peripherals onboard the UNO 238 V2 MiniPC.
         </p>
         <image-component tag="image" source="assets\software\UNO 238 V2.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: UNO 238 V2 MiniPC available interfaces"></image-component>
         <p>
           In the context of the robotics system, the CAN node mainly interfaces with the tool changer unit circuits boards, seen in section 3. The interaction between the CAN node and the peripherals can then be illustrated in the diagram below:
         </p>
         <image-component tag="image" source="assets\Can bus node interactions.drawio.svg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: CAN Bus Node Interactions"></image-component>
         <p>
           The CAN Node itself opens various services that the sequencer can call. These services are for the control of the tool changer’s electromagnet, power delivery and the gripper’s open and close command. Upon calling any of these services, the CAN Node transmits a CAN frame that can be seen in the diagram below:
         </p>
         <image-component tag="image" source="assets/software/CAN Frame MiniPC to Toolchanger Robot Side.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: CAN Frame MiniPC to Toolchanger Robot Side"></image-component>
         <p>
           In this CAN frame, the commands for the electromagnet, power delivery and gripper state are seen in the bit 6, 5 and 4 fields whilst bit 3 to 0 are reserved for other command structures. 
         </p>
@@ -1559,7 +1596,7 @@
           From a functional perspective, the sequencer receives higher-level requests that correspond to complete robotic actions, such as performing a delivery, retrieving a tool, returning to a home pose, or executing a pickup sequence. Rather than directly controlling motors or actuators, the sequencer breaks each high-level task into a series of ordered sub-operations. These sub-operations are then issued to the relevant nodes using ROS2 services, actions, or topic-based communication depending on the nature of the task. This design allows the logic of the task flow to be managed in one place, while hardware-specific or subsystem-specific details remain isolated in their own nodes.
         </p>
         <image-component tag="image" source="assets\Sequencer Node interactions.drawio.svg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Sequencer Node Interactions"></image-component>
         <p>
           In the diagram above, the sequencer node interfaces with all the relevant hardware control nodes. Since the sequencer can control all items with proper logic, it plays a critical role in fault handling and recovery. In practical robotic systems, failures such as missing tools, unsuccessful grasps, delayed status updates, or unexpected subsystem states are common. To address this, the sequencer includes conditional branches that alter the execution flow based on returned results. For instance, if a requested screwdriver is not detected at the pickup location, the sequencer can record that outcome, skip the failed pickup, and proceed to inspect the next valid request instead of remaining stuck in an incomplete state. If no valid items remain, the node can trigger a safe homing or recovery procedure. This makes the overall system more robust and better suited for semi-structured real-world operation.
         </p>
@@ -1576,14 +1613,24 @@
           From a functional standpoint, the webserver accepts user inputs such as delivery requests, task selections, or other operation commands. These inputs are then passed into the backend control logic, where they are interpreted and relayed to the sequencer or relevant subsystem. In this way, the webserver does not directly command the robot at the hardware level but instead serves as a structured interface between user intent and robotic execution.
         </p>
         <image-component tag="image" source="assets\Webserver Node Interactions.drawio.svg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Webserver Node Interactions"></image-component>
         <p>
           In the UI, the user has the option to select multiple tools for delivery. They can then select which table do they want the deliveries to be delivered to. Upon clicking the Send Request button, the commands are then sent over to the sequencer node, where the system then decides how to control the hardware to complete the order. 
+        </p>
+        <image-component tag="image" source="assets\Webserver Node Interactions.drawio.svg"
+          subtitle="PLACEHOLDER"></image-component>
+          <image-component tag="image" source="assets\Webserver Node Interactions.drawio.svg"
+          subtitle="PLACEHOLDER"></image-component>
+        <p>
+          PLACEHOLDER UNDER DEVELOPMENT
         </p>
       </div>
 
       <div id="SS-55">
         <h3>5.8: Overall software functionality</h3>
+        <p>
+          PLACEHOLDER
+        </p>
         <video-component tag="toolchanger" source="https://www.youtube.com/embed/z7QtXw3824A?si=i-uDyGqe4bisUB3b"
           subtitle="Video: Tool Changer and End Effector Mechanisms and Electrical Integration test"></video-component>
         <video-component tag="toolchanger" source="https://www.youtube.com/embed/ea6Gtco5GJM?si=ClvRYERWCisZuPnH"
@@ -1607,7 +1654,7 @@
         <h3>6.1 Safety implementation</h3>
         
         <image-component tag="image" source="assets\safety\Safety Diagram for System.svg"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure n: Safety Diagram for System"></image-component>
         <p>
           Onboard the AMR and Cobot, there are integrated safety peripherals that prevent the system from injuring or harming users. One of the main changes that the team did to improve the safety further was to merge the estop logic to both the AMR and Cobot. This allows for the system to be shut down fully. The following videos showcase these safety peripherals during the use of the system. 
         </p>
