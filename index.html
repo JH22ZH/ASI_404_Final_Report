@@ -103,48 +103,58 @@
 
         <sl-tree-item expanded>
           <a href="#RS_2">2 Robot Structure</a>
+
           <sl-tree-item>
             <a href="#RS_21">2.1 Mechanical</a>
             <sl-tree-item>
-              <a href="#RS_211">2.1.1 Placeholder</a>
+              <a href="#RS_211">2.1.1 Recap of Semester 1 Developments</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#RS_212">2.1.2 Semester 2 Developments</a>
             </sl-tree-item>
           </sl-tree-item>
+
           <sl-tree-item>
             <a href="#RS_22">2.2 Electrical</a>
             <sl-tree-item>
-              <a href="#RS_221">2.2.1 Placeholder</a>
+              <a href="#RS_221">2.2.1 Final Circuit Design</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#RS_222">2.2.2 Centralised E-stop System</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#RS_223">2.2.3 Battery Performance and Operational Considerations</a>
             </sl-tree-item>
           </sl-tree-item>
-            
         </sl-tree-item>
 
         <sl-tree-item expanded>
-          <a href="#EE_3">3 End effector & tool changer system</a>
-          <sl-tree-item>
-            <a href="#EE_31">3.1 Research</a>
-          </sl-tree-item>
-          <sl-tree-item>
-            <a href="#EE_32">3.2 End Effector System design</a>
-            <sl-tree-item>
-              <a href="#EE_321">3.2.1 Electrical</a>
-            </sl-tree-item>
-            <sl-tree-item>
-              <a href="#EE_322">3.2.2 Mechanical</a>
-            </sl-tree-item>
-          </sl-tree-item>
-          <sl-tree-item>
-            <a href="#EE_33">3.3  System design</a>
-            <sl-tree-item>
-              <a href="#EE_331">3.3.1 Mechanical</a>
-            </sl-tree-item>
-            <sl-tree-item>
-              <a href="#EE_332">3.3.2 Electrical</a>
-            </sl-tree-item>
-          </sl-tree-item>
-          <sl-tree-item>
-            <a href="#EE_34">3.4 Full assembly analysis</a>
-          </sl-tree-item>
-        </sl-tree-item>
+  <a href="#EE-3">3 End effector &amp; tool changer system</a>
+  <sl-tree-item>
+    <a href="#EE-31">3.1 Research</a>
+  </sl-tree-item>
+  <sl-tree-item>
+    <a href="#EE-32">3.2 End Effector System design</a>
+    <sl-tree-item>
+      <a href="#EE-321">3.2.1 Electrical</a>
+    </sl-tree-item>
+    <sl-tree-item>
+      <a href="#EE-322">3.2.2 Mechanical</a>
+    </sl-tree-item>
+  </sl-tree-item>
+  <sl-tree-item>
+    <a href="#EE-33">3.3 System design</a>
+    <sl-tree-item>
+      <a href="#EE-331">3.3.1 Mechanical</a>
+    </sl-tree-item>
+    <sl-tree-item>
+      <a href="#EE-332">3.3.2 Electrical</a>
+    </sl-tree-item>
+  </sl-tree-item>
+  <sl-tree-item>
+    <a href="#EE-34">3.4 Full assembly analysis</a>
+  </sl-tree-item>
+</sl-tree-item>
 
         <sl-tree-item expanded>
           <a href="#CV_4">4. Computer Vision Subsystem</a>
@@ -496,6 +506,188 @@
     </div>
 
     <sl-divider></sl-divider>
+
+    <div id="RS_2">
+      <h4>2. Robot Structure</h4>
+      <p>
+        This chapter covers the development of the robot structure subsystem, including both the mechanical and
+        electrical aspects of the system. The subsystem was designed to provide a stable and modular platform for
+        mounting the robot arm, integrating the required electronics, and supporting safe and practical operation
+        within the intended environment.
+      </p>
+    </div>
+
+    <div id="RS_21">
+      <h4>2.1 Mechanical</h4>
+      <p>
+        The mechanical subsystem focuses on designing a robot structure that can securely mount the robot arm while
+        remaining lightweight, modular, and capable of housing all required components. The design evolved across
+        both semesters, beginning with the core structural platform and later incorporating additional features for
+        usability, safety, cooling, and serviceability.
+      </p>
+    </div>
+
+    <div id="RS_211">
+      <h4>2.1.1 Recap of Semester 1 Developments</h4>
+      <p>
+        The goal of this subsystem is to design a robot structure capable of securely mounting the robot arm while
+        remaining lightweight, modular, and able to accommodate all required electronic components.
+      </p>
+      <p>
+        With these requirements in mind, multiple design iterations were drafted, taking into account key constraints
+        such as AMR payload limits, centre-of-gravity stability, and spatial constraints. The final design was then
+        selected for implementation.
+      </p>
+      <p>
+        The key features of the implemented design are summarised below:
+      </p>
+      <ol>
+        <li>
+          <strong>Optimised dimensions:</strong> The structure height and layout were designed to ensure that the robot
+          arm can effectively reach the required workspace while maintaining overall system stability.
+        </li>
+        <li>
+          <strong>Adaptable frame design:</strong> The frame was designed with built-in flexibility to accommodate
+          potential future modifications, allowing additional profiles to be added for reinforcement and enabling
+          adjustment of the robot arm position to rebalance the centre of gravity without major redesign.
+        </li>
+        <li>
+          <strong>Accessible electronics layout:</strong> A vertical panel design with DIN rail mounting was adopted,
+          allowing for organised wiring, improved accessibility, and easier troubleshooting.
+        </li>
+      </ol>
+      <p>
+        Apart from these features, structural evaluation such as centre-of-gravity analysis and finite element analysis
+        were also conducted to validate the stability of the system.
+      </p>
+      <p>
+        Overall, the interim work established a stable and well-integrated mechanical platform, forming the foundation
+        for further system development in Semester 2.
+      </p>
+    </div>
+
+    <div id="RS_212">
+      <h4>2.1.2 Semester 2 Developments</h4>
+      <p>
+        While provisions for additional features were considered during the initial design phase in Semester 1, these
+        were only preliminary designs. The final design and implementation of these additional features were carried
+        out in Semester 2.
+      </p>
+      <ol>
+        <li>
+          <strong>Interface panel and emergency stop:</strong> An interface panel with push buttons enables quick execution
+          of predefined commands. Two E-stops were implemented, one at the back and one at the side of the robot.
+          These E-stops are linked to both the robot arm and the AMR, such that both systems stop simultaneously when pressed.
+        </li>
+        <li>
+          <strong>Battery box:</strong> A battery box is needed to safely contain the battery. Initially, a quick-release
+          sliding battery box was designed. However, due to time constraints, a Pelican case was purchased as an alternative.
+        </li>
+        <li>
+          <strong>Inbuilt adjustable monitor and external connector ports:</strong> An adjustable monitor and external
+          connector ports, including HDMI, USB, and LAN ports, were integrated into the system to facilitate easy
+          debugging and system monitoring.
+        </li>
+        <li>
+          <strong>Cooling system:</strong> Cooling fans were installed to improve airflow within the enclosure. One fan
+          supplies air to the controller’s intake, while another expels hot air at the exhaust. The intake fan is
+          positioned at the bottom and the exhaust fan at the top to utilise natural convection.
+        </li>
+        <li>
+          <strong>Storage unit:</strong> A compartment was allocated as a storage unit for miscellaneous components such as
+          tools and accessories, making the system more convenient for users.
+        </li>
+        <li>
+          <strong>External covers:</strong> Protective external panels made of acrylic and 3D-printed corner covers made
+          of PETG were implemented to improve safety and aesthetics. PETG was selected over PLA as it is more durable
+          against impacts.
+        </li>
+      </ol>
+      <p>
+        With the addition of new components, the overall payload was reassessed to ensure compliance with the AMR’s
+        payload limits. The AMR has a payload capacity of 100 kg. Preliminary weight analysis based on the CAD model
+        estimated the payload at 90 kg. After fabrication, the actual measured weight was 85 kg. Considering a ±5%
+        tolerance to account for screws and miscellaneous components, the total payload remains within allowable limits.
+      </p>
+      <p>
+        The final configuration therefore remains safe for operation while accommodating the additional functional
+        features introduced in Semester 2.
+      </p>
+    </div>
+
+    <div id="RS_22">
+      <h4>2.2 Electrical</h4>
+      <p>
+        The electrical subsystem supports power delivery, system protection, onboard computation, and auxiliary
+        electronics integration. Building on the baseline architecture established earlier, the final design refined
+        the power distribution and safety systems to support reliable robot operation.
+      </p>
+    </div>
+
+    <div id="RS_221">
+      <h4>2.2.1 Final Circuit Design</h4>
+      <p>
+        The finalised circuit design of the robotic system retains the dual-power architecture established in the
+        interim phase. The AMR provides a maximum output of 48 V at 20 A, which is approximately 960 W. This is
+        insufficient to reliably support the robot arm and its controller, which require approximately 1 kVA during
+        continuous operation.
+      </p>
+      <p>
+        To address this, the robot arm is powered by a dedicated 72 V, 16 Ah battery pack through a 2200 W inverter,
+        while auxiliary components such as the onboard computer and networking devices are powered directly from the AMR.
+        This architecture was retained in the final system to ensure reliable operation and sufficient power availability.
+      </p>
+      <p>
+        Building on this baseline architecture, the electrical subsystem was further refined through the integration of
+        additional components required for full system functionality. These include the robot-side and tool-side changer
+        boards, which enable electrical interfacing for the tool changer mechanism, as well as the tool changer
+        electromagnet for end-effector operation.
+      </p>
+      <p>
+        A mini PC was also incorporated to support onboard computation, while DC fans were introduced to provide active
+        cooling for improved thermal management of the enclosed electronics.
+      </p>
+    </div>
+
+    <div id="RS_222">
+      <h4>2.2.2 Centralised E-stop System</h4>
+      <p>
+        As shown in the interim report, the E-stop circuit enables simultaneous shutdown of both the robot arm and the AMR.
+        This is necessary because the two systems currently operate with separate E-stop circuits.
+      </p>
+      <p>
+        As described in Section 2.1.2, two E-stop buttons were implemented: one located on the interface panel at the rear
+        of the robot, and the other positioned at the front for easy access. This configuration improves accessibility and
+        ensures that the robot can be stopped quickly from multiple operating positions.
+      </p>
+      <p>
+        A video showing the E-stop testing is referenced in Section 6.1 on edge case testing and safety considerations.
+      </p>
+    </div>
+
+    <div id="RS_223">
+      <h4>2.2.3 Battery Performance and Operational Considerations</h4>
+      <p>
+        Following the interim review, a key consideration was the operational runtime of the system from a user
+        perspective. Based on testing, the battery pack powering the robot arm provides approximately 6 hours of
+        operation before low-voltage conditions of around 68.5 V lead to insufficient power warnings on the arm.
+        A full recharge to nominal voltage of about 82 V takes approximately 1 hour.
+      </p>
+      <p>
+        The AMR, as specified by the manufacturer, provides a runtime of approximately 8 to 10 hours, with a charging
+        time of about 2.5 to 3 hours, and roughly 1.5 hours for 0 to 80% charging. Since the AMR powers only auxiliary
+        components in the final architecture, its runtime is not the limiting factor.
+      </p>
+      <p>
+        In the context of the Hub’s operating hours from 8.30 am to 6 pm, which is about 9.5 hours, the robot arm
+        battery is the primary constraint on continuous usage. However, the short charging time allows the system to
+        be recharged during low-usage periods, enabling continued operation throughout the day with minimal downtime.
+      </p>
+      <p>
+        Overall, the power setup balances runtime, charging time, and flexibility, allowing the system to remain
+        practical and usable in its intended environment.
+      </p>
+    </div>
 
     
     <br />
