@@ -681,6 +681,9 @@
         </p>
         <image-component tag="image" source="assets\For toolchanger PCB\testingboards.jpg"
           subtitle="PLACEHOLDER"></image-component>
+        
+        <video-component tag="cantest" source="https://www.youtube.com/embed/2dQB4g_SVxs?si=tBOHJKejRftSuvOc"
+          subtitle="Video: CAN bus communication test"></video-component>
 
       </div>
 
@@ -815,84 +818,358 @@
     <sl-divider></sl-divider>
 
       <div id="CV-4">
-          <h4>4. Computer Vision Subsystem</h4>
-        </div>
+        <h2>4. Computer Vision Subsystem</h2>
+        <p>
+          This subsystem enables the robot to identify the requested tool and estimate its 3D grasping coordinates.
+          The pegboard setup is divided into three sections: location 1, location 2, and location 3.
+          Each section is designated for a specific category of tools: location 1 stores Phillips screwdrivers,
+          location 2 stores flathead screwdrivers, and location 3 stores a mallet.
+        </p>
+        <p>
+          The user first inputs a tool name into the system. Based on the selected tool type, the robot arm moves to
+          the designated location. The camera is then activated to capture an image of the scene. Object detection is
+          performed using YOLOv11n, after which the 3D coordinates (XYZ) of the closest instance of the selected tool
+          are computed relative to the camera frame. These coordinates are then transformed into the robot arm frame
+          to guide the robot arm for grasping.
+        </p>
+        <p>
+          Due to time constraints, the project scope was narrowed down based on the following assumptions:
+        </p>
+        <ol>
+          <li>
+            The tools are always positioned upright. While some deviations from vertical alignment are acceptable,
+            they are not exaggeratedly slanted, messy, or occluded.
+          </li>
+          <li>
+            The screwdriver arrangements are always consistent. For example, large flatheads will always be placed
+            at the 2 leftmost holders, medium flatheads at the middle 2 holders, and small flatheads at the 2
+            rightmost holders.
+          </li>
+        </ol>
+        <p>
+          Based on observations and feedback from the Hub staff, these assumptions are reasonable as the tool holders
+          are already sized accordingly to fit specific screwdriver sizes. As a result, users tend to return tools to
+          their designated positions and, in most cases, place them upright, maintaining a consistent and structured layout.
+        </p>
+      </div>
 
-        <div id="CV-41">
-          <h4>4.1 Overview</h4>
-        </div>
+      <div id="CV-41">
+        <h4>4.1 Overview</h4>
+        <p>
+          The computer vision subsystem is responsible for detecting the requested tool from the pegboard scene and
+          estimating its 3D coordinates for grasping. The process begins when the user inputs a tool name. The robot
+          then moves the camera to the relevant pegboard region, captures the scene, performs object detection, and
+          computes the coordinates of the nearest matching tool relative to the camera frame.
+        </p>
+        <p>
+          The final estimated coordinates are then passed downstream for frame transformation and motion execution.
+        </p>
+      </div>
 
-        <div id="CV-411">
-          <h4>4.1.1 Modifications to System</h4>
-        </div>
+      <div id="CV-411">
+        <h4>4.1.1 Modifications to System</h4>
+        <p>
+          The original screwdriver sets in the Hub consist of three sizes for each screwdriver head type, namely
+          small, medium, and large. Although these sizes differ physically, they are visually identical in appearance
+          apart from scale. This poses a challenge for the model, as changes in camera distance and perspective may
+          cause the same screwdriver to appear larger or smaller under different conditions, leading to ambiguity in
+          size classification.
+        </p>
+        <p>
+          This issue is particularly significant when only one class of screwdriver is present in the scene, as the
+          model has no reference for relative size comparison. Apart from that, the dark screwdriver tips sometimes
+          blend into the black pegboard, making classification based on screwdriver tips unreliable.
+        </p>
+        <p>
+          To overcome these challenges, the screwdrivers were colour coded with distinct colours to make class
+          classification easier for the model. Other solutions that did not involve colour coding were explored but
+          were not selected after evaluating their trade-offs. Ultimately, colour coding was chosen because it is
+          simple and provides the most reliable predictions.
+        </p>
+      </div>
 
-        <div id="CV-412">
-          <h4>4.1.2 Hardware Tools</h4>
-        </div>
+      <div id="CV-412">
+        <h4>4.1.2 Hardware Tools</h4>
+        <p>
+          Two hardware components form the physical foundation of the system: the Intel RealSense D435if depth camera,
+          which handles scene capture, and the Advantech UNO-238V, which serves as the onboard robot PC.
+        </p>
+        <p>
+          To achieve a balance of speed and accuracy, both the RGB and depth streams were configured at a resolution
+          of 1280 × 720 at 30 fps.
+        </p>
+        <p>
+          Although the Advantech PC is equipped with Intel Integrated Graphics (ADL GT2), it does not support CUDA,
+          which is required for GPU-accelerated inference in PyTorch. As a result, inference during deployment is
+          performed on the CPU. This is acceptable for the application, as detection is only triggered once per
+          pick-and-place cycle rather than requiring continuous real-time inference.
+        </p>
+      </div>
 
-        <div id="CV-413">
-          <h4>4.1.3 Project Phases</h4>
-        </div>
+      <div id="CV-413">
+        <h4>4.1.3 Project Phases</h4>
+        <p>
+          The project is divided into three main phases: model development, computer vision pipeline development,
+          and 3D coordinate validation.
+        </p>
+        <p>
+          The model development phase focuses on training the object detection model using a custom dataset.
+          The computer vision pipeline development phase involves integrating the trained model with depth
+          processing to compute 3D coordinates of detected objects. Finally, the 3D coordinate validation
+          phase evaluates the accuracy and stability of the computed coordinates.
+        </p>
+      </div>
 
-        <div id="CV-42">
-          <h4>4.2 Model Development</h4>
-        </div>
+      <div id="CV-42">
+        <h4>4.2 Model Development</h4>
+        <p>
+          This phase focuses on building and evaluating an object detection model tailored to the pegboard tool
+          detection task. It includes dataset collection, annotation, model training, and performance comparison.
+        </p>
+      </div>
 
-        <div id="CV-421">
-          <h4>4.2.1 Dataset Collection</h4>
-        </div>
+      <div id="CV-421">
+        <h4>4.2.1 Dataset Collection</h4>
+        <p>
+          To ensure consistency between training and inference, the same RealSense D435if camera used during deployment
+          was also used to capture the training images. The dataset consists of a total of 410 images, with 344 images
+          belonging to the screwdriver classes and 66 images belonging to the mallet class.
+        </p>
+        <p>
+          The screwdriver dataset was grouped into different variation categories to represent real-world conditions,
+          such as changes in distance, lighting, screwdriver arrangements, and robot position. For each variation
+          group, images were captured at two locations corresponding to the robot arm’s operating positions during inference.
+          The number of images per group was decided based on how frequent each scenario is expected to occur, ensuring
+          that the model is better trained on common conditions while still being exposed to less frequent cases for robustness.
+        </p>
+        <p>
+          As the exact robot position was not defined initially, images from the earlier groups were captured using
+          a stand approximating the expected position. Once the robot’s position was finalized, subsequent images were
+          captured at the actual position under varied real-world conditions.
+        </p>
+        <p>
+          For the mallet dataset, since it consists of only a single tool class with no size variants, only 66 images
+          were collected at location 3 across varied positions and lighting conditions.
+        </p>
+      </div>
 
-        <div id="CV-422">
-          <h4>4.2.2 Data Annotation</h4>
-        </div>
+      <div id="CV-422">
+        <h4>4.2.2 Data Annotation</h4>
+        <p>
+          After data collection, all images were annotated to serve as ground truth for model training using Roboflow.
+          Bounding boxes were drawn as tightly as possible around each object.
+        </p>
+        <p>
+          For occluded objects, annotations were only made when the class could be confidently identified from visible
+          features, in order to avoid introducing ambiguous training signals.
+        </p>
+      </div>
 
-        <div id="CV-423">
-          <h4>4.2.3 Model Training and Performance Evaluation</h4>
-        </div>
+      <div id="CV-423">
+        <h4>4.2.3 Model Training and Performance Evaluation</h4>
+        <p>
+          The dataset was split into training, validation, and test sets. Two YOLO model variants were evaluated,
+          namely YOLOv11n and YOLOv26n. Ultimately, YOLOv11n was selected due to its better performance.
+        </p>
+        <p>
+          The test set was used for performance evaluation. Based on the results, YOLOv11n performs better than
+          YOLOv26n across all evaluation metrics, achieving higher mAP, precision, and recall. This indicates more
+          accurate detections and fewer missed objects.
+        </p>
+        <p>
+          This is reflected in the confusion matrices, where YOLOv11n shows a cleaner diagonal with minimal errors,
+          while YOLOv26n has more missed detections and slightly more spread. Although YOLOv26n is slightly faster,
+          the difference is small compared to the drop in accuracy. Therefore, YOLOv11n was selected as the final
+          model due to its better overall performance and robustness.
+        </p>
+      </div>
 
-        <div id="CV-43">
-          <h4>4.3 Computer Vision Pipeline</h4>
-        </div>
+      <div id="CV-43">
+        <h4>4.3 Computer Vision Pipeline</h4>
+        <p>
+          The computer vision pipeline is deployed as a ROS2 service node. When the software control stack issues a
+          request specifying a target tool class, the client node activates the RealSense camera, runs the computer
+          vision pipeline, and returns the estimated XYZ coordinates of the nearest matching target tool back to the client.
+          The camera is then deactivated after each service call.
+        </p>
+        <p>
+          The pipeline consists of colour and depth frame alignment, object detection, depth filtering, 3D coordinate
+          computation via deprojection, and target selection.
+        </p>
+      </div>
 
-        <div id="CV-431">
-          <h4>4.3.1 Color and Depth Frame Alignment</h4>
-        </div>
+      <div id="CV-431">
+        <h4>4.3.1 Color and Depth Frame Alignment</h4>
+        <p>
+          Two image streams are required: the RGB frame, which is used for object detection using YOLO, and the depth
+          frame, which provides distance information for computing the 3D coordinates of detected objects.
+        </p>
+        <p>
+          Due to the physical offset between the colour and depth sensors on the D435if, a pixel in the RGB image does
+          not inherently correspond to the same point in the depth image. Since YOLO operates on the RGB frame and
+          outputs pixel coordinates in the RGB coordinate space, the depth frame is aligned to the RGB frame.
+        </p>
+        <p>
+          This ensures that depth values can be directly looked up at the same pixel coordinates that YOLO produces.
+          In other words, the alignment warps the depth image into the colour camera’s perspective, ensuring pixel
+          correspondence between the two streams. This step is necessary for the deprojection function, which requires
+          each pixel’s 2D coordinate and depth value to refer to the same point in space.
+        </p>
+      </div>
 
-        <div id="CV-432">
-          <h4>4.3.2 Object Detection</h4>
-        </div>
+      <div id="CV-432">
+        <h4>4.3.2 Object Detection</h4>
+        <p>
+          For each detected object, the model predicts a bounding box. A grasp point is then defined within this
+          bounding box to facilitate robot grasping. This point represents a pixel location in the 2D RGB image.
+        </p>
+        <p>
+          For screwdrivers, the grasp point is set at 15% of the bounding box height from the top, targeting the handle end.
+          For the mallet, it is set at 40% from the top, targeting the shaft. This ensures that the computed 3D coordinate
+          corresponds to a physically meaningful grasp location.
+        </p>
+      </div>
 
-        <div id="CV-433">
-          <h4>4.3.3 Depth Filtering</h4>
-        </div>
+      <div id="CV-433">
+        <h4>4.3.3 Depth Filtering</h4>
+        <p>
+          After the grasp point is determined, a reliable depth value is required to compute the corresponding 3D coordinate.
+          The depth value Z plays a critical role in 3D coordinate computation, as it directly affects the accuracy of the
+          computed X and Y values.
+        </p>
+        <p>
+          However, raw depth data may contain noise or invalid measurements such as zero-depth pixels. Therefore, two stages
+          of filtering are applied to improve robustness.
+        </p>
+        <ol>
+          <li>SDK filtering</li>
+          <li>Patch-based depth sampling</li>
+        </ol>
+        <p>
+          From the depth map, certain regions on the screwdriver handle may still contain zero depth values. If only a single
+          depth value at the grasp point is used, it may coincide with these invalid pixels, resulting in incorrect 3D coordinates.
+        </p>
+        <p>
+          To solve this, a 9 × 17 pixel sample patch centred around the grasp point is sampled. Within the patch, pixels with
+          zero depth values are first discarded. Among the remaining pixels, those whose depth values fall within a set tolerance
+          of the patch median are retained. This helps eliminate inconsistent or unwanted depth data within the patch. These
+          remaining valid pixels are then passed to the 3D coordinate computation stage.
+        </p>
+      </div>
 
-        <div id="CV-434">
-          <h4>4.3.4 3D Coordinate Computation via Deprojection</h4>
-        </div>
+      <div id="CV-434">
+        <h4>4.3.4 3D Coordinate Computation via Deprojection</h4>
+        <p>
+          Deprojection refers to the process of converting a 2D pixel coordinate into a 3D point in real-world space.
+          In this pipeline, the RealSense SDK function <code>rs.rs2_deproject_pixel_to_point()</code> is used to perform
+          this conversion.
+        </p>
+        <p>
+          This function takes in the pixel coordinate, the corresponding depth value Z, and the camera intrinsic parameters
+          to return the 3D coordinates. To improve robustness, deprojection is not performed on a single pixel. Instead,
+          all valid pixels within the sampled patch are individually deprojected, and the final XYZ is computed as the
+          median of these points.
+        </p>
+        <p>
+          This reduces the effect of depth noise and ensures a more stable estimate of the object position. As the depth
+          frame is aligned to the RGB frame and the RGB camera intrinsics are used in the deprojection function, the resulting
+          coordinates are expressed relative to the RGB camera optical frame.
+        </p>
+      </div>
 
-        <div id="CV-435">
-          <h4>4.3.5 Target Selection</h4>
-        </div>
+      <div id="CV-435">
+        <h4>4.3.5 Target Selection</h4>
+        <p>
+          Once all detections in the scene have been processed and assigned 3D coordinates, the pipeline filters only those
+          matching the requested tool class. Among the remaining detections, the system returns the coordinate value of the
+          target class that is closest to the camera’s optical axis.
+        </p>
+        <p>
+          Closest proximity is computed as the Euclidean distance in the XY plane from the camera origin to the grasp point
+          of each detection. This approach is used instead of full 3D Euclidean distance because the camera surface may not
+          always be perfectly parallel to the pegboard due to robot misalignment, causing Z values to vary across the scene
+          even when all tools lie on the same physical plane.
+        </p>
+        <p>
+          Including Z would therefore introduce unintended bias into the selection. Restricting the calculation to the XY plane
+          ensures that tool selection remains consistent and predictable with respect to the actual tool position.
+        </p>
+        <p>
+          The result of the target selection is returned to the client via a service response. In the successful case, the
+          response contains the 3D coordinates of the selected target, which are then used by the downstream control stack
+          for motion execution. If no matching object is detected, a failure response is returned instead, which is displayed
+          as a “NOT FOUND” message on screen.
+        </p>
+      </div>
 
-        <div id="CV-44">
-          <h4>4.4 3D Coordinate Accuracy Validation</h4>
-        </div>
+      <div id="CV-44">
+        <h4>4.4 3D Coordinate Accuracy Validation</h4>
+        <p>
+          Based on the camera hardware specifications, the expected worst-case depth error for the application distance of
+          450 mm is ±9 mm. Validation tests were conducted to confirm that the coordinates returned by the computer vision
+          pipeline were sufficiently accurate.
+        </p>
+        <p>
+          When testing the full computer vision pipeline, the grasp point was observed to be consistently aligned with the
+          gripper centre. Of the 150 grip tests performed for the screwdriver, 149 were successful, while 1 failed due to
+          collision with the screwdriver above. The mallet test also showed consistent results, although it was not tested
+          as rigorously since it served primarily as a proof-of-concept for the tool changer system.
+        </p>
+        <p>
+          Prior to these deployment-scene validation tests, some preliminary tests were also conducted to gauge the accuracy
+          of the computed coordinates.
+        </p>
+      </div>
 
-        <div id="CV-45">
-          <h4>4.5 Alternative Methods Explored</h4>
-        </div>
+      <div id="CV-45">
+        <h4>4.5 Alternative Methods Explored</h4>
+        <p>
+          Before the current pipeline was deployed, additional techniques were explored to improve the precision and reliability
+          of the grasp point and depth computation.
+        </p>
+      </div>
 
-        <div id="CV-451">
-          <h4>4.5.1 Bounding Box Smoothing</h4>
-        </div>
+      <div id="CV-451">
+        <h4>4.5.1 Bounding Box Smoothing</h4>
+        <p>
+          Bounding box smoothing was performed by running object detection across 5 RGB frames and computing the average grasp
+          point to reduce detection jitter. However, the detected grasp point locations varied by at most about 1 pixel across
+          frames, indicating that the bounding box predictions were already sufficiently stable.
+        </p>
+        <p>
+          As a result, averaging provided negligible benefit and this method was not adopted.
+        </p>
+      </div>
 
-        <div id="CV-452">
-          <h4>4.5.2 Median XYZ Across Multiple Depth Frames</h4>
-        </div>
+      <div id="CV-452">
+        <h4>4.5.2 Median XYZ Across Multiple Depth Frames</h4>
+        <p>
+          This method was explored to reduce frame-to-frame depth noise by estimating the XYZ coordinates as the median across
+          10 depth frames per capture. Benchmarking over 50 captures showed only a small reduction in variance compared to
+          single-frame estimates.
+        </p>
+        <p>
+          Since the improvement was small, the added computational cost was not justified, and this method was not adopted.
+        </p>
+        <p>
+          One observation from this method, however, is that it could potentially be beneficial for scenarios involving live
+          inference rather than image-based inference. This is because live inference continuously processes data streams, making
+          frame-to-frame variance more apparent.
+        </p>
+      </div>
 
-        <div id="CV-46">
-          <h4>4.6 Limitations of Current Pipeline</h4>
-        </div>
+      <div id="CV-46">
+        <h4>4.6 Limitations of Current Pipeline</h4>
+        <p>
+          A limitation of the current pipeline is that it performs poorly in edge cases such as when the screwdrivers are messy,
+          slanted, or occluded. As the system relies on axis-aligned bounding boxes and a fixed grasp point, it does not account
+          for object orientation.
+        </p>
+        <p>
+          Consequently, the computed grasp point may fall outside the object or on a non-graspable region such as the shaft.
+          Occlusion can also reduce detection accuracy and lead to incorrect classifications.
+        </p>
+      </div>
 
     <br />
     <br />
