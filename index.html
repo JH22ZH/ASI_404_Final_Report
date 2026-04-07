@@ -22,6 +22,17 @@
 
   <link rel="stylesheet" href="./components/table-of-content/table-of-content.css">
 
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
 
   <link rel="stylesheet" href="./components/image/image-component.css">
   <script type="module" src="./components/image/image-component.js"></script>
@@ -363,7 +374,7 @@
         </p>
         <image-component tag="image" source="assets\hub\FloorPlan.png"
           subtitle="Fig 2: Floor Plan of the Hub"></image-component>
-        <image-component tag="image" source="assets\Value proposition\stafix.png"
+        <image-component size="large" tag="image" source="assets\Value proposition\stafix.png"
           subtitle="Fig 2: Floor Plan of the Hub"></image-component>
       </div>
 
@@ -372,7 +383,7 @@
         <p>
           To ascertain the problems further, we drafted up a problem identification table utilising the 5W1H template in Figure 10.
         </p>
-        <image-component tag="image" source="assets\Value proposition\5W1h.png"
+        <image-component size="large" tag="image" source="assets\Value proposition\5W1h.png"
           subtitle="Fig 1: A collage of articles showing an increasing interest in Warehouse Automation"></image-component>
         <p>
           From our previous presentation, the problem statement defined by the team was stated that several redundant tasks are slowing down the work of the Hub staff and reducing efficiency in the Hub during the school semester. There is a need to streamline or automate the tasks. 
@@ -426,10 +437,10 @@
         <p>
           Based on the taskings that the robot must accomplish, we have identified the key subsystems that need to be developed to bring the system to a minimum viable product, shown in Figures n and X.
         </p>
-        <image-component tag="image" source="assets\Value proposition\Hardwaresubsystem.png"
-          subtitle="PLACEHOLDER"></image-component>
+        <image-component size = "medium" tag="image" source="assets\Value proposition\Hardwaresubsystem.png"
+          subtitle="Figure n: Updated Hardware Subsystem diagram"></image-component>
         <image-component tag="image" source="assets\Value proposition\Softwaresubsystem.png"
-          subtitle="PLACEHOLDER"></image-component>
+          subtitle="Figure x: Updated Software Subsystem diagram"></image-component>
       </div>
 
       <div id="Intro_16">
@@ -881,7 +892,7 @@
         <p>
           Concepts were also evaluated for the tool changer mechanism as shown in figure n, with the utilisation of electromagnets being selected as the approach. Tests were conducted to validate the electromagnet strength with a selected steel plate of certain thickness and were successfully completed as shown in the figure n. 
         </p>
-        <image-component size = "medium" tag="image" source="assets\toolchanger\Magnet.png"
+        <image-component size = "small" tag="image" source="assets\toolchanger\Magnet.png"
           subtitle="Figure n: Prototype End Effector"></image-component>
           <p>
         Following the validation of these concepts, the next sections will cover the detailed design and development of the finalised end effector and tool changer prototype systems, including the mechanical design, electrical integration, and control strategies implemented to achieve the required functionality.
@@ -1162,13 +1173,7 @@
         <image-component tag="image" source="assets\For grippers\Tool changer holder.png"
           subtitle="Figure n: Tool Holder"></image-component>
         <p>
-          The tool changer holder was created with the following considerations in mind:
-        </p>
-        <p>
-          -	Robot approach for docking/undocking
-        </p>
-        <p>
-          -	Part complexity
+          The tool changer holder was created with the following considerations on the robot's physical approach for docking and undocking alongside the part complexity. 
         </p>
         <p>
           The tool pickup strategy was intentionally designed as a vertical lift followed by linear forward clearance, rather than using an angled holder. This approach decouples load transfer from disengagement, resulting in more predictable tool extraction, reduced sideloading, improved repeatability, and simpler tolerance management. While an angled holder may appear to assist release geometrically, it would also introduce greater dependence on precise alignment and could increase the risk of rubbing, wedging, and inconsistent extraction. The selected method therefore offered a more robust and controllable solution for reliable autonomous tool exchange.
@@ -1774,7 +1779,166 @@
 
       <div id="SS-55">
         <h3>5.5: Computer Vision</h3>
+        <p>
+          The computer vision node is responsible for processing tool recognition data and returning the depth and detection information required for the system to perform pick-and-place operations or to terminate an order when the requested tool is not detected. The detailed processing methodology is discussed in Section 4, Computer Vision. Accordingly, this section focuses on the role of the computer vision node within the control architecture and its interactions with the rest of the software stack.
+        </p>
+        <p>
+          The interaction diagram below illustrates the relationship between the computer vision node and the wider control stack, with the sequencer node acting as the primary service client.
+        </p>
+        <image-component size="large" tag="image" source="assets\Computer Vision Node.drawio.svg"
+          subtitle="Figure n: Computer Vision Node interactions"></image-component>
+        <p>
+          Upon receiving a request from the sequencer node, the computer vision node takes in the name of the requested tool and begins processing the visual input to determine whether the tool is present. If the request is completed successfully and valid frame data is returned, the sequencer node then computes the new target coordinates required for motion execution. While this process is based on frame transformations, it was simplified into vector calculations under the assumption of fixed frame relationships. The following sections describe this calculation in greater detail.
+        </p>
+
+         <h4>5.5.1 Target Position Derivation</h4>
+
+  <p>
+    To command the robot such that the gripper reaches the target detected by the depth camera,
+    a vector-based derivation was used. Under the simplifying assumption that all coordinate
+    frames are aligned, rotational transformations reduce to the identity and only translational
+    offsets need to be considered. The required position can therefore be obtained through direct
+    vector addition and subtraction. Figure n illustrates the relevant coordinate frames and vectors involved in the derivation.
+  </p>
+  <image-component tag="image" source="assets\For grippers\New frame transformation picture.png"
+          subtitle="Figure n: CAN Frame MiniPC to Toolchanger Robot Side"></image-component>
+
+  <h4>5.5.2 Symbol Definitions</h4>
+
+  <table class="report-table">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$\mathbf{p}_1$</td>
+        <td>Current robot endpoint position in the world frame</td>
+      </tr>
+      <tr>
+        <td>${}^{1}\mathbf{p}_2$</td>
+        <td>Gripper position relative to the robot endpoint</td>
+      </tr>
+      <tr>
+        <td>${}^{1}\mathbf{p}_3$</td>
+        <td>Depth camera position relative to the robot endpoint</td>
+      </tr>
+      <tr>
+        <td>${}^{3}\mathbf{p}_4$</td>
+        <td>Detected target position relative to the depth camera</td>
+      </tr>
+      <tr>
+        <td>$\mathbf{p}_4$</td>
+        <td>Target position in the world frame</td>
+      </tr>
+      <tr>
+        <td>$\mathbf{p}_1^{desired}$</td>
+        <td>Desired robot endpoint position in the world frame</td>
+      </tr>
+      <tr>
+        <td>$\mathbf{p}_2^{desired}$</td>
+        <td>Desired gripper position in the world frame</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>5.5.3 Derivation</h4>
+
+      <p>
+        The target position in the world frame is first expressed by summing the current endpoint
+        position, the camera offset from the endpoint, and the detected target offset from the camera:
+      </p>
+
+      <div class="equation-block">
+        <div class="equation">
+          $$\mathbf{p}_4 = \mathbf{p}_1 + {}^{1}\mathbf{p}_3 + {}^{3}\mathbf{p}_4$$
+        </div>
+        <div class="equation-number">(1)</div>
       </div>
+
+      <p>
+        To ensure that the gripper coincides with the detected target, the desired gripper position
+        is set equal to the target position:
+      </p>
+
+      <div class="equation-block">
+        <div class="equation">
+          $$\mathbf{p}_2^{desired} = \mathbf{p}_4$$
+        </div>
+        <div class="equation-number">(2)</div>
+      </div>
+
+      <p>
+        Since the gripper is mounted with a known offset relative to the robot endpoint, the desired
+        gripper position may also be written as:
+      </p>
+
+      <div class="equation-block">
+        <div class="equation">
+          $$\mathbf{p}_2^{desired} = \mathbf{p}_1^{desired} + {}^{1}\mathbf{p}_2$$
+        </div>
+        <div class="equation-number">(3)</div>
+      </div>
+
+      <p>
+        Substituting Equation (2) into Equation (3) gives:
+      </p>
+
+      <div class="equation-block">
+        <div class="equation">
+          $$\mathbf{p}_1^{desired} + {}^{1}\mathbf{p}_2 = \mathbf{p}_4$$
+        </div>
+        <div class="equation-number">(4)</div>
+      </div>
+
+      <p>
+        Rearranging for the desired robot endpoint position:
+      </p>
+
+      <div class="equation-block">
+        <div class="equation">
+          $$\mathbf{p}_1^{desired} = \mathbf{p}_4 - {}^{1}\mathbf{p}_2$$
+        </div>
+        <div class="equation-number">(5)</div>
+      </div>
+
+      <p>
+        Substituting Equation (1) into Equation (5) yields the final expression for the desired
+        endpoint position:
+      </p>
+
+      <div class="equation-block">
+        <div class="equation">
+          $$\mathbf{p}_1^{desired} = \mathbf{p}_1 + {}^{1}\mathbf{p}_3 + {}^{3}\mathbf{p}_4 - {}^{1}\mathbf{p}_2$$
+        </div>
+        <div class="equation-number">(6)</div>
+      </div>
+
+      <h4>5.5.4 Final Expression</h4>
+
+      <div class="final-equation">
+        $$
+        \boxed{
+        \mathbf{p}_1^{desired}
+        =
+        \mathbf{p}_1 + {}^{1}\mathbf{p}_3 + {}^{3}\mathbf{p}_4 - {}^{1}\mathbf{p}_2
+        }
+        $$
+      </div>
+
+      <p>
+        Equation (6) shows that the desired robot endpoint position is obtained by starting from the
+        current endpoint position, adding the camera mounting offset, adding the target offset measured
+        by the depth camera, and subtracting the gripper offset. The gripper term is subtracted because
+        the robot is controlled through the endpoint frame, whereas the actual point required to
+        coincide with the target is the gripper.
+      </p>
+
+      <p>
+        After the calculation is completed, the sequencer then moves the end effector into the desired position by sending direct frame goal requests to the MoveIt2 trajectory planner, which then computes the required trajectory to move the robot to the desired position.
+      </p>
 
       <div id="SS-56">
         <h3>5.6: Sequencer</h3>
@@ -1843,7 +2007,7 @@
           <image-component tag="image" source="assets\software\Debugging section of UI.jpg"
           subtitle="Figure n: Debugging Section in UI"></image-component>
         <p>
-          Figure n shows the web UI prototype in its entirety.
+          Figure n shows the web UI prototype in its entirety. The videos in section 5.8 also show the webserver in action, where the user can monitor the delivery process and see the feedback from the system.
         </p>
         <image-component tag="image" source="assets\software\ASI-404 - Robot System UI Control Prototype_Cropped.png"
           subtitle="Figure n: The Complete Web UI Prototype"></image-component>
@@ -2043,7 +2207,7 @@
           During this preliminary validation, the stakeholder interacted with the system and assessed its operation in relation to its intended use case. Feedback was collected through direct observation and discussion, focusing on areas such as usability, task flow, clarity of interaction, and practical suitability. The comments obtained were then used to introduce small refinements to the system to improve its readiness for broader user testing.
         </p>
         <image-component tag="image" source="assets\uservalidation\Preliminary.png"
-          subtitle="Figure 72: Gantt Chart to show timeline of development"></image-component>
+          subtitle="Figure n: Preliminary User Validation with Patrick"></image-component>
       </div>
 
       <div id="P-712">
@@ -2052,9 +2216,9 @@
           Following the preliminary refinement stage, the system was subjected to primary user validation involving the intended user group. The objective of this stage was to evaluate the system under more realistic user-facing conditions and to assess its usability, effectiveness, and user acceptance after the initial refinements had been incorporated.
         </p>
         <image-component tag="image" source="assets\uservalidation\Primary Collage 1.png"
-          subtitle="Figure 72: Gantt Chart to show timeline of development"></image-component>
+          subtitle="Figure n: Primary User Validation - Collage 1"></image-component>
         <image-component tag="image" source="assets\uservalidation\Primary Collage 2.png"
-          subtitle="Figure 73: Gantt Chart to show timeline of development"></image-component>
+          subtitle="Figure n: Primary User Validation - Collage 2"></image-component>
         <p>
           During this round of feedback, key feedback points obtained from the students and stakeholders were on points such as the user experience, suitability for the intended environment and workflow, maintainability of the system and general improvements and recommendations for future works. The summary of each feedback can be found in the table below. 
         </p>
@@ -2086,7 +2250,7 @@
       </div>
 
       <div id="P-72">
-        <h2>7.2 Future works and improvements to the system</h2>
+        <h3>7.2 Future works and improvements to the system</h3>
         <p>
           For each subsystem, spanning both hardware and software, there remain several opportunities for further development to improve the overall efficiency, functionality, and usability of the system.
         </p>
@@ -2099,7 +2263,7 @@
       </div>
 
       <div id="P-73">
-        <h2>7.3 Conclusion</h2>
+        <h3>7.3 Conclusion and impact</h3>
         <p>
           To conclude, this project focused on the development of an integrated robotic system designed to assist Hub staff by reducing repetitive manual tasks and improving overall operational efficiency. Throughout the project, the team applied and synthesised knowledge from multiple disciplines, resulting in the successful development of a functional proof-of-concept prototype.
         </p>
@@ -2108,12 +2272,6 @@
         </p>
         <image-component size="medium" tag="image" source="assets\grpmempic\ASI 404 Team Photo.jpg"
           subtitle="Figure x: The team and the prototype"></image-component>
-      </div>
-
-      <div id="P-74">
-        <h2>7.4 Gantt Chart</h2>
-        <image-component  tag="image" source="assets/projmanagement/Gantt Chart.svg"
-          subtitle="Gantt Chart"></image-component>
       </div>
 
     </div>
