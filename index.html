@@ -898,13 +898,20 @@
           subtitle="Figure x: Back View of the Tool Changer Control Board"></image-component>
 
         <p>
-          To validate the functionality of the fabricated control boards, firmware was first successfully uploaded through the onboard debugger interface, after which the LED peripherals were tested to confirm basic microcontroller operation. Following this, communication tests were conducted to verify the functionality of the CAN circuitry by transmitting signals from the Robot-side board to the Tool-side board, with the onboard debugging LEDs serving as visual indicators of successful data exchange. Finally, the MOSFET and transistor switching circuits were tested to confirm correct switching of the 12 V supply and the electromagnet, both of which were validated successfully. Upon completion of these electrical tests, the boards were integrated into the mechanical housings for the Robot-side and Tool-side assemblies, as described in the following section.
+          To validate the functionality of the fabricated control boards, firmware was first successfully uploaded through the onboard debugger interface, after which the LED peripherals were tested to confirm basic microcontroller operation. Following this, communication tests were conducted to verify the functionality of the CAN circuitry by transmitting signals from the Robot-side board to the Tool-side board, with the onboard debugging LEDs serving as visual indicators of successful data exchange. Finally, the MOSFET and transistor switching circuits were tested to confirm correct switching of the 12 V supply and the electromagnet, both of which were validated successfully. 
         </p>
         <image-component tag="image" source="assets\For toolchanger PCB\testingboards.jpg"
           subtitle="Figure x: Testing the Control Boards"></image-component>
         
         <video-component tag="cantest" source="https://www.youtube.com/embed/2dQB4g_SVxs?si=tBOHJKejRftSuvOc"
           subtitle="Video: CAN bus communication test"></video-component>
+
+        <p>
+          Upon completion of these electrical tests, the boards were integrated into the mechanical housings for the Robot-side and Tool-side assemblies, as seen in figure n below. More details on the mechanical design of the housings are provided in the following sections.
+        </p>
+
+        <image-component tag="image" source="assets\For grippers\board implementation full.png"
+          subtitle="Figure x: The boards integrated into the mechanical housings"></image-component>
 
       </div>
 
@@ -928,7 +935,7 @@
         <h3>3.3.3 The Robot Side Unit</h3>
          <image-component tag="image" source="assets\For grippers\Robot side with Camera.png"
           subtitle="Figure n: Robot Side Unit with Camera" width="40px"
-  height="auto"></image-component>
+          height="auto"></image-component>
         <p>
           The Robot side tool unit is meant to house the electromagnet and corresponding circuit board, with a major consideration for the alignment of the Tool side unit when docking. Successful, repeatable alignment of the tool side unit is crucial for both mechanical and electrical connections.
         </p>
@@ -954,16 +961,36 @@
         <p>
           For the tool side unit, the primary design considerations involve the mounting of the corresponding steel plate, of which the validation was done from the interim presentation period, with the calculations seen in Appendix AAA alongside the placement of the dowel pins. The corresponding tool changer circuit system is mounted here as well. 
         </p>
-        <p>
-          Mounting holes are placed at the underside of the holder for customisability in gripper placements and options. Additionally, the edges of the holder are designed to double function as the supports on the tool holder. Further elaboration on this is seen in section ()
-        </p>
+        
         <image-component tag="image" source="assets\For grippers\Tool Side of Toolchanger.png"
           subtitle="Figure n: Tool Side of Tool Changer"></image-component>
-          <p>
-            PLACEHOLDER
-          </p>
+        <p>
+          Mounting holes are placed at the underside of the holder for customisability in gripper placements and options. Additionally, the edges of the holder are designed to double function as the supports on the tool holder.
+        </p>
         <image-component tag="image" source="assets\For grippers\High flexibility in the mounting.png"
           subtitle="Figure n: High Flexibility in Mounting"></image-component>
+
+          <model-viewer
+          src="assets\3dmodels\toolchanger_master_assembly.glb"
+          alt="3D model of the ASI-404 mobile manipulator"
+          camera-controls
+          auto-rotate
+          shadow-intensity="0.4"
+          exposure="0.5"
+          style="width: 100%; height: 600px; background-color: #f5f5f5; border-radius: 12px;">
+        </model-viewer>
+
+        <model-viewer
+          src="assets\3dmodels\full_assembly_with_gripper_and_toolchanger.glb"
+          alt="3D model of the ASI-404 mobile manipulator"
+          camera-controls
+          auto-rotate
+          shadow-intensity="0.4"
+          exposure="0.5"
+          style="width: 100%; height: 600px; background-color: #f5f5f5; border-radius: 12px;"
+         >
+        </model-viewer>
+
       </div>
 
       <div id="EE-336">
@@ -994,15 +1021,7 @@
         </p>
         <image-component tag="image" source="assets\For grippers\Holder constrains in X and Y.png"
           subtitle="Figure n: Holder Constraints in X and Ys"></image-component>
-        <model-viewer
-          src="assets\3dmodels\toolchanger_master_assembly.glb"
-          alt="3D model of the ASI-404 mobile manipulator"
-          camera-controls
-          auto-rotate
-          shadow-intensity="0.4"
-          exposure="0.5"
-          style="width: 100%; height: 600px; background-color: #f5f5f5; border-radius: 12px;">
-        </model-viewer>
+        
         <model-viewer
           src="assets\3dmodels\v2_overall_toolchanger_mount_assembly_for_export.glb"
           alt="3D model of the ASI-404 mobile manipulator"
@@ -1016,26 +1035,31 @@
       </div>
 
       <div id="EE-34">
-        <h3>3.4 Overall integration and testing</h3>
+        <h3>3.4 Overall integration and testing of tool changer and end effector</h3>
+        <image-component tag="image" source="assets\For grippers\Toolchanger system integrated.jpg"
+          subtitle="Figure n: Integrated Tool Changer System mounted on the robot"></image-component>
         <p>
-          After the individual development of the end effector and tool changer subsystems, the final phase of this section involved the integration of all components into a cohesive system, followed by comprehensive testing to validate functionality and performance. This process included mechanical assembly, electrical wiring, firmware deployment, and system-level validation through a series of test scenarios designed to evaluate the reliability and effectiveness of the tool changing mechanism under realistic operating conditions.
+          After the individual development of the end effector and tool changer subsystems, the final phase of this section involved the integration of all components into a cohesive system as shown in the figure above, followed by comprehensive testing to validate functionality and performance. This process included mechanical assembly, electrical wiring, firmware deployment, and system-level validation through a series of test scenarios designed to evaluate the reliability and effectiveness of the tool changing mechanism under realistic operating conditions.
+        </p>
+        <p>
+          The tool changing system was subjected to a range of tests, including repeated docking and undocking cycles to assess the durability and reliability of the mechanical interfaces, as well as functional tests to confirm the correct operation of the electrical control circuits and the successful actuation of the gripper mechanism as shown in the figure n below.
+        </p>
+
+        <image-component tag="image" source="assets\For grippers\Docking tests with pogo pin engagement.png"
+          subtitle="Figure n: Docking tests for toolchanger mechanism"></image-component>
+
+        <p>
+          The videos below demonstrate key aspects of the integrated system in action, showcasing the tool changer’s ability to autonomously exchange end effectors and transmit data. The video showcasing CAN Bus transmission code is in section 5, under the software control stack. Over 300 docking/undocking cycles were completed and only 2 failures are recorded, due to firmware bugs that were subsequently fixed.
         </p>
         <video-component tag="toolchanger" source="https://www.youtube.com/embed/R4gRMEHpWVc?si=i9v4UlkKUjpJGsDo"
           subtitle="Video: Tool Changer and End Effector Mechanisms and Electrical Integration test"></video-component>
-        <video-component tag="mallet" source="https://www.youtube.com/embed/DWrguW84aJk?si=bgm2AMRRX14WOO9n"
-          subtitle="Video: Mallet pick testing with computer vision"></video-component>
-        <video-component tag="grasptest" source="https://www.youtube.com/embed/zzv4f3nGRJY?si=GBp7xDPt-xhqSi9w"
-          subtitle="Video: Mallet pick testing with computer vision"></video-component>
-        <model-viewer
-          src="assets\3dmodels\full_assembly_with_gripper_and_toolchanger.glb"
-          alt="3D model of the ASI-404 mobile manipulator"
-          camera-controls
-          auto-rotate
-          shadow-intensity="0.4"
-          exposure="0.5"
-          style="width: 100%; height: 600px; background-color: #f5f5f5; border-radius: 12px;"
-         >
-        </model-viewer>
+        <p>
+          The videos below show the testing of the toolchanging system working to perform a pick and place operation. This test was hardcoded with no feedback data. 
+        </p>
+        <video-component tag="testing" source="https://www.youtube.com/embed/LISxjKM-Umo?si=gUK-EqzXExkjav08"
+          subtitle="Video: Tool changer with pick and place testing"></video-component>
+
+        
 
         
       </div>
@@ -1615,26 +1639,67 @@
         <image-component tag="image" source="assets\Webserver Node Interactions.drawio.svg"
           subtitle="Figure n: Webserver Node Interactions"></image-component>
         <p>
-          In the UI, the user has the option to select multiple tools for delivery. They can then select which table do they want the deliveries to be delivered to. Upon clicking the Send Request button, the commands are then sent over to the sequencer node, where the system then decides how to control the hardware to complete the order. 
+          In the UI, the user has the option to select multiple tools for delivery, which can be seen in the figure n below. They can then select which table do they want the deliveries to be delivered to. Upon clicking the Send Request button, the commands are then sent over to the sequencer node, where the system then decides how to control the hardware to complete the order. 
         </p>
-        <image-component tag="image" source="assets\Webserver Node Interactions.drawio.svg"
-          subtitle="PLACEHOLDER"></image-component>
-          <image-component tag="image" source="assets\Webserver Node Interactions.drawio.svg"
-          subtitle="PLACEHOLDER"></image-component>
+        <image-component tag="image" source="assets\software\Tool selection of UI.jpg"
+          subtitle="Figure n: Tool Selection in UI"></image-component>
+          <p>
+            In the lower dialogue box, the user can monitor the delivery with parameters. These parameters dynamically update based on the feedback from the sequencer node. A description of these parameters can be seen in the table below:
+          </p>
+          <table class="parameter-table">
+          <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Items to be delivered</td>
+            <td>This dialogue updates to show the tool selection the users have selected for the robot to perform a delivery.</td>
+          </tr>
+          <tr>
+            <td>Unavailable items</td>
+            <td>During the actual pickup of tools, if the system records a tool as unavailable, the option will be seen here.</td>
+          </tr>
+          <tr>
+            <td>Deliver to</td>
+            <td>The table selected by the user for delivery.</td>
+          </tr>
+          <tr>
+            <td>Status of robot</td>
+            <td>The feedback from the sequencer which shows which hardware is being controlled at which stage. Error messages can also appear here.</td>
+          </tr>
+          <tr>
+            <td>Status of delivery</td>
+            <td>The status of delivery from No active delivery -&gt; In progress -&gt; Delivery completed.</td>
+          </tr>
+        </table>
+          <p>
+            An additional set of buttons and debug console are also present, mainly for resetting the system and conducting tests. 
+          </p>
+          <image-component tag="image" source="assets\software\Debugging section of UI.jpg"
+          subtitle="Figure n: Debugging Section in UI"></image-component>
         <p>
-          PLACEHOLDER UNDER DEVELOPMENT
+          Figure n shows the web UI prototype in its entirety.
         </p>
+        <image-component tag="image" source="assets\software\ASI-404 - Robot System UI Control Prototype_Cropped.png"
+          subtitle="Figure n: The Complete Web UI Prototype"></image-component>
       </div>
 
-      <div id="SS-55">
+      <div id="SS-58">
         <h3>5.8: Overall software functionality</h3>
+        <image-component tag="image" source="assets\ROS2 Computational Graph.drawio.svg"
+          subtitle="Figure n: ROS2 Computational Graph"></image-component>
         <p>
-          PLACEHOLDER
+          Figure N presents an overview of the ROS 2 services and actions implemented within the system nodes. After all nodes have been successfully initialised and confirmed to be operational, the system is able to accept incoming tool delivery requests. The flowchart below illustrates the corresponding system workflow and internal control logic executed upon receipt and acceptance of a delivery request.
+        </p>
+        <image-component tag="image" source="assets\Sequence flowchart of robot functionality.drawio.svg"
+          subtitle="Figure n: Sequence Flowchart of Robot Functionality"></image-component>
+        <p>
+          The videos below showcase the full system running autonomously with the webserver integration. The first video shows the system collecting and delivering the requested screwdrivers based on user input and the second video shows the system returning back to the home position after the delivery is completed and acknowledged.
         </p>
         <video-component tag="toolchanger" source="https://www.youtube.com/embed/z7QtXw3824A?si=i-uDyGqe4bisUB3b"
-          subtitle="Video: Tool Changer and End Effector Mechanisms and Electrical Integration test"></video-component>
+          subtitle="Video: Full systems test with webserver integration part 1"></video-component>
         <video-component tag="toolchanger" source="https://www.youtube.com/embed/ea6Gtco5GJM?si=ClvRYERWCisZuPnH"
-          subtitle="Video: Tool Changer and End Effector Mechanisms and Electrical Integration test"></video-component>
+          subtitle="Video: Full systems test with webserver integration part 2"></video-component>
       </div>
   
     </div>
@@ -1700,6 +1765,11 @@
           </td>
         </tr>
       </table>
+      <p>
+        The video below shows an edge case where no tool are available. The corresponding system response is that the robot will return to the home position and the webserver will show that the delivery has failed.
+      </p>
+      <video-component tag="safety" source="https://www.youtube.com/embed/pixhMVDu030?si=lLuPqnUEVY9_0Hiu"
+          subtitle="Video: No tool detected edge case"></video-component>
       </div>
 
       <div id="SC-622">
