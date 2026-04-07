@@ -39,13 +39,7 @@
 </head>
 
 <body>
-  <div class="side-collage side-collage-left">
-    <img src="assets\grpmempic\ASI 404 Team Photo.jpg" alt="Development collage left">
-  </div>
 
-  <div class="side-collage side-collage-right">
-    <img src="assets/side-collage-right.png" alt="Development collage right">
-  </div>
   <div class="content">
     <h1>CDE4301, ASI-404</h1>
     <h1>Mobile Manipulator for the IDP Hub</h1>
@@ -1605,34 +1599,19 @@
       <div id="SS-51">
         <h3>5.1 Updated software strategy and architecture</h3>
         <p>
-          To ensure completion of the 3 main tasks assigned, an understanding must be done on how the stakeholders would interact with the system and make it perform the desired tasks.
+          From the interim presentation, a user sequence diagram, shown in Figure N, and an initial software architecture diagram, shown in Figure N, were developed to represent the idealised control flow and software structure of the system.
         </p>
+        <image-component tag="image" source="assets\software\task3.png"
+          subtitle="Figure n: Interaction diagram"></image-component>
+        <image-component tag="image" source="assets\software\C4 Model Diagram.drawio.svg"
+          subtitle="Figure n: Initial software architecture diagram"></image-component>
         <p>
-          A user sequence diagram (Figure 60) was created to showcase the generic workflow of the system by the user. 
+          For the final deployed prototype, the software architecture was further streamlined, as illustrated in the updated diagram shown below.
         </p>
-        
-        <image-component tag="image" source="assets/userseqdiagram.png"
-          subtitle="Fig 60: User Sequence Diagram"></image-component>
-        
+         <image-component tag="image" source="assets\C4 Model Diagram Updated.drawio.svg"
+          subtitle="Figure n: Updated software architecture diagram"></image-component>
         <p>
-          A robot sequence diagram (Figure 61) was also created to show the motions of the robot upon receiving a command. 
-        </p>
-        <image-component size = "large" tag="image" source="assets/roboseq.png"
-          subtitle="Fig 61: Robot Sequence Diagram"></image-component>
-        <p>
-          The Home position for the robot is defined as the location where the robot is located while idle whilst the Charge position is defined as the location where the robot will go to charge itself when the battery is low. (Figure 62)
-        </p>
-         <image-component size="small" tag="image" source="assets/software/robohome.png"
-          subtitle="Fig 62: Allocated space for Home Position and Charging"></image-component>
-          <p>
-          Sofware Subsystem Overview:
-        </p>
-        <image-component tag="image" source="assets/software/softsub.png"
-          subtitle="Fig 63: Software Subsystems to develop"></image-component>
-        <image-component tag="image" source="assets/xe.png"
-          subtitle="PLACEHOLDER"></image-component>
-        <p>
-          PLACEHOLDER
+          Throughout the development of the final prototype software, the implementation approach was continually refined and, where necessary, restructured to meet the practical operating requirements of the system. The following sections describe in detail the individual nodes and their respective functionalities that enable the overall system to operate.
         </p>
       </div>
 
@@ -2109,7 +2088,13 @@
       <div id="P-72">
         <h2>7.2 Future works and improvements to the system</h2>
         <p>
-          PLACEHOLDER
+          For each subsystem, spanning both hardware and software, there remain several opportunities for further development to improve the overall efficiency, functionality, and usability of the system.
+        </p>
+        <p>
+          For the end effector and tool changer subsystems, a more focused design effort on gripper finger geometry may enable the development of a universal gripper capable of handling the full range of tools on the board. In addition, further improvements to the electronic hardware and embedded firmware could expand the level of control available to the Mini PC, thereby increasing the flexibility and functionality of gripper operation.
+        </p>
+        <p>
+          For the end effector and tool changer subsystems, a more focused design effort on gripper finger geometry may enable the development of a universal gripper capable of handling the full range of tools on the board. In addition, further improvements to the electronic hardware and embedded firmware could expand the level of control available to the Mini PC, thereby increasing the flexibility and functionality of gripper operation.
         </p>
       </div>
 
@@ -2123,6 +2108,12 @@
         </p>
         <image-component size="medium" tag="image" source="assets\grpmempic\ASI 404 Team Photo.jpg"
           subtitle="Figure x: The team and the prototype"></image-component>
+      </div>
+
+      <div id="P-74">
+        <h2>7.4 Gantt Chart</h2>
+        <image-component  tag="image" source="assets/projmanagement/Gantt Chart.svg"
+          subtitle="Gantt Chart"></image-component>
       </div>
 
     </div>
