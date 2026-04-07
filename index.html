@@ -699,39 +699,204 @@
     <div>
       <div id="EE-3">
         <h2>3: End effector & tool changer systems</h2>
+        
+        
+      </div>
+
+      
+      <div id="EE-31">
+        <h3>3.1 Interim developments</h3>
         <p>
           To design the End Effectors for the system, design constraints must be established in terms of the actuation mode of choice, overall maximum size and the maximum mass before further analysis on the approach can be done. 
         </p>
-      </div>
+        <p>
+          From the interim presentation, the actuation mode of the end effector and tool changer were confirmed after analysing the constaints and ranking the different actuation modes based on the concept screening technique as shown in the table below. Electric actuation was selected. 
+        </p>
 
-      <div id="EE-31">
-        <h3>3.1 Research</h3>
+        <table class="concepts-table">
+  <tr>
+    <th colspan="2" class="top-header"></th>
+    <th colspan="6" class="top-header">Concepts</th>
+  </tr>
+  <tr>
+    <th rowspan="2" class="criteria-header">Selection<br>Criteria</th>
+    <th rowspan="2" class="weight-header">Weight</th>
+    <th colspan="2" class="pneumatic-header">Pneumatic</th>
+    <th colspan="2" class="hydraulic-header">Hydraulic</th>
+    <th colspan="2" class="electric-header">Electric</th>
+  </tr>
+  <tr>
+    <th class="pneumatic-cell">Rating</th>
+    <th class="pneumatic-cell">Weighted<br>Score</th>
+    <th class="hydraulic-cell">Rating</th>
+    <th class="hydraulic-cell">Weighted<br>Score</th>
+    <th class="electric-cell">Rating</th>
+    <th class="electric-cell">Weighted<br>Score</th>
+  </tr>
+
+  <tr>
+    <td class="criteria-col">Force Output</td>
+    <td class="criteria-col">15%</td>
+    <td class="pneumatic-cell">3</td>
+    <td class="pneumatic-cell">0.45</td>
+    <td class="hydraulic-cell">4</td>
+    <td class="hydraulic-cell">0.6</td>
+    <td class="electric-cell">3</td>
+    <td class="electric-cell">0.45</td>
+  </tr>
+  <tr>
+    <td class="criteria-col">Actuation</td>
+    <td class="criteria-col">5%</td>
+    <td class="pneumatic-cell">4</td>
+    <td class="pneumatic-cell">0.2</td>
+    <td class="hydraulic-cell">4</td>
+    <td class="hydraulic-cell">0.2</td>
+    <td class="electric-cell">3</td>
+    <td class="electric-cell">0.15</td>
+  </tr>
+  <tr>
+    <td class="criteria-col">Noise</td>
+    <td class="criteria-col">20%</td>
+    <td class="pneumatic-cell">2</td>
+    <td class="pneumatic-cell">0.4</td>
+    <td class="hydraulic-cell">2</td>
+    <td class="hydraulic-cell">0.4</td>
+    <td class="electric-cell">4</td>
+    <td class="electric-cell">0.8</td>
+  </tr>
+  <tr>
+    <td class="criteria-col">Maintenance</td>
+    <td class="criteria-col">20%</td>
+    <td class="pneumatic-cell">3</td>
+    <td class="pneumatic-cell">0.6</td>
+    <td class="hydraulic-cell">2</td>
+    <td class="hydraulic-cell">0.4</td>
+    <td class="electric-cell">4</td>
+    <td class="electric-cell">0.8</td>
+  </tr>
+  <tr>
+    <td class="criteria-col">Hardware Requirements</td>
+    <td class="criteria-col">40%</td>
+    <td class="pneumatic-cell">2</td>
+    <td class="pneumatic-cell">0.8</td>
+    <td class="hydraulic-cell">2</td>
+    <td class="hydraulic-cell">0.8</td>
+    <td class="electric-cell">4</td>
+    <td class="electric-cell">1.6</td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="summary-label">Total Score</td>
+    <td colspan="2" class="summary-cell">2.45</td>
+    <td colspan="2" class="summary-cell">2.4</td>
+    <td colspan="2" class="summary-cell">3.8</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary-label">Rank</td>
+    <td colspan="2" class="summary-cell">2</td>
+    <td colspan="2" class="summary-cell">1</td>
+    <td colspan="2" class="summary-cell">3</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="continue-label">Continue?</td>
+    <td colspan="2" class="summary-cell">No</td>
+    <td colspan="2" class="summary-cell">No</td>
+    <td colspan="2" class="continue-yes">Yes</td>
+  </tr>
+</table>
+
         <p>
-          To narrow down the ideal Actuation mode for the system, we evaluated the main types of actuation methods against various criteria for the system through the Concept Screening technique seen in Figure 44.
+          From this and knowing the dimensional constraints of the mounting, the design specifications for the end effector and tool changer system were drafted and are shown in the table below. 
         </p>
-        <image-component tag="image" source="assets\Value proposition\ActMode.png"
-          subtitle="Fig 44: Actuation mode concept screening"></image-component>
+
+        <table class="design-spec-table">
+  <tr>
+    <th colspan="3">Design Specifications</th>
+  </tr>
+
+  <tr>
+    <td class="section overall" rowspan="4">Overall<br>system</td>
+    <td>Dimensional Requirement</td>
+    <td>165 x 230 x 135 (L x W x H)</td>
+  </tr>
+  <tr>
+    <td>Maximum Mass</td>
+    <td>2kg</td>
+  </tr>
+  <tr>
+    <td>Actuation Mode</td>
+    <td>Electric</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>&lt;500 SGD</td>
+  </tr>
+
+  <tr>
+    <td class="section grippers" rowspan="5">Grippers</td>
+    <td>Max gripper length</td>
+    <td>130mm</td>
+  </tr>
+  <tr>
+    <td>Maximum Mass</td>
+    <td>1kg</td>
+  </tr>
+  <tr>
+    <td>Control Mode</td>
+    <td>Open/Closed Loop</td>
+  </tr>
+  <tr>
+    <td>Minimum Gripping force</td>
+    <td>1kg</td>
+  </tr>
+  <tr>
+    <td>Payload support</td>
+    <td>1 - 3kg</td>
+  </tr>
+
+  <tr>
+    <td class="section tool-changer" rowspan="5">Tool<br>Changer<br>System</td>
+    <td>Maximum Mass</td>
+    <td>1kg</td>
+  </tr>
+  <tr>
+    <td>Max supporting payload mass</td>
+    <td>10kg (Safety Factor of 2)</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="center-text">Holds gripper system under power loss</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="center-text">Fully controllable by robot system</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="center-text">Able to transmit power and signal to gripper</td>
+  </tr>
+</table>
+        <image-component size = "large" tag="image" source="assets\endeffector\grippercc.png"
+          subtitle="Figure n: Concept screening for end effector"></image-component>
+            <p>
+          Due to the wide variety of tools that the robot is required to grasp, careful consideration had to be given to the final gripper designs. An additional factor was the storage fixtures used for the tools. Feedback from stakeholders indicated that the existing tool holders were not to be modified, making them a key design constraint. Although compliant gripper systems can handle a broad range of object geometries, the conditions imposed by the pegboard storage arrangement made the development of a truly universal end effector impractical. As a result, the team elected to develop a system that allows the robot to automatically exchange end effectors according to the tool being handled, thereby enabling more reliable and optimised pickup performance across all tool types.
+        </p>
+        <p>
+          A prototype end effector was developed, which was a rack-and-pinion gripper mechanism with swappable fingers. This design was chosen primarily due to being straightforward to implement as shown in the figure above for the concept screening, while also aligning with the direction validated during the interim presentation. The prototype gripper can be seen in the figure below. 
+        </p>
+          <image-component size = "large" tag="image" source="assets\toolchanger\toolcc.png"
+          subtitle="Figure n: Prototype End Effector"></image-component>
+          
+        <p>
+          Concepts were also evaluated for the tool changer mechanism as shown in figure n, with the utilisation of electromagnets being selected as the approach. Tests were conducted to validate the electromagnet strength with a selected steel plate of certain thickness and were successfully completed as shown in the figure n. 
+        </p>
+        <image-component size = "medium" tag="image" source="assets\toolchanger\Magnet.png"
+          subtitle="Figure n: Prototype End Effector"></image-component>
           <p>
-          Given the AMR’s payload limits and internal space constraints, hardware requirements received higher weight. Based on the concept screening and system needs, electric actuation was selected for the end effector.
-        </p>
-        <p>
-          Due to the wide variety of tools that the robot is required to grasp, careful consideration had to be given to the gripper design. An additional factor was the storage fixtures used for the tools. Feedback from stakeholders indicated that the existing tool holders were not to be modified, making them a key design constraint. Although compliant gripper systems can handle a broad range of object geometries, the conditions imposed by the pegboard storage arrangement made the development of a truly universal end effector impractical. As a result, the team elected to develop a system that allows the robot to automatically exchange end effectors according to the tool being handled, thereby enabling more reliable and optimised pickup performance across all tool types.
-        </p>
-         <p>
-          When evaluating commercially available tool changer mechanisms, the method of actuation was a major consideration. Many existing systems rely on pneumatic or hydraulic actuation. While these approaches offer high payload capacity, this advantage was not particularly relevant given that the collaborative robot used in this project has a maximum payload limit of 5 kg. From a system integration standpoint, such mechanisms also presented additional challenges, as they are often controlled through proprietary hardware or require the use of a programmable logic controller (PLC). The team did not have access to such hardware, nor was compatibility with the main system computer guaranteed.
-        </p>
+        Following the validation of these concepts, the next sections will cover the detailed design and development of the finalised end effector and tool changer prototype systems, including the mechanical design, electrical integration, and control strategies implemented to achieve the required functionality.
+      </p>
+      
          <p>
           Another important consideration concerned the interface connections provided by the tool changer mechanism. Available interfaces were generally limited to simple Boolean inputs and outputs, such as on/off actuation signals, together with basic power delivery. Although this level of interfacing was functionally sufficient, it introduced challenges in terms of control integration. Neither the collaborative robot nor the autonomous mobile robot provided dedicated native control for such mechanisms, and the intended system architecture centred on ROS 2 as the primary control framework running from the main onboard computer.
         </p>
-        </p>
-        <image-component tag="image" source="assets/xe.png"
-          subtitle="PLACEHOLDER"></image-component>
-        <p>
-          Evaluation of the available computing hardware, specifically the UNO-238 V2 Industrial Mini PC, showed that the system only provided 3.3 V GPIO logic and CAN Bus 2.0B as accessible hardware interfaces. In this context, CAN Bus was considered more suitable than conventional serial communication due to its robustness in electrically noisy environments. Unlike standard serial communication, which is more susceptible to noise-induced corruption, CAN Bus uses differential signalling, making it significantly more resistant to electromagnetic interference. This was especially important because signal transmission needed to be routed through the robot arm structure, where the cobot’s AC servo drive systems could generate electromagnetic interference capable of disrupting less robust communication methods.
-        </p>
-        <p>
-          For the end effector itself, a rack-and-pinion gripper mechanism with swappable fingers was selected for the pick-and-place tasks associated with the required tool set. This design was chosen primarily due to time constraints, while also aligning with the direction validated during the interim presentation. The rack-and-pinion arrangement provided a straightforward and mechanically reliable solution, while the interchangeable fingers allowed the gripper to be adapted to the geometry of different tools without requiring a complete redesign of the grasping mechanism.
-        </p>
+      
 
       </div>
 
@@ -759,8 +924,8 @@
          <p>
           Following successful preliminary evaluation of the compliant gripper finger design, this concept was retained in the updated iteration. Experimental testing showed that the compliant fingers were able to successfully grasp screwdrivers, wrenches, and pliers. However, due to the mounting geometry and handling requirements of the mallet, a different gripper finger configuration was required to achieve reliable pickup. For this tool, the selected approach involved lifting the mallet while maintaining its orientation throughout the transfer process until deposition, thereby ensuring stable handling.
         </p>
-        <image-component tag="image" source="assets/xe.png"
-          subtitle="PLACEHOLDER"></image-component>
+        <image-component tag="image" source="assets\For grippers\Gripper pictures.png"
+          subtitle="Figure n: Gripper designs for screwdriver and mallet"></image-component>
         
         <model-viewer
           src="assets\3dmodels\rack_and_pinion_manipulator_assembly.glb"
@@ -812,6 +977,11 @@
       <div id="EE-331">
         <h3>3.3.1 Electrical Development</h3>
         <p>
+            
+          Evaluation of the available computing hardware, specifically the UNO-238 V2 Industrial Mini PC, showed that the system only provided 3.3 V GPIO logic and CAN Bus 2.0B as accessible hardware interfaces. In this context, CAN Bus was considered more suitable than conventional serial communication due to its robustness in electrically noisy environments. Unlike standard serial communication, which is more susceptible to noise-induced corruption, CAN Bus uses differential signalling, making it significantly more resistant to electromagnetic interference. This was especially important because signal transmission needed to be routed through the robot arm structure, where the cobot’s AC servo drive systems could generate electromagnetic interference capable of disrupting less robust communication methods.
+    
+        </p>
+        <p>
           As the electrical subsystem of the tool changer imposed several constraints on the overall mechanical implementation, it is addressed first in this section. Based on the available system peripherals, the power requirements of the end effector prototype, and the results obtained from preliminary testing of the 24 V electromagnet, a set of design deliverables was established for the control board.
         </p>
         <table class="requirements-table">
@@ -842,7 +1012,7 @@
         <p>
           For the CAN Bus communication circuit, the SN65HVD232 transceiver was selected due to its compatibility with 3.3 V microcontroller logic and its suitability for direct integration with the STM32-based control architecture. In addition, the device is widely used in embedded CAN applications and is supported by substantial reference material and implementation examples, which reduced development risk and simplified hardware validation.
         </p>
-        <image-component tag="image" source="assets\For toolchanger PCB\CAN Transceivers.png"
+        <image-component size = "small" tag="image" source="assets\For toolchanger PCB\CAN Transceivers.png"
           subtitle="Figure x: CAN Transceivers"></image-component>
         <p>
           Following the interim presentation, the selected electromagnet required a 24 V supply, while the gripper subsystem only required 12 V operation. As the STM32F103 operates using 3.3 V logic, dedicated switching circuits were required to allow the low-voltage control signals from the microcontroller to safely and reliably switch the higher-voltage loads.
@@ -863,7 +1033,7 @@
         <p>
           To support repeated mechanical coupling and decoupling between the robot side and tool side control boards, a pogo-pin contact interface was adopted. Spring-loaded pogo pins were assigned to the tool side, while corresponding pogo pads were placed on the robot side. This allowed electrical connection to be established automatically during tool docking without requiring manual cable connection, while also improving serviceability and modularity of the overall tool changing system.
         </p>
-        <image-component tag="image" source="assets/For toolchanger PCB/Pogo Pin DIP.jpg"
+        <image-component size ="small" tag="image" source="assets/For toolchanger PCB/Pogo Pin DIP.jpg"
           subtitle="Figure x: Pogo Pins"></image-component>
         <p>
           From these requirements, a hardware block diagram was developed to define the major functional sections of the circuit board and to map the selected components to each subsystem requirement.
@@ -933,7 +1103,7 @@
 
       <div id="EE-333">
         <h3>3.3.3 The Robot Side Unit</h3>
-         <image-component tag="image" source="assets\For grippers\Robot side with Camera.png"
+         <image-component size ="small"tag="image" source="assets\For grippers\Robot side with Camera.png"
           subtitle="Figure n: Robot Side Unit with Camera" width="40px"
           height="auto"></image-component>
         <p>
@@ -952,7 +1122,7 @@
         <p>
           The mounting of the camera was done on the robot side for the detection of the tools and assisting in grabbing. Further elaboration on the exact software is shown in section 4. In terms of the mechanical mounting, consideration was given to the camera’s RGB and Depth FOV, to ensure that the camera image was not blocked when the Tool side with the end effector was docked together. 
         </p>
-        <image-component tag="image" source="assets\For grippers\FOV Consideration of the Camera mount (Annotated).png"
+        <image-component size = "medium" tag="image" source="assets\For grippers\FOV Consideration of the Camera mount (Annotated).png"
           subtitle="Figure n: FOV Consideration of the Camera Mount"></image-component>
       </div>
 
@@ -967,7 +1137,7 @@
         <p>
           Mounting holes are placed at the underside of the holder for customisability in gripper placements and options. Additionally, the edges of the holder are designed to double function as the supports on the tool holder.
         </p>
-        <image-component tag="image" source="assets\For grippers\High flexibility in the mounting.png"
+        <image-component size="medium" tag="image" source="assets\For grippers\High flexibility in the mounting.png"
           subtitle="Figure n: High Flexibility in Mounting"></image-component>
 
           <model-viewer
@@ -1574,9 +1744,25 @@
         <p>
           The navigation accuracy is noted to be a point of concern, repeatability tests were done which shows that after 50 navigation attempts to the same defined location, the AMR can drift about +- 20mm in both X and Y directions. This poses an issue during the pick and place as hardcoded motions will not suffice to grab the items as the whole system can drift far enough that the gripper will miss outright. This inaccuracy issue is solved via the utilisation of computer vision as mentioned in section 4 and in section 5.4.
         </p>
-        <image-component tag="image" source="assets\software\Sesto inaccuracy.jpg"
+      </div>
+      <div id="SS-531">
+        <h4>5.3.1 SESTO Navigation Accuracy and Mitigation</h4>
+        <p>
+          The SESTO Magnus Lite AMR platform exhibits a navigation accuracy issue, with observed drift of approximately ±20 mm in both X and Y directions after repeated navigation attempts to the same location. This level of inaccuracy poses a significant challenge for tasks such as pick-and-place operations, where precise positioning is critical for successful item grasping.
+        </p>
+        <image-component size = "medium" tag="image" source="assets\software\Sesto inaccuracy.jpg"
           subtitle="Figure n: Sesto Navigation Inaccuracy"></image-component>
-
+        <p>
+          Based on the datasheet, the Sesto Magnus Lite has a navigation accuracy of ±20 mm, which is consistent with the observed drift during testing. The exact positional readings can be found in Appendix N. This means that even if the AMR successfully reaches the general vicinity of the target location, there is still a possibility that it may be misaligned by up to 20 mm, which can lead to failed grasps if the robot arm relies solely on hardcoded motions based on expected coordinates.
+        </p>
+        <p>
+          Consideration was placed for the utilisation of a docking marker that the AMR can reference and dock to. However, the placement of the docking marker and low profile design makes it a tripping hazard for people. Hence this idea was scrapped. 
+        </p>
+         <image-component size = "medium" tag="image" source="assets\sesto\Sesto docking marker.jpg"
+          subtitle="Figure n: Sesto Docking Marker"></image-component>
+        <p>
+          To mitigate this issue, the system incorporates computer vision techniques to dynamically adjust the robot's position during pick-and-place tasks. By using visual feedback from the camera, the robot can detect the actual location of the target item and make real-time adjustments to its position, compensating for any drift caused by navigation inaccuracies. This approach allows the robot to successfully grasp items even when there is some deviation in its initial positioning, enhancing the overall robustness and reliability of the system.
+        </p>
       </div>
 
       <div id="SS-54">
@@ -1584,7 +1770,7 @@
         <p>
           The CAN bus node provides the low-level hardware communication interface between the ROS2 software stack, and the physical end-effector or peripheral devices connected over the CAN network. The CAN bus node interfaces with the drivers and corresponding CAN peripherals onboard the UNO 238 V2 MiniPC.
         </p>
-        <image-component tag="image" source="assets\software\UNO 238 V2.png"
+        <image-component size ="medium" tag="image" source="assets\software\UNO 238 V2.png"
           subtitle="Figure n: UNO 238 V2 MiniPC available interfaces"></image-component>
         <p>
           In the context of the robotics system, the CAN node mainly interfaces with the tool changer unit circuits boards, seen in section 3. The interaction between the CAN node and the peripherals can then be illustrated in the diagram below:
@@ -1691,7 +1877,7 @@
         <p>
           Figure N presents an overview of the ROS 2 services and actions implemented within the system nodes. After all nodes have been successfully initialised and confirmed to be operational, the system is able to accept incoming tool delivery requests. The flowchart below illustrates the corresponding system workflow and internal control logic executed upon receipt and acceptance of a delivery request.
         </p>
-        <image-component tag="image" source="assets\Sequence flowchart of robot functionality.drawio.svg"
+        <image-component size="medium" tag="image" source="assets\Sequence flowchart of robot functionality.drawio.svg"
           subtitle="Figure n: Sequence Flowchart of Robot Functionality"></image-component>
         <p>
           The videos below showcase the full system running autonomously with the webserver integration. The first video shows the system collecting and delivering the requested screwdrivers based on user input and the second video shows the system returning back to the home position after the delivery is completed and acknowledged.
@@ -1718,7 +1904,7 @@
       <div id="SC-61">
         <h3>6.1 Safety implementation</h3>
         
-        <image-component tag="image" source="assets\safety\Safety Diagram for System.svg"
+        <image-component size = "medium" tag="image" source="assets\safety\Safety Diagram for System.svg"
           subtitle="Figure n: Safety Diagram for System"></image-component>
         <p>
           Onboard the AMR and Cobot, there are integrated safety peripherals that prevent the system from injuring or harming users. One of the main changes that the team did to improve the safety further was to merge the estop logic to both the AMR and Cobot. This allows for the system to be shut down fully. The following videos showcase these safety peripherals during the use of the system. 
@@ -1935,7 +2121,7 @@
         <p>
           Although the current system remains a prototype and would require further refinement, optimisation, and targeted development before it is suitable for long-term real-world deployment, it has nevertheless demonstrated the feasibility and potential of such a solution. More importantly, the project highlights how industrial robotic systems can be adapted beyond conventional manufacturing settings to support workflow improvement and efficiency enhancement in other operational environments.
         </p>
-        <image-component tag="image" source="assets\grpmempic\ASI 404 Team Photo.jpg"
+        <image-component size="medium" tag="image" source="assets\grpmempic\ASI 404 Team Photo.jpg"
           subtitle="Figure x: The team and the prototype"></image-component>
       </div>
 

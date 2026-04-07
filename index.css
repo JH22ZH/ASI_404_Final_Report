@@ -186,6 +186,80 @@ th, td {
   display: block;
 }
 
+.parameter-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.parameter-table th,
+.parameter-table td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.parameter-table th {
+  background-color: #1f7a2e;
+  color: white;
+  font-weight: bold;
+}
+
+.parameter-table td {
+  background-color: #d7ddd7;
+  color: black;
+}
+
+.design-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.design-spec-table th,
+.design-spec-table td {
+  border: 2px solid #222;
+  padding: 8px 10px;
+  font-size: 16px;
+}
+
+.design-spec-table th {
+  background-color: #fff200;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+.design-spec-table td {
+  background-color: #efefef;
+  color: black;
+}
+
+.design-spec-table .section {
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.design-spec-table .overall {
+  background-color: #d9e6f2;
+}
+
+.design-spec-table .grippers {
+  background-color: #cfe8f3;
+}
+
+.design-spec-table .tool-changer {
+  background-color: #f1dfd3;
+}
+
+.design-spec-table .center-text {
+  text-align: center;
+}
+
 p {
   text-align: justify;
   font-size: 1.1rem;
