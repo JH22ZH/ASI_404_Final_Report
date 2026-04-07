@@ -1636,9 +1636,7 @@
         <p>
           The diagram above shows how the node, called the Master Cobot Action Node, interacts with the other software subsystems in the overall architecture. The node’s endpoints feature Ros2 services that allow for the control and data reading of the cobot during its execution. The sequencer node, the node that handles the direct systems, mainly interacts via this service calls which are sequence requests. 
         </p>
-        <p>
-          Within the Cobot Node, a stored database of movements are located that when referenced by the Sequencer, will lead to its execution. Throughout the execution of the sequences, feedback on the trajectory planning is also obtained via the MoveIt2 action server. The joint position and cartesian coordinates of the end effector are constantly updated and the sequencer can parse this information for utilisation in other moves, such as computing the new position to travel after the depth data, which is seen in section ()
-        </p>
+        
 
       </div>
 
@@ -1745,7 +1743,7 @@
          <image-component size = "medium" tag="image" source="assets\sesto\Sesto docking marker.jpg"
           subtitle="Figure n: Sesto Docking Marker"></image-component>
         <p>
-          To mitigate this issue, the system incorporates computer vision techniques to dynamically adjust the robot's position during pick-and-place tasks. By using visual feedback from the camera, the robot can detect the actual location of the target item and make real-time adjustments to its position, compensating for any drift caused by navigation inaccuracies. This approach allows the robot to successfully grasp items even when there is some deviation in its initial positioning, enhancing the overall robustness and reliability of the system.
+          To mitigate this issue, the system incorporates computer vision techniques to dynamically adjust the robot's position during pick-and-place tasks. By using visual feedback from the camera, the robot can detect the actual location of the target item and make real-time adjustments to its position, compensating for any drift caused by navigation inaccuracies. 
         </p>
       </div>
 
