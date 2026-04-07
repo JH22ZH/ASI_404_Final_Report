@@ -514,7 +514,7 @@
     <sl-divider></sl-divider>
 
     <div id="RS_2">
-      <h4>2. Robot Structure</h4>
+      <h2>2. Robot Structure</h2>
       <p>
         This chapter covers the development of the robot structure subsystem, including both the mechanical and
         electrical aspects of the system. The subsystem was designed to provide a stable and modular platform for
@@ -524,105 +524,133 @@
     </div>
 
     <div id="RS_21">
-      <h4>2.1 Mechanical</h4>
+      <h3>2.1 Mechanical</h3>
       <p>
         The mechanical subsystem focuses on designing a robot structure that can securely mount the robot arm while
-        remaining lightweight, modular, and capable of housing all required components. The design evolved across
-        both semesters, beginning with the core structural platform and later incorporating additional features for
-        usability, safety, cooling, and serviceability.
+        remaining lightweight, modular, and capable of housing all required components. 
       </p>
     </div>
 
     <div id="RS_211">
       <h4>2.1.1 Recap of Semester 1 Developments</h4>
       <p>
-        The goal of this subsystem is to design a robot structure capable of securely mounting the robot arm while
-        remaining lightweight, modular, and able to accommodate all required electronic components.
+        The figure below shows the progress of the frame structure from the interim presentation period.
+      </p>
+      <image-component size="medium" tag="image" source="assets\fc2\fig 1.jpg"
+          subtitle="Figure : Robot structure as of interim period"></image-component>
+      <p>
+       The robot structure was designed with consideration of the operational environment of the Hub, the payload capacity of the AMR, and the AMR’s permissible center of gravity as shown in the figure below.
+      </p>
+      <image-component tag="image" source="assets\fc2\fig 2.png"
+          subtitle="Figure :Design considerations for frame structure"></image-component>
+      <p>
+        In addition to these considerations, the structure was designed to fulfil several key functional requirements as shown in the figure below.
+      </p>
+      <image-component tag="image" source="assets\fc2\fig 3.png"
+          subtitle="Figure : Required functionalities of the structure"></image-component>
+      <p>
+        Prior to implementing the design, a total of five design iterations were developed and evaluated using a concept selection matrix (figure_). A detailed comparison of these design iterations is provided in Appendix D1-D6.
+      </p>
+      <image-component tag="image" source="assets\fc2\fig 4.png"
+          subtitle="Figure : Concept selection matrix of ideal frame"></image-component>
+      <image-component tag="image" source="assets\fc2\fig 5.png"
+          subtitle="Figure : Definitions used for the concept selection matrix"></image-component>
+      <p>
+        From the concept selection matrix, the best performing configuration was identified and taken forward for detailed design. The key design features of the implemented structure are described in the following paragraphs below.
       </p>
       <p>
-        With these requirements in mind, multiple design iterations were drafted, taking into account key constraints
-        such as AMR payload limits, centre-of-gravity stability, and spatial constraints. The final design was then
-        selected for implementation.
+        First, the height and layout of the structure was designed to ensure that the robot arm can effectively reach the required workspaces while maintaining overall system stability.
       </p>
+      <image-component tag="image" source="assets\fc2\fig 6.png"
+          subtitle="Figure : Optimized dimensions of structure"></image-component>
       <p>
-        The key features of the implemented design are summarised below:
+        Second, the frame was optimized to be lightweight, while ensuring ease of assembly. 
       </p>
-      <ol>
-        <li>
-          <strong>Optimised dimensions:</strong> The structure height and layout were designed to ensure that the robot
-          arm can effectively reach the required workspace while maintaining overall system stability.
-        </li>
-        <li>
-          <strong>Adaptable frame design:</strong> The frame was designed with built-in flexibility to accommodate
-          potential future modifications, allowing additional profiles to be added for reinforcement and enabling
-          adjustment of the robot arm position to rebalance the centre of gravity without major redesign.
-        </li>
-        <li>
-          <strong>Accessible electronics layout:</strong> A vertical panel design with DIN rail mounting was adopted,
-          allowing for organised wiring, improved accessibility, and easier troubleshooting.
-        </li>
-      </ol>
+      <image-component tag="image" source="assets\fc2\fig 7.png"
+          subtitle="Figure 7: Frame optimized to be lightweight and easy to assemble"></image-component>
       <p>
-        Apart from these features, structural evaluation such as centre-of-gravity analysis and finite element analysis
-        were also conducted to validate the stability of the system.
+        Third, the frame allows for easy future modifications, where additional profiles can be added for reinforcement, and the robot arm position can be adjusted to rebalance the centre of gravity without major redesign.
       </p>
+      <image-component tag="image" source="assets\fc2\fig 8.png"
+          subtitle="Figure : Adaptable frame design"></image-component>
       <p>
-        Overall, the interim work established a stable and well-integrated mechanical platform, forming the foundation
-        for further system development in Semester 2.
+        Fourth, a vertical panel with DIN rail mounting was implemented to organise wiring and electronic components. The segregation of control and power panels improves accessibility and simplifies troubleshooting.
+      </p>
+      <image-component tag="image" source="assets\fc2\fig 9.png"
+          subtitle="Figure : Modular and accessible electronics layout"></image-component>
+      <p>
+        After the structure was designed, structural evaluations such as CG analysis and static analysis were also conducted to validate the stability of the system. Explanation for how analysis was done can be found in appendix D7.
+      </p>
+      <image-component tag="image" source="assets\fc2\fig 10.png"
+          subtitle="Figure : CG and static analysis (FEA and FOS)"></image-component>
+      <p>
+        Overall, the interim work established a stable and well-integrated mechanical platform, forming the foundation for further system development in Semester 2.
       </p>
     </div>
 
     <div id="RS_212">
       <h4>2.1.2 Semester 2 Developments</h4>
       <p>
-        While provisions for additional features were considered during the initial design phase in Semester 1, these
-        were only preliminary designs. The final design and implementation of these additional features were carried
-        out in Semester 2.
-      </p>
-      <ol>
-        <li>
-          <strong>Interface panel and emergency stop:</strong> An interface panel with push buttons enables quick execution
-          of predefined commands. Two E-stops were implemented, one at the back and one at the side of the robot.
-          These E-stops are linked to both the robot arm and the AMR, such that both systems stop simultaneously when pressed.
-        </li>
-        <li>
-          <strong>Battery box:</strong> A battery box is needed to safely contain the battery. Initially, a quick-release
-          sliding battery box was designed. However, due to time constraints, a Pelican case was purchased as an alternative.
-        </li>
-        <li>
-          <strong>Inbuilt adjustable monitor and external connector ports:</strong> An adjustable monitor and external
-          connector ports, including HDMI, USB, and LAN ports, were integrated into the system to facilitate easy
-          debugging and system monitoring.
-        </li>
-        <li>
-          <strong>Cooling system:</strong> Cooling fans were installed to improve airflow within the enclosure. One fan
-          supplies air to the controller’s intake, while another expels hot air at the exhaust. The intake fan is
-          positioned at the bottom and the exhaust fan at the top to utilise natural convection.
-        </li>
-        <li>
-          <strong>Storage unit:</strong> A compartment was allocated as a storage unit for miscellaneous components such as
-          tools and accessories, making the system more convenient for users.
-        </li>
-        <li>
-          <strong>External covers:</strong> Protective external panels made of acrylic and 3D-printed corner covers made
-          of PETG were implemented to improve safety and aesthetics. PETG was selected over PLA as it is more durable
-          against impacts.
-        </li>
-      </ol>
-      <p>
-        With the addition of new components, the overall payload was reassessed to ensure compliance with the AMR’s
-        payload limits. The AMR has a payload capacity of 100 kg. Preliminary weight analysis based on the CAD model
-        estimated the payload at 90 kg. After fabrication, the actual measured weight was 85 kg. Considering a ±5%
-        tolerance to account for screws and miscellaneous components, the total payload remains within allowable limits.
+       While provisions for additional features were considered during the initial design phase, their detailed design and physical implementation were carried out in Semester 2. The key features implemented in semester 2 are described below.
+
       </p>
       <p>
-        The final configuration therefore remains safe for operation while accommodating the additional functional
-        features introduced in Semester 2.
+        1.	Interface Panel and Emergency Stop
       </p>
+      <p>
+        An interface panel with push buttons was implemented to enable quick execution of predefined commands. Two E-stop buttons were installed at accessible locations on the robot. These E-stops are integrated with both the robot arm and the AMR, ensuring that both systems stop simultaneously when activated.
+      </p>
+        <image-component size="medium" tag="image" source="assets\fc2\fig 11.png"
+          subtitle="Figure : Two E-stops and push buttons implemented"></image-component>
+       <p>
+        2.	Battery Box
+      </p>
+      <p>
+        A battery box is required to safely house the battery. Initially, we designed a quick-release sliding battery box (see appendix D8) so that the battery can be conveniently connected and disconnected to the robot power system in a single action. However, due to time constraints, a commercial Pelican case was adopted as a practical alternative.
+      </p>
+        <image-component size="medium"tag="image" source="assets\fc2\fig 12.png"
+          subtitle="Figure : Battery box"></image-component>
+       <p>
+        3.	Adjustable Monitor and External connection ports
+      </p>
+      <p>
+        An adjustable monitor and external connector ports (HDMI, USB and LAN ports) were integrated into the system to facilitate easy debugging and system monitoring.
+      </p>
+      <image-component tag="image" source="assets\fc2\fig 13.png"
+          subtitle="Figure : Adjustable monitor and External connection ports"></image-component>
+      <p>
+        4.	Cooling System
+      </p>
+      <p>
+        Cooling fans were installed to improve airflow within the enclosure. One fan supplies air to the controller’s intake vent, while another expels hot air at the exhaust vent. The intake fan is positioned at the bottom and the exhaust fan at the top to utilise natural convection. 
+      </p>
+      <image-component tag="image" source="assets\fc2\fig 14.png"
+          subtitle="Figure : Intake and exhaust fans implemented for airflow in system"></image-component>
+      <p>
+        5.	Storage Unit
+      </p>
+      <p>
+        A compartment was allocated to be a storage unit for miscellaneous components such as tools and accessories, to make things more convenient for users. 
+      </p>
+      <image-component tag="image" source="assets\fc2\fig 15.png"
+          subtitle="Figure : Storage unit for miscellaneous parts"></image-component>
+      <p>
+        6.	External Covers
+      </p>
+      <p>
+        Protective external panels and 3D printed corner covers were fabricated from acrylic and PETG respectively, improving both safety and aesthetics. PETG was chosen over PLA for its superior impact resistance.
+      </p>
+      <image-component size="medium" tag="image" source="assets\fc2\fig 16.png"
+          subtitle="Figure : Acrylic panel covers and 3D printed corners"></image-component>
+      <p>
+        With the addition of new components to the robot, the total payload was reassessed to ensure that the payload of the AMR remained within the 100 kg capacity. The components were weighed, and the robot structure was found to have a total mass of 87.24 kg (Figure _). Accounting for a +5% tolerance to include screws and other miscellaneous items, the estimated total mass increases to 91.61 kg. This verification confirms that the final system remains within the allowable payload limits, ensuring safe operation.
+      </p>
+      <image-component size="medium" tag="image" source="assets\fc2\fig 17.png"
+          subtitle="Figure : Examples of components weighed"></image-component>
     </div>
 
     <div id="RS_22">
-      <h4>2.2 Electrical</h4>
+      <h3>2.2 Electrical</h3>
       <p>
         The electrical subsystem supports power delivery, system protection, onboard computation, and auxiliary
         electronics integration. Building on the baseline architecture established earlier, the final design refined
