@@ -661,26 +661,13 @@
     <div id="RS_221">
       <h4>2.2.1 Final Circuit Design</h4>
       <p>
-        The finalised circuit design of the robotic system retains the dual-power architecture established in the
-        interim phase. The AMR provides a maximum output of 48 V at 20 A, which is approximately 960 W. This is
-        insufficient to reliably support the robot arm and its controller, which require approximately 1 kVA during
-        continuous operation.
+        Figure _ shows the finalised circuit diagram of the robot structure. As outlined in the interim report, the AMR provides a maximum output of 48 V at 20 A (~960 W), which is insufficient to reliably support the robot arm and its controller, specified at approximately 1 kVA (on continuous operation). To address this, a dual-power architecture was adopted - the robot arm is powered by a dedicated 72 V, 1152 Wh battery pack via an inverter, while auxiliary components such as the onboard computer and networking devices are powered directly from the AMR. This architecture ensures reliable operation and sufficient power availability.
       </p>
       <p>
-        To address this, the robot arm is powered by a dedicated 72 V, 16 Ah battery pack through a 2200 W inverter,
-        while auxiliary components such as the onboard computer and networking devices are powered directly from the AMR.
-        This architecture was retained in the final system to ensure reliable operation and sufficient power availability.
+       Building on this baseline architecture, the electrical subsystem was further refined through the integration of additional components required for full system functionality. Key additions include the robot-side and tool-side changer boards, which enable electrical interfacing for the tool changer mechanism, as well as the tool changer electromagnet for end-effector operation (section 3.3). In addition, two DC fans were introduced to provide active cooling for improved thermal management of the enclosed electronics, and a mini monitor was integrated to facilitate system debugging.
       </p>
-      <p>
-        Building on this baseline architecture, the electrical subsystem was further refined through the integration of
-        additional components required for full system functionality. These include the robot-side and tool-side changer
-        boards, which enable electrical interfacing for the tool changer mechanism, as well as the tool changer
-        electromagnet for end-effector operation.
-      </p>
-      <p>
-        A mini PC was also incorporated to support onboard computation, while DC fans were introduced to provide active
-        cooling for improved thermal management of the enclosed electronics.
-      </p>
+      <image-component  tag="image" source="assets\fc2\eefig1.png"
+          subtitle="Figure : Final circuit diagram of robot structure"></image-component>
     </div>
 
     <div id="RS_222">
@@ -694,6 +681,8 @@
         of the robot, and the other positioned at the front for easy access. This configuration improves accessibility and
         ensures that the robot can be stopped quickly from multiple operating positions.
       </p>
+      <image-component  tag="image" source="assets\fc2\eefig2.png"
+          subtitle="Figure : Centralised E-stop system implemented via power relay"></image-component>
       <p>
         A video showing the E-stop testing is referenced in Section 6.1 on edge case testing and safety considerations.
       </p>
