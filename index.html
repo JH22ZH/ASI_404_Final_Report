@@ -296,28 +296,28 @@
         </sl-tree-item>
 
         <sl-tree-item>
-          <a href="#Appendix_A: Cobot system specifications">Appendix A </a>
+          <a href="#Appendix_A">Appendix A: Cobot system specifications </a>
         </sl-tree-item>
         <sl-tree-item>
-          <a href="#Appendix_B: AMR system specifications">Appendix B</a>
+          <a href="#Appendix_B">Appendix B: AMR system specifications</a>
         </sl-tree-item>
         <sl-tree-item>
-          <a href="#Appendix_C: Additional data collection">Appendix C</a>
+          <a href="#Appendix_C">Appendix C: Additional data collection</a>
         </sl-tree-item>
         <sl-tree-item>
-          <a href="#Appendix_D: Frame mechanical subsystem">Appendix D</a>
+          <a href="#Appendix_D">Appendix D: Frame Subsystem</a>
         </sl-tree-item>
         <sl-tree-item>
-          <a href="#Appendix_E: End effector and Toolchanger mechanical">Appendix E</a>
+          <a href="#Appendix_E">Appendix E: End effector and Toolchanger mechanical</a>
         </sl-tree-item>
         <sl-tree-item>
-          <a href="#Appendix_F: End effector and toolchanger electrical">Appendix F</a>
+          <a href="#Appendix_F">Appendix F: End effector and toolchanger electrical</a>
         </sl-tree-item>
         <sl-tree-item>
-          <a href="#Appendix_G: Electrical integration between AMR and Cobot">Appendix G</a>
+          <a href="#Appendix_G">Appendix G: Software integration</a>
         </sl-tree-item>
         <sl-tree-item>
-          <a href="#Appendix_H: Software integration">Appendix H</a>
+          <a href="#Appendix_H">Appendix H: Computer vision</a>
         </sl-tree-item>
       </sl-tree>
     </div>
@@ -367,24 +367,24 @@
       <div id="Intro_12">
         <h3>1.2 Location and stakeholders</h3>
         <p>
-          The Hub was chosen as a location of interest as it is one of the largest workspaces within NUS with high student traffic from various disciplines to use the facilities to do discussions, fabrication or tinker.
+          The Hub was chosen as a location of interest as it is one of the largest workspaces within NUS with high student traffic from various disciplines to use the facilities to do discussions, fabrication or tinker. The floor plan of the space is shown in Figure 2.
         </p>
         <p>
-          The project involves the Hub Technical Staff seen in Figure 6, How Yee Teng (primary) and Patrick Tan Shoong Chin (secondary), as well as the Hub Technical Assistants. To gather insights, data collection through surveys and observations helped the team to understand their roles and contributions as well as understanding what problems the staff faced on the ground.
+          The project involves the Hub Technical Staff seen in Figure 3, How Yee Teng (primary) and Patrick Tan Shoong Chin (secondary), as well as the Hub Technical Assistants. To gather insights, data collection through surveys and observations helped the team to understand their roles and contributions as well as understanding what problems the staff faced on the ground.
         </p>
         <image-component tag="image" source="assets\hub\FloorPlan.png"
           subtitle="Fig 2: Floor Plan of the Hub"></image-component>
         <image-component size="large" tag="image" source="assets\Value proposition\stafix.png"
-          subtitle="Fig 2: Floor Plan of the Hub"></image-component>
+          subtitle="Fig 3: Key stakeholders"></image-component>
       </div>
 
       <div id="Intro_13">
         <h3>1.3 Problem Analysis and Problem Statement</h3>
         <p>
-          To ascertain the problems further, we drafted up a problem identification table utilising the 5W1H template in Figure 10.
+          To ascertain the problems further, we drafted up a problem identification table utilising the 5W1H template in Figure 4.
         </p>
         <image-component size="large" tag="image" source="assets\Value proposition\5W1h.png"
-          subtitle="Fig 1: A collage of articles showing an increasing interest in Warehouse Automation"></image-component>
+          subtitle="Fig 4: Problem Identification using 5W1H"></image-component>
         <p>
           From our previous presentation, the problem statement defined by the team was stated that several redundant tasks are slowing down the work of the Hub staff and reducing efficiency in the Hub during the school semester. There is a need to streamline or automate the tasks. 
         </p>
@@ -399,10 +399,10 @@
       <div id="Intro_14">
         <h3>1.4 Value Proposition</h3>
         <p>
-          To assist in handling tasks that cannot be handled by software changes due to the physical nature of interaction, a physical solution can be created that will be able to aid the staff in handling work as proposed in the Value Proposition Canvas in Figure 11.
+          To assist in handling tasks that cannot be handled by software changes due to the physical nature of interaction, a physical solution can be created that will be able to aid the staff in handling work as proposed in the Value Proposition Canvas in Figure 5.
         </p>
         <image-component tag="image" source="assets\Value proposition\vpc.png"
-          subtitle="Fig 1: A collage of articles showing an increasing interest in Warehouse Automation"></image-component>
+          subtitle="Fig 5: Value Proposition Canvas"></image-component>
         <p>
           The team will develop an autonomous mobile manipulator that combines navigation and manipulation: it can move through the Hub, pick and handle objects, and deliver them to staff—without requiring constant monitoring or extra devices.
         </p>
@@ -418,29 +418,27 @@
         <p>
           Based on the derived problem statements and key problems identified by the staff, the design specifications were prepared. Given our limited manpower, budget of $1600 SGD and time for development of less than a year, we decided to scope down to 2 distinct tasks that the system must achieve that assists with the staff.
         </p>
-        <image-component tag="image" source="assets/Sandbox.png"
-          subtitle="PLACEHOLDER"></image-component>
         <p>
-          For task 1, the robot is to grab tools from the pegboard shown in Figure 13, put it into an onboard basket and deliver it to a table. End-effector system with tool changer capabilities enables picking tools of different geometries.
+          For task 1, the robot is to grab tools from the pegboard shown in Figure 6, put it into an onboard basket and deliver it to a table. End-effector system with tool changer capabilities enables picking tools of different geometries.
         </p>
-        <image-component tag="image" source="assets/Sandbox.png"
-          subtitle="PLACEHOLDER"></image-component>
+        <image-component tag="image" source="assets\hub\ploc.png"
+          subtitle="Figure 6: Location of Pegboard in the Hub"></image-component>
         <p>
-          For task 2, for the staff to control and monitor signs onboard for the system to function, a user interface is to create that can link commands from the user to the relevant commands for the hardware to perform the task. A sequence diagram for the user interface is shown in Figure 15.
+          For task 2, for the staff to control and monitor signs onboard for the system to function, a user interface is to create that can link commands from the user to the relevant commands for the hardware to perform the task. A sequence diagram for the user interface is shown in Figure 7.
         </p>
-        <image-component tag="image" source="assets/Sandbox.png"
-          subtitle="PLACEHOLDER"></image-component>
+        <image-component tag="image" source="assets\software\task3.png"
+          subtitle="Figure 7: User sequence diagram of GUI"></image-component>
       </div>
 
       <div id="Intro_152">
         <h3>1.5.2 Subsystem Identification</h3>
         <p>
-          Based on the taskings that the robot must accomplish, we have identified the key subsystems that need to be developed to bring the system to a minimum viable product, shown in Figures n and X.
+          Based on the taskings that the robot must accomplish, we have identified the key subsystems that need to be developed to bring the system to a minimum viable product, shown in figures 8 and 9.
         </p>
         <image-component size = "medium" tag="image" source="assets\Value proposition\Hardwaresubsystem.png"
-          subtitle="Figure n: Updated Hardware Subsystem diagram"></image-component>
+          subtitle="Figure 8: Updated Hardware Subsystem diagram"></image-component>
         <image-component tag="image" source="assets\Value proposition\Softwaresubsystem.png"
-          subtitle="Figure x: Updated Software Subsystem diagram"></image-component>
+          subtitle="Figure 9: Updated Software Subsystem diagram"></image-component>
       </div>
 
       <div id="Intro_16">
@@ -459,7 +457,7 @@
       <div id="Intro_17">
         <h3>1.7 Work Allocation</h3>
         <p>
-          The updated work allocation amongst the team members is shown in Figure 
+          The updated work allocation amongst the team members is shown in the table below.
         </p>
         <table class="team-table">
           <tr>
@@ -932,6 +930,7 @@
         <image-component tag="image" source="assets\For grippers\Gripper pictures.png"
           subtitle="Figure n: Gripper designs for screwdriver and mallet"></image-component>
         
+        <h4>3D Model of the Gripper</h4>
         <model-viewer
           src="assets\3dmodels\rack_and_pinion_manipulator_assembly.glb"
           alt="3D model of the ASI-404 mobile manipulator"
@@ -982,12 +981,13 @@
       <div id="EE-331">
         <h3>3.3.1 Electrical Development</h3>
         <p>
-            
-          Evaluation of the available computing hardware, specifically the UNO-238 V2 Industrial Mini PC, showed that the system only provided 3.3 V GPIO logic and CAN Bus 2.0B as accessible hardware interfaces. In this context, CAN Bus was considered more suitable than conventional serial communication due to its robustness in electrically noisy environments. Unlike standard serial communication, which is more susceptible to noise-induced corruption, CAN Bus uses differential signalling, making it significantly more resistant to electromagnetic interference. This was especially important because signal transmission needed to be routed through the robot arm structure, where the cobot’s AC servo drive systems could generate electromagnetic interference capable of disrupting less robust communication methods.
-    
+          As the electrical subsystem of the tool changer imposed several constraints on the overall mechanical implementation, it is addressed first in this section. 
         </p>
         <p>
-          As the electrical subsystem of the tool changer imposed several constraints on the overall mechanical implementation, it is addressed first in this section. Based on the available system peripherals, the power requirements of the end effector prototype, and the results obtained from preliminary testing of the 24 V electromagnet, a set of design deliverables was established for the control board.
+          Evaluation of the available computing hardware, particularly the UNO-238 V2 Industrial Mini PC, showed that the accessible interfaces were limited to 3.3 V GPIO logic and CAN Bus 2.0B. CAN Bus was selected over conventional serial communication because its differential signalling offers greater robustness against electromagnetic interference. This was especially important as communication lines had to pass through the robot arm structure, where the cobot’s AC servo drives could introduce electrical noise.
+        </p>
+        <p>
+          Based on the available system peripherals, the power requirements of the end effector prototype, and the results obtained from preliminary testing of the 24 V electromagnet, a set of design deliverables was established for the control board.
         </p>
         <table class="requirements-table">
           <tr>
@@ -1004,7 +1004,7 @@
           </tr>
         </table>
         <p>
-          To further reduce the bill of materials cost, an additional requirement was introduced whereby the same board design could be configured as either the master board or the slave board. In the master configuration, the board is mounted on the cobot side and is responsible for power delivery and control of the tool changer release mechanism. In the slave configuration, the board is mounted on the end effector side and is responsible for receiving commands from the system to control the actuators and sensor peripherals associated with the attached tool. This approach reduced the need for multiple unique board designs and simplified manufacturing and integration.
+          To further reduce bill-of-materials cost, the board was designed to operate as either a master or slave through configuration. In the master role, it is mounted on the cobot side to handle power delivery and control the tool changer release mechanism. In the slave role, it is mounted on the end effector side to receive system commands and control the actuators and sensors of the attached tool. This reduced the number of unique board designs required and simplified manufacturing and integration.
         </p>
         <p>
           After evaluating the range of microcontrollers available on the market, the STM32F103 was selected because it satisfied the functional requirements of the system while maintaining relatively low cost and manageable design complexity. The device provides sufficient digital I/O and integrated peripherals for the intended application, including CAN communication, UART communication, timer functions, and general-purpose control signals.
@@ -1036,7 +1036,7 @@
           For switching the 12 V supply to the end effector, a high-side switching circuit based on a P-channel MOSFET was used. In this case, the MOSFET is placed on the positive supply rail, allowing the load to be disconnected from the 12 V source when required. Because the source terminal of the P-channel MOSFET sits near 12 V during operation, the microcontroller’s 3.3 V logic output alone is insufficient to directly pull the gate to the required level for effective switching. To address this, an NPN transistor was introduced to pull the MOSFET gate toward ground when commanded, producing a sufficiently negative V_GSto turn the P-channel MOSFET on. When the transistor is turned off, the gate is pulled back toward the source potential, turning the MOSFET off. This arrangement allowed the microcontroller to control the 12 V output rail safely using its 3.3 V logic levels.
         </p>
         <p>
-          To support repeated mechanical coupling and decoupling between the robot side and tool side control boards, a pogo-pin contact interface was adopted. Spring-loaded pogo pins were assigned to the tool side, while corresponding pogo pads were placed on the robot side. This allowed electrical connection to be established automatically during tool docking without requiring manual cable connection, while also improving serviceability and modularity of the overall tool changing system.
+          To enable repeated coupling and decoupling between the robot-side and tool-side control boards, a pogo-pin contact interface was adopted. Spring-loaded pogo pins were placed on the tool side, with matching pogo pads on the robot side. This allowed electrical connection to be made automatically during tool docking without manual cable connection, while improving the serviceability and modularity of the tool changing system.
         </p>
         <image-component size ="small" tag="image" source="assets/For toolchanger PCB/Pogo Pin DIP.jpg"
           subtitle="Figure x: Pogo Pins"></image-component>
@@ -1054,8 +1054,9 @@
          <image-component tag="image" source="assets\For toolchanger PCB\Prototype Boards.png"
           subtitle="Figure x: Iterative Prototypes for Tool Changer Control Board"></image-component>
         <p>
-          The final control board integrates the STM32F103C8T6 microcontroller, the low-side and high-side switching circuits, and an onboard CAN Bus 2.0B transceiver into a single compact design. In the tool-side configuration, the board additionally supports up to six timer-based input/output channels, allowing it to control end effectors with as many as six servos.
+          The final control board integrates the STM32F103C8T6 microcontroller, the low-side and high-side switching circuits, and an onboard CAN Bus 2.0B transceiver into a single compact design. In the tool-side configuration, the board additionally supports up to six timer-based input/output channels, allowing it to control end effectors with as many as six servos. The figures below showcase the key components on the board.
         </p>
+        <h4>3D Model of the Tool Changer PCB</h4>
          <model-viewer
           src="assets\3dmodels\toolchanger_end_effector_side_of_pcb.glb"
           alt="3D model of the ASI-404 mobile manipulator"
@@ -1073,7 +1074,7 @@
           subtitle="Figure x: Back View of the Tool Changer Control Board"></image-component>
 
         <p>
-          To validate the functionality of the fabricated control boards, firmware was first successfully uploaded through the onboard debugger interface, after which the LED peripherals were tested to confirm basic microcontroller operation. Following this, communication tests were conducted to verify the functionality of the CAN circuitry by transmitting signals from the Robot-side board to the Tool-side board, with the onboard debugging LEDs serving as visual indicators of successful data exchange. Finally, the MOSFET and transistor switching circuits were tested to confirm correct switching of the 12 V supply and the electromagnet, both of which were validated successfully. 
+          To validate the fabricated control boards, firmware was first uploaded through the onboard debugger interface, followed by LED tests to confirm basic microcontroller operation. Communication tests were then carried out to verify the CAN circuitry by transmitting signals from the robot-side board to the tool-side board, with onboard debugging LEDs used as visual indicators of successful data exchange. Finally, the MOSFET and transistor switching circuits were tested to confirm correct control of the 12 V supply and the electromagnet, both of which were successfully validated.
         </p>
         <image-component tag="image" source="assets\For toolchanger PCB\testingboards.jpg"
           subtitle="Figure x: Testing the Control Boards"></image-component>
@@ -1144,7 +1145,7 @@
         </p>
         <image-component size="medium" tag="image" source="assets\For grippers\High flexibility in the mounting.png"
           subtitle="Figure n: High Flexibility in Mounting"></image-component>
-
+        <h4>3D Model of the Tool Changer Unit</h4>
           <model-viewer
           src="assets\3dmodels\toolchanger_master_assembly.glb"
           alt="3D model of the ASI-404 mobile manipulator"
@@ -1154,7 +1155,7 @@
           exposure="0.5"
           style="width: 100%; height: 600px; background-color: #f5f5f5; border-radius: 12px;">
         </model-viewer>
-
+        <h4>3D Model of the Tool Changer Unit with end effector attached</h4>
         <model-viewer
           src="assets\3dmodels\full_assembly_with_gripper_and_toolchanger.glb"
           alt="3D model of the ASI-404 mobile manipulator"
@@ -1190,7 +1191,7 @@
         </p>
         <image-component tag="image" source="assets\For grippers\Holder constrains in X and Y.png"
           subtitle="Figure n: Holder Constraints in X and Ys"></image-component>
-        
+        <h4>3D Model of the full Tool Changer Assembly</h4>
         <model-viewer
           src="assets\3dmodels\v2_overall_toolchanger_mount_assembly_for_export.glb"
           alt="3D model of the ASI-404 mobile manipulator"
