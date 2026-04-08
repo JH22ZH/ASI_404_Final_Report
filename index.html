@@ -1171,13 +1171,13 @@
       <div id="EE-334">
         <h3>3.3.4 The End Effector Side Unit</h3>
         <p>
-          For the tool side unit, the primary design considerations involve the mounting of the corresponding steel plate, of which the validation was done from the interim presentation period, with the calculations seen in appendix E alongside the placement of the dowel pins. The corresponding tool changer circuit system is mounted here as well. 
+          For the tool side unit shown in figure 56, the primary design considerations involve the mounting of the corresponding steel plate, of which the validation was done from the interim presentation period, with the calculations seen in appendix E alongside the placement of the dowel pins. The corresponding tool changer circuit system is mounted here as well. 
         </p>
         
         <image-component tag="image" source="assets\For grippers\Tool Side of Toolchanger.png"
           subtitle="Figure 56: Tool Side of Tool Changer"></image-component>
         <p>
-          Mounting holes are placed at the underside of the holder for customisability in gripper placements and options. Additionally, the edges of the holder are designed to double function as the supports on the tool holder.
+          Figure 57 shows the mounting holes that are placed at the underside of the holder for customisability in gripper placements and options. Additionally, the edges of the holder are designed to double function as the supports on the tool holder.
         </p>
         <image-component size="medium" tag="image" source="assets\For grippers\High flexibility in the mounting.png"
           subtitle="Figure 57: High Flexibility in Mounting"></image-component>
@@ -1210,25 +1210,25 @@
         <image-component tag="image" source="assets\For grippers\Tool changer holder.png"
           subtitle="Figure 58: Tool Holder"></image-component>
         <p>
-          The tool changer holder was created with the following considerations on the robot's physical approach for docking and undocking alongside the part complexity. 
+          The tool changer holder shown in figure 58 was created with the following considerations on the robot's physical approach for docking and undocking alongside the part complexity. 
         </p>
         <p>
           The tool pickup strategy was intentionally designed as a vertical lift followed by linear forward clearance, rather than using an angled holder. This approach decouples load transfer from disengagement, resulting in more predictable tool extraction, reduced sideloading, improved repeatability, and simpler tolerance management. While an angled holder may appear to assist release geometrically, it would also introduce greater dependence on precise alignment and could increase the risk of rubbing, wedging, and inconsistent extraction. The selected method therefore offered a more robust and controllable solution for reliable autonomous tool exchange.
         </p>
         <p>
-          In this application, robustness and repeatability were prioritized over passive geometric assistance. The chosen holder geometry ensures the robot executes a deterministic extraction sequence that is easier to validate and better suited to autonomous operation.
+          In this application, robustness and repeatability were prioritized over passive geometric assistance. The chosen holder geometry ensures the robot executes a deterministic extraction sequence that is easier to validate and better suited to autonomous operation. The docking and undocking sequence is shown in more detail in the figures 59 and 60 below, where the vertical lift and forward clearance can be observed.
         </p>
         <image-component tag="image" source="assets\For grippers\Docking sequence for tool attachment.png"
           subtitle="Figure 59: Docking Sequence for Tool Attachment"></image-component>
         <image-component tag="image" source="assets\For grippers\Docking sequence for tool return.png"
           subtitle="Figure 60: Docking Sequence for Tool Return"></image-component>
         <p>
-         The retaining “fingers” of the tool holder were intentionally designed to constrain the tool in the X and Y directions. This was necessary because the end effector behaves as a separate rigid body with respect to the main robotic platform. During AMR motion, especially under sharp angular turning, inertial loading acting on the gripper can generate lateral displacement relative to the holder. Without sufficient constraint, this could result in unintended disengagement of the tool from its storage interface. The addition of X- and Y-axis constraint therefore improves retention security during dynamic operation.  
+         The retaining “fingers” of the tool holder were intentionally designed to constrain the tool in the X and Y directions. This was necessary because the end effector behaves as a separate rigid body with respect to the main robotic platform. During AMR motion, especially under sharp angular turning, inertial loading acting on the gripper can generate lateral displacement relative to the holder. Without sufficient constraint, this could result in unintended disengagement of the tool from its storage interface. The addition of X- and Y-axis constraint therefore improves retention security during dynamic operation as shown in figure 61.  
         </p>
         <image-component tag="image" source="assets\For grippers\Holder constrains in X and Y.png"
           subtitle="Figure 61: Holder Constraints in X and Ys"></image-component>
           <p>
-            The basket unit as seen in the figure below was designed to be mounted to the tool holder body, to allow for modularity should the basket be damaged or require replacement. The basket was designed to be large enough to accommodate the tools while also being compact to minimise the overall footprint of the storage system. 
+            The basket unit as seen in figure 62 was designed to be mounted to the tool holder body, to allow for modularity should the basket be damaged or require replacement. The basket was designed to be large enough to accommodate the tools while also being compact to minimise the overall footprint of the storage system. 
           </p>
           <image-component size = "medium" tag="image" source="assets\For grippers\Basket .png"
           subtitle="Figure 62: Basket Unit for Tool Storage"></image-component>
@@ -1250,10 +1250,10 @@
         <image-component tag="image" source="assets\For grippers\Toolchanger system integrated.jpg"
           subtitle="Figure 63: Integrated Tool Changer System mounted on the robot"></image-component>
         <p>
-          After the individual development of the end effector and tool changer subsystems, the final phase of this section involved the integration of all components into a cohesive system as shown in the figure above, followed by comprehensive testing to validate functionality and performance. This process included mechanical assembly, electrical wiring, firmware deployment, and system-level validation through a series of test scenarios designed to evaluate the reliability and effectiveness of the tool changing mechanism under realistic operating conditions.
+          After the individual development of the end effector and tool changer subsystems, the final phase of this section involved the integration of all components into a cohesive system as shown in figure 63, followed by comprehensive testing to validate functionality and performance. This process included mechanical assembly, electrical wiring, firmware deployment, and system-level validation through a series of test scenarios designed to evaluate the reliability and effectiveness of the tool changing mechanism under realistic operating conditions.
         </p>
         <p>
-          The tool changing system was subjected to a range of tests, including repeated docking and undocking cycles to assess the durability and reliability of the mechanical interfaces, as well as functional tests to confirm the correct operation of the electrical control circuits and the successful actuation of the gripper mechanism as shown in the figure 64 below.
+          The tool changing system was subjected to a range of tests, including repeated docking and undocking cycles to assess the durability and reliability of the mechanical interfaces, as well as functional tests to confirm the correct operation of the electrical control circuits and the successful actuation of the gripper mechanism as shown in figure 64 below.
         </p>
 
         <image-component tag="image" source="assets\For grippers\Docking tests with pogo pin engagement.png"
@@ -1269,10 +1269,6 @@
         </p>
         <video-component tag="testing" source="https://www.youtube.com/embed/LISxjKM-Umo?si=gUK-EqzXExkjav08"
           subtitle="Video: Tool changer with pick and place testing"></video-component>
-
-        
-
-        
       </div>
       
     </div>
@@ -1288,17 +1284,17 @@
       <div id="CV-41">
         <h4>4.1 Overview</h4>
         <p>
-          Figure _ shows the pegboard setup, which is divided into three sections, location 1, 2, and 3. Each section is designated for a specific category of tools - location 1 stores Phillips screwdrivers, location 2 stores flathead screwdrivers, and location 3 stores a mallet
+          Figure 65 shows the pegboard setup, which is divided into three sections, location 1, 2, and 3. Each section is designated for a specific category of tools - location 1 stores Phillips screwdrivers, location 2 stores flathead screwdrivers, and location 3 stores a mallet
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 1.png"
           subtitle="Figure 65: Pegboard setup"></image-component>
         <p>
-          The corresponding tool classes are defined as follows:
+          The corresponding tool classes are defined as follows in figure 66:
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 2.png"
           subtitle="Figure 66: Classes used in the computer vision model"></image-component>
         <p>
-          The user will first input a tool name into the system. Based on the user’s selected tool type, the robot arm first moves to the designated location. The camera is then activated to capture an image of the scene. Object detection is performed using YOLOv11n, after which the 3D coordinates (XYZ) of the closest instance of the selected tool are computed relative to the camera frame. These coordinates are then transformed into the robot arm frame to guide the robot arm for grasping (frame transformation is covered in section 5.5). A visual illustration of this process is shown below.
+          The user will first input a tool name into the system. Based on the user’s selected tool type, the robot arm first moves to the designated location. The camera is then activated to capture an image of the scene. Object detection is performed using YOLOv11n, after which the 3D coordinates (XYZ) of the closest instance of the selected tool are computed relative to the camera frame. These coordinates are then transformed into the robot arm frame to guide the robot arm for grasping (frame transformation is covered in section 5.5). A visual illustration of this process is shown below in figure 67.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 3.png"
           subtitle="Figure 67: Example scenario of the workflow"></image-component>
@@ -1312,7 +1308,7 @@
           2.	The screwdrivers’ arrangements are always consistent. For example, large flatheads (PH–L) will always be placed at the 2 leftmost holders, medium flatheads (PH–M) will be placed at the middle 2 holders, small flatheads (PH-S) will be placed at the 2 rightmost holders (Figure 68).
         </p>
         <p>
-          Based on our observations and feedback from the Hub staff, these assumptions are reasonable as the tool holders are already sized according to fit specific screwdriver sizes. As a result, users tend to return tools to their designated positions, and in most cases place them upright, maintaining a consistent and structured layout.
+          Based on our observations and feedback from the Hub staff, these assumptions are reasonable as the tool holders are already sized according to fit specific screwdriver sizes. As a result, users tend to return tools to their designated positions, and in most cases place them upright, maintaining a consistent and structured layout as shown in figure 68.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 4.png"
           subtitle="Figure 68: Screwdrivers are consistently returned to their designated holders due to size-specific holder design"></image-component>
@@ -1321,7 +1317,7 @@
       <div id="CV-411">
         <h4>4.1.1 Modifications to System</h4>
         <p>
-          Figure_ shows the original sets of screwdrivers in the HUB. For each screwdriver head type (FH and PH), there are 3 sizes: S, M, and L. These sizes are visually identical in appearance but differ in scale. This poses a challenge for the model to differentiate between screwdriver sizes, as different camera distance and perspective may result in the same screwdriver appearing larger or smaller under different conditions, leading to ambiguity in size classification. This is particularly so in cases where there is only 1 class of screwdrivers in the scene as the model has no reference to differentiate between different sizes of screwdrivers, thereby leading to wrong predictions. 
+          Figure 69 shows the original sets of screwdrivers in the HUB. For each screwdriver head type (FH and PH), there are 3 sizes: S, M, and L. These sizes are visually identical in appearance but differ in scale. This poses a challenge for the model to differentiate between screwdriver sizes, as different camera distance and perspective may result in the same screwdriver appearing larger or smaller under different conditions, leading to ambiguity in size classification. This is particularly so in cases where there is only 1 class of screwdrivers in the scene as the model has no reference to differentiate between different sizes of screwdrivers, thereby leading to wrong predictions. 
         </p>
         <p>
           This issue is particularly significant when only one class of screwdriver is present in the scene, as the
@@ -1334,12 +1330,12 @@
         <image-component tag="image" source="assets\fc2\cv\fig 5.png"
           subtitle="Figure 69: Challenges faced with original screwdriver set"></image-component>
         <p>
-          To tackle these challenges, the screwdrivers were color coded with distinct colors to make class classification easier for the model.
+          To tackle these challenges, the screwdrivers were color coded with distinct colors to make class classification easier for the model as shown in figure 70.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 6.png"
           subtitle="Figure 70: Screwdrivers modified by colour coding"></image-component>
           <p>
-            Other solutions that did not involve color coding the screwdrivers were explored but were not selected after evaluating their trade-offs (see figure_). Ultimately, color coding was chosen as it is simple and provides the most reliable predictions.
+            Other solutions that did not involve color coding the screwdrivers were explored but were not selected after evaluating their trade-offs (see figure 71). Ultimately, color coding was chosen as it is simple and provides the most reliable predictions.
           </p>
         <image-component tag="image" source="assets\fc2\cv\fig 7.png"
           subtitle="Figure 71: Alternative methods considered to colour coding"></image-component>
@@ -1348,7 +1344,7 @@
       <div id="CV-412">
         <h4>4.1.2 Hardware Tools</h4>
         <p>
-          Two hardware components form the physical foundation of the system: the Intel RealSense D435if depth camera, which handles scene capture, and the Advantech UNO-238V, which serves as the onboard robot PC. Their specifications are shown in figure_
+          Two hardware components form the physical foundation of the system: the Intel RealSense D435if depth camera, which handles scene capture, and the Advantech UNO-238V, which serves as the onboard robot PC (Shown in figure 72). Their specifications are shown in figure 73.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 8.png"
           subtitle="Figure 72: Hardware tools usedR"></image-component>
@@ -1375,7 +1371,7 @@
           and 3D coordinate validation.
         </p>
         <p>
-          The model development phase focuses on training the object detection model using a custom dataset. The computer vision pipeline development phase involves integrating the trained model with depth processing to compute 3D coordinates of detected objects. Finally, the 3D coordinate validation phase evaluates the accuracy and stability of the computed coordinates.
+          The model development phase shown in figure 74 focuses on training the object detection model using a custom dataset. The computer vision pipeline development phase involves integrating the trained model with depth processing to compute 3D coordinates of detected objects. Finally, the 3D coordinate validation phase evaluates the accuracy and stability of the computed coordinates.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 10.png"
           subtitle="Figure 74: Project phases"></image-component>
@@ -1391,7 +1387,7 @@
           To ensure consistency between training and inference, the same camera (D435if) used for inference was also used to capture the training images. The dataset consists of a total of 410 images, with 344 of them belonging to the screwdrivers and 66 belonging to the mallet.
         </p>
         <p>
-          As shown in figure_, the screwdriver dataset was grouped into different variation categories to represent real-world conditions such as changes in distance, lighting, screwdriver arrangements, and robot position. For each variation group, images were captured at two locations (Loc 1 and Loc 2), corresponding to the robot arm’s operating positions during inference. The number of images per group were decided based on how frequent each scenario is expected, ensuring the model is better trained on common conditions while still exposed to less frequent cases for robustness.
+          As shown in figure 75, the screwdriver dataset was grouped into different variation categories to represent real-world conditions such as changes in distance, lighting, screwdriver arrangements, and robot position. For each variation group, images were captured at two locations (Loc 1 and Loc 2), corresponding to the robot arm’s operating positions during inference. The number of images per group were decided based on how frequent each scenario is expected, ensuring the model is better trained on common conditions while still exposed to less frequent cases for robustness.
         </p>
         <p>
           As the exact robot position was not defined initially, images from group A-C were captured using a stand approximating the expected position. Once the robot's position was finalized, subsequent images (Group D – I) were captured at the actual position under varied real-world conditions (see appendix H1).
@@ -1399,14 +1395,14 @@
         <image-component tag="image" source="assets\fc2\cv\fig 11.png"
           subtitle="Figure 75: Variation groups of dataset images"></image-component>
         <p>
-          Below are some examples of images from the dataset for each variation group:
+          The figures below show some examples of images from the dataset for each variation group:
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 12.png"
           subtitle="Figure 76: Screwdriver dataset. (Variation groups A-C)"></image-component>
           <image-component tag="image" source="assets\fc2\cv\fig 13.png"
           subtitle="Figure 77: Screwdriver dataset (Variation groups D – I)"></image-component>
           <p>
-            As for the mallet dataset, as it is only a single tool class with no size variants, only 66 images were collected at location 3 across varied positions and lighting conditions.
+            As for the mallet dataset (Shown in figure 78), as it is only a single tool class with no size variants, only 66 images were collected at location 3 across varied positions and lighting conditions.
           </p>
         <image-component tag="image" source="assets\fc2\cv\fig 14.png"
           subtitle="Figure 78: Mallet dataset"></image-component>
@@ -1415,7 +1411,7 @@
       <div id="CV-422">
         <h4>4.2.2 Data Annotation</h4>
         <p>
-          After data collection, all images were annotated to serve as ground truth for model training using Roboflow. Bounding boxes were drawn as tightly as possible around each object. For occluded objects, annotations were only made when the class could be confidently identified from visible features, to avoid introducing ambiguous training signals (see Figure _).
+          After data collection, all images were annotated to serve as ground truth for model training using Roboflow. Bounding boxes were drawn as tightly as possible around each object. For occluded objects, annotations were only made when the class could be confidently identified from visible features, to avoid introducing ambiguous training signals (see Figure 79).
         </p>
        <image-component tag="image" source="assets\fc2\cv\fig 15.png"
           subtitle="Figure 79: Annotation convention used when labelling dataset"></image-component>
@@ -1424,7 +1420,7 @@
       <div id="CV-423">
         <h4>4.2.3 Model Training and Performance Evaluation</h4>
         <p>
-          The dataset was split into 3 sets as shown below.
+          The dataset was split into 3 sets as shown below in figure 80.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 16.png"
           subtitle="Figure 80: Dataset split"></image-component>
@@ -1432,12 +1428,12 @@
           Model training and performance evaluation were done on 2 types of YOLO models, namely the YOLOv11n and YOLOv26n. Ultimately, YOLOv11n was the chosen one due to its better performance. 
         </p>
         <p>
-          The training configurations for both models are as follows (figure_) 
+          The training configurations for both models are as follows (figure 81): 
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 17.png"
           subtitle="Figure 81: Training configurations"></image-component>
         <p>
-          The test set was used for performance evaluation. The performance comparisons between models are shown in the figures below. See appendix H2 for definitions of key metrics, and appendix H3 for additional training results.
+          The test set was used for performance evaluation. The performance comparisons between models are shown in the figure 82 and 83 below. See appendix H2 for definitions of key metrics, and appendix H3 for additional training results.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 18.png"
           subtitle="Figure 82: Performance results"></image-component>
@@ -1454,7 +1450,7 @@
       <div id="CV-43">
         <h4>4.3 Computer Vision Pipeline</h4>
         <p>
-          The computer vision pipeline is deployed as a ROS2 service node. When the software control stack (section 5.4) issues a request specifying a target tool class, the client node activates the RealSense camera, runs the computer vision pipeline described in this section, and returns the estimated XYZ coordinates of the nearest matching target tool back to the client. The camera is then deactivated after each service call. The following subsection details each stage of this pipeline.
+          The computer vision pipeline is deployed as a ROS2 service node (Figure 84). When the software control stack (section 5.4) issues a request specifying a target tool class, the client node activates the RealSense camera, runs the computer vision pipeline described in this section, and returns the estimated XYZ coordinates of the nearest matching target tool back to the client. The camera is then deactivated after each service call. The following subsection details each stage of this pipeline.
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 20.png"
           subtitle="Figure 84: Computer vision pipeline integrated with ROS"></image-component>
@@ -1467,7 +1463,7 @@
           Two image streams are required: the RGB frame, which is used for object detection using YOLO, and the depth frame, which provides distance information for computing the 3D coordinates of detected objects.
         </p>
         <p>
-          Due to the physical offset between the colour and depth sensors on the D435if, a pixel (cx, cy) in the RGB image does not inherently correspond to the same point in the depth image. Since YOLO operates on the RGB frame and outputs pixel coordinates in the RGB coordinate space, the depth frame is aligned to the RGB frame. This ensures that depth values can be directly looked up at the same pixel coordinates that YOLO produces. In other words, this alignment warps the depth image into the colour camera's perspective, ensuring pixel correspondence between the two streams. (Figure _)
+          Due to the physical offset between the colour and depth sensors on the D435if, a pixel (cx, cy) in the RGB image does not inherently correspond to the same point in the depth image. Since YOLO operates on the RGB frame and outputs pixel coordinates in the RGB coordinate space, the depth frame is aligned to the RGB frame. This ensures that depth values can be directly looked up at the same pixel coordinates that YOLO produces. In other words, this alignment warps the depth image into the colour camera's perspective, ensuring pixel correspondence between the two streams. (Figure 85)
         </p>
         <p>
           This stream alignment step is necessary for the deprojection function in Section 4.3.4, which requires each pixel's 2D coordinate and depth value to refer to the same point in space.
@@ -1482,7 +1478,7 @@
           For each detected object, the model predicts a bounding box. A grasp point (cx ,cy ) is then defined within this bounding box to facilitate robot grasping. This point represents a pixel location in the 2D RGB image.
         </p>
         <p>
-          For screwdrivers, the grasp point is set at 15% of the bounding box height from the top, targeting the handle end. For the mallet, it is set at 40% from the top, targeting the shaft. This ensures that the computed 3D coordinate corresponds to a physically meaningful grasp location.
+          For screwdrivers, the grasp point is set at 15% of the bounding box height from the top, targeting the handle end. For the mallet, it is set at 40% from the top, targeting the shaft. This ensures that the computed 3D coordinate corresponds to a physically meaningful grasp location as shown in figure 86.
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 22.png"
           subtitle="Figure 86: Grasp point computation"></image-component>
@@ -1500,7 +1496,7 @@
           However, raw depth data may contain noise or invalid measurements (e.g., zero-depth pixels). Therefore, two stages of filtering to the depth data are applied to improve robustness.
         </p>
         <p>
-          1. SDK Filtering:
+          1. SDK Filtering (Figure 87):
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 23.png"
           subtitle="Figure 87: SDK filter"></image-component>
@@ -1508,12 +1504,12 @@
            2.	Patch-based depth sampling 
           </p>
           <p>
-            From the depth map (figure_), we can see that certain regions on the screwdriver handle could still contain zero depth values (black pixels). If only a single depth value at (cx,cy) is used, it may coincide with these invalid pixels, resulting in incorrect 3D coordinates.
+            From the depth map (figure 88), we can see that certain regions on the screwdriver handle could still contain zero depth values (black pixels). If only a single depth value at (cx,cy) is used, it may coincide with these invalid pixels, resulting in incorrect 3D coordinates.
           </p>
            <image-component tag="image" source="assets\fc2\cv\fig 24.png"
           subtitle="Figure 88: Depth map"></image-component>
           <p>
-            To solve this, a 9 × 17 pixel sample patch centered around the grasp point is sampled, as shown in figure_. Within the patch, pixels with zero depth values are first discarded. Among the remaining pixels, those whose depth values falling within a set tolerance of the patch median are retained (the green pixels). Doing so helps eliminate potential inconsistent or unwanted depth data within the patch. These remaining valid pixels are then passed to the 3D coordinate computation stage described in the next section.
+            To solve this, a 9 × 17 pixel sample patch centered around the grasp point is sampled, as shown in figure 89. Within the patch, pixels with zero depth values are first discarded. Among the remaining pixels, those whose depth values falling within a set tolerance of the patch median are retained (the green pixels). Doing so helps eliminate potential inconsistent or unwanted depth data within the patch. These remaining valid pixels are then passed to the 3D coordinate computation stage described in the next section.
           </p>
            <image-component tag="image" source="assets\fc2\cv\fig 25.png"
           subtitle="Figure 89: Depth filtering (accepting green pixels only)"></image-component>
@@ -1525,7 +1521,7 @@
           Deprojection refers to the process of converting a 2D pixel coordinate into a 3D point in real-world space.
         </p>
         <p>
-          In this pipeline, the RealSense SDK function rs.rs2_deproject_pixel_to_point() is used to perform this conversion. This function takes in the pixel coordinate (px,py), the corresponding depth value Z and the camera intrinsic parameters, to return the 3D coordinates (see figure_)
+          In this pipeline, the RealSense SDK function rs.rs2_deproject_pixel_to_point() is used to perform this conversion. This function takes in the pixel coordinate (px,py), the corresponding depth value Z and the camera intrinsic parameters, to return the 3D coordinates (see figure 90).
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 26.png"
           subtitle="Figure 90: Deprojection function"></image-component>
@@ -1533,7 +1529,7 @@
           To improve robustness, deprojection is not performed on a single pixel. Instead, all valid pixels within the sampled patch from section 4.3.3, are individually deprojected, and the final XYZ is computed as the median of these points. This reduces the effect of depth noise and ensures a more stable estimate of the object position.
         </p>
         <p>
-          As the depth frame is aligned to the RGB frame (Section 4.3.1), and the RGB camera intrinsics are used in the deprojection function, the resulting coordinates are expressed relative to the RGB camera optical frame (see figure_).
+          As the depth frame is aligned to the RGB frame (Section 4.3.1), and the RGB camera intrinsics are used in the deprojection function, the resulting coordinates are expressed relative to the RGB camera optical frame (see figure 91).
         </p>
         <p>
           Further details on the underlying projection and deprojection model are provided in Appendix H4.
@@ -1545,7 +1541,7 @@
       <div id="CV-435">
         <h4>4.3.5 Target Selection</h4>
         <p>
-          Once all detections in the scene have been processed and assigned 3D coordinates, the pipeline filters only those matching the requested tool class. Among the remaining detections, the system returns the coordinate value of the target class that is closest to the camera's optical axis. Closest proximity is computed as the Euclidean distance in the XY plane from the camera origin (0, 0) to the grasp point of each detection, as illustrated in Figure _.
+          Once all detections in the scene have been processed and assigned 3D coordinates, the pipeline filters only those matching the requested tool class. Among the remaining detections, the system returns the coordinate value of the target class that is closest to the camera's optical axis. Closest proximity is computed as the Euclidean distance in the XY plane from the camera origin (0, 0) to the grasp point of each detection, as illustrated in Figure 92.
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 28.png"
           subtitle="Figure 92: Nearest target tool selection based on euclidean of XY"></image-component>
@@ -1553,7 +1549,7 @@
           This approach is used instead of full 3D Euclidean distance as the camera surface may not always be perfectly parallel to the pegboard due to robot misalignment, causing Z values to vary across the scene even when all tools lie on the same physical plane. Including Z would therefore introduce unintended bias into the selection. Thus, restricting the calculation to the XY plane ensures that tool selection remains consistent and predictable with respect to the actual tool position.
         </p>
         <p>
-          The result of the target selection is returned to the client via a service response. In the successful case, the response contains the 3D coordinates (X, Y, Z) of the selected target for downstream motion execution. If no matching object is detected, a failure response is returned, which is displayed as a “NOT FOUND” message on screen.
+          The result of the target selection is returned to the client via a service response. In the successful case, the response contains the 3D coordinates (X, Y, Z) of the selected target for downstream motion execution. If no matching object is detected, a failure response is returned, which is displayed as a “NOT FOUND” message on screen, as shown in figure 93.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 29.png"
           subtitle="Figure 93: No screwdriver found in scene"></image-component>
@@ -1568,7 +1564,7 @@
           Some validation tests were done to validate that the coordinates returned by the computer vision pipeline are accurate.
         </p>
         <p>
-         When testing the full computer vision pipeline on the actual deployment conditions, we observed that the grasp point is consistently aligned with the gripper center (figure_). Of the 150 grip tests done for the screwdriver, 149 were successful whilst 1 failed due to collision with the screwdriver above. The mallet test also showed consistent results, though it wasn’t as rigorously tested as it wasn’t the focus of the project (it is a proof-of-concept for the tool changer system (figure_))
+         When testing the full computer vision pipeline on the actual deployment conditions, we observed that the grasp point is consistently aligned with the gripper center (figure 94). Of the 150 grip tests done for the screwdriver, 149 were successful whilst 1 failed due to collision with the screwdriver above. The mallet test also showed consistent results as shown in figure 95.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 30.png"
           subtitle="Figure 94: XYZ accuracy test on screwdriver"></image-component>
@@ -1593,7 +1589,7 @@
       <div id="CV-451">
         <h4>4.5.1 Bounding Box Smoothing</h4>
         <p>
-          Bounding box smoothing was performed by running object detection across 5 RGB frames and computing the average grasp point (cx, cy) to reduce detection jitter. However, as shown in Figure_, detected grasp point locations varied by at most ~1px across frames, indicating that the bounding box predictions were already sufficiently stable and that averaging provided negligible benefit. This method was therefore not adopted.
+          Bounding box smoothing was performed by running object detection across 5 RGB frames and computing the average grasp point (cx, cy) to reduce detection jitter. However, as shown in figure 96, detected grasp point locations varied by at most ~1px across frames, indicating that the bounding box predictions were already sufficiently stable and that averaging provided negligible benefit. This method was therefore not adopted.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 32.png"
           subtitle="Figure 96: Bounding box variation across 5 RGB frames"></image-component>
@@ -1602,7 +1598,7 @@
       <div id="CV-452">
         <h4>4.5.2 Median XYZ Across Multiple Depth Frames</h4>
         <p>
-          This method was explored to reduce frame-to-frame depth noise by estimating the XYZ coordinates as the median across 10 depth frames per capture. As shown in figure _, benchmarking over 50 captures showed only a small reduction in variance compared to single-frame estimates (Euclidean standard deviation: 1.832 mm → 1.386 mm). Since the improvement (~0.45 mm) is small, the added computation cost was not justified. Thus, this method was not adopted.
+          This method was explored to reduce frame-to-frame depth noise by estimating the XYZ coordinates as the median across 10 depth frames per capture. As shown in figure 97, benchmarking over 50 captures showed only a small reduction in variance compared to single-frame estimates (Euclidean standard deviation: 1.832 mm → 1.386 mm). Since the improvement (~0.45 mm) is small, the added computation cost was not justified. Thus, this method was not adopted.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 33.png"
           subtitle="Figure 97: Variance comparison of single vs multiple depth frame method"></image-component>
@@ -1620,17 +1616,17 @@
           Several tests at various screwdriver angles were done.
         </p>
         <p>
-          Firstly, the screwdriver was tilted such that the grasp point lies at the edge of the screwdriver contour (figure_). As seen from the video below, although the robot still managed to grasp it, it almost didn't.
+          Firstly, the screwdriver was tilted such that the grasp point lies at the edge of the screwdriver contour (figure 98). As seen from the video below, although the robot still managed to grasp it, it almost didn't.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 34.png"
           subtitle="Figure 98: Grasp point falls on edge of screwdriver handle"></image-component>
         <p>
-          Next, we tried tilting the screwdriver furthermore, until the grasp point does not lie on the screwdriver anymore (figure). As seen from the video below, the gripper went too much forward into the pegboard and did not manage to grab the screwdriver.
+          Next, we tried tilting the screwdriver furthermore, until the grasp point does not lie on the screwdriver anymore (figure 99). As seen from the video below, the gripper went too much forward into the pegboard and did not manage to grab the screwdriver.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 35.png"
           subtitle="Figure 99: Grasp point does not fall on screwdriver handle"></image-component>
         <p>
-          To be able to grab slanted objects, other types of models could be used. These will be discussed in section 7.2
+          To be able to grab slanted objects, other types of models could be used. These will be discussed in section 7.2.
         </p>
       </div>
 
@@ -1645,14 +1641,14 @@
       <div id="SS-51">
         <h3>5.1 Updated software strategy and architecture</h3>
         <p>
-          From the interim presentation, a user sequence diagram, shown in Figure N, and an initial software architecture diagram, shown in Figure N, were developed to represent the idealised control flow and software structure of the system.
+          From the interim presentation, a user sequence diagram, shown in figure 100, and an initial software architecture diagram, shown in Figure 101, were developed to represent the idealised control flow and software structure of the system.
         </p>
         <image-component tag="image" source="assets\software\task3.png"
           subtitle="Figure 100: Interaction diagram"></image-component>
         <image-component tag="image" source="assets\software\C4 Model Diagram.drawio.svg"
           subtitle="Figure 101: Initial software architecture diagram"></image-component>
         <p>
-          For the final deployed prototype, the software architecture was further streamlined, as illustrated in the updated diagram shown below.
+          For the final deployed prototype, the software architecture was further streamlined, as illustrated in the updated diagram shown below in figure 102.
         </p>
          <image-component tag="image" source="assets\C4 Model Diagram Updated.drawio.svg"
           subtitle="Figure 102: Updated software architecture diagram"></image-component>
@@ -1675,7 +1671,7 @@
          <image-component tag="image" source="assets\Master action node interactions.drawio.svg"
           subtitle="Figure 103: Master Cobot Action Node Interactions"></image-component>
         <p>
-          The diagram above shows how the node, called the Master Cobot Action Node, interacts with the other software subsystems in the overall architecture. The node’s endpoints feature Ros2 services that allow for the control and data reading of the cobot during its execution. The sequencer node, the node that handles the direct systems, mainly interacts via this service calls which are sequence requests. 
+          The diagram in figure 103 shows how the node, called the Master Cobot Action Node, interacts with the other software subsystems in the overall architecture. The node’s endpoints feature Ros2 services that allow for the control and data reading of the cobot during its execution. The sequencer node, the node that handles the direct systems, mainly interacts via this service calls which are sequence requests. 
         </p>
         
 
@@ -1689,7 +1685,7 @@
         <image-component tag="image" source="assets\Sesto Communication.drawio.svg"
           subtitle="Figure 104: SESTO Node Communication"></image-component>
         <p>
-          From the diagram above, the main interactions with the software architecture involve the SESTO node accepting service and action requests from the sequencer. These service cand action request are directly tied to API calls that are done to the SESTO’s onboard API server to execute the motions. The table below shows the endpoints utilised for the system.
+          From the diagram above in figure 104, the main interactions with the software architecture involve the SESTO node accepting service and action requests from the sequencer. These service cand action request are directly tied to API calls that are done to the SESTO’s onboard API server to execute the motions. The table below shows the endpoints utilised for the system.
         </p>
         <table class="api-table">
           <tr>
@@ -1752,18 +1748,15 @@
           The SESTO node also contributes to execution reliability by returning status information back to the sequencer. Once a navigation goal is issued, the sequencer does not simply assume the movement has completed. Instead, it relies on the SESTO node to monitor whether the platform is travelling, has arrived, or has encountered an issue. This is especially important in integrated workflows where downstream actions, such as tool pickup or delivery, should only begin once the base is correctly positioned. Without this feedback mechanism, the system could attempt manipulator operations at the wrong location, leading to failed or unsafe execution.
         </p>
         <p>
-          When the AMR reaches its destination, it will enter in Station-Lock mode, where no navigation requests will be accepted until specifically released. This is used as an intermediary safety layer to prevent any navigation requests from being submitted which may lead to unsafe conditions if the arm also were to be moving simultaneously. The release of this Station-Lock is done via the API endpoint /amrs/release/station.
+          When the AMR reaches its destination, it will enter in Station-Lock mode, where no navigation requests will be accepted until specifically released. This is used as an intermediary safety layer to prevent any navigation requests from being submitted which may lead to unsafe conditions if the arm also were to be moving simultaneously. The release of this Station-Lock is done via the API endpoint /amrs/release/station and is shown in figure 105.
         </p>
         <image-component tag="image" source="assets\sesto\Sesto at station lock.jpg"
           subtitle="Figure 105: Sesto at Station Lock"></image-component>
         <p>
-          For the creation of new waypoints, this can also be done using API calls to the system but for convenience, the Fleet Server UI seen in figure x, onboard the AMR was utilised as the GUI overlay shows the location of the endpoints, leading to easier implementation. Each key point can then be referenced in the API calls.
+          For the creation of new waypoints, this can also be done using API calls to the system but for convenience, the Fleet Server UI seen in figure 106, onboard the AMR was utilised as the GUI overlay shows the location of the endpoints, leading to easier implementation. Each key point can then be referenced in the API calls.
         </p>
         <image-component tag="image" source="assets\software\Sesto Fleet Server.jpg"
           subtitle="Figure 106: Sesto Fleet Server"></image-component>
-        <p>
-          In figure x to n shows the physical locations of these waypoints.  
-        </p>
         <p>
           The navigation accuracy is noted to be a point of concern, repeatability tests were done which shows that after 50 navigation attempts to the same defined location, the AMR can drift about +- 20mm in both X and Y directions. This poses an issue during the pick and place as hardcoded motions will not suffice to grab the items as the whole system can drift far enough that the gripper will miss outright. This inaccuracy issue is solved via the utilisation of computer vision as mentioned in section 4 and in section 5.4.
         </p>
@@ -1771,7 +1764,7 @@
       <div id="SS-531">
         <h4>5.3.1 SESTO Navigation Accuracy and Mitigation</h4>
         <p>
-          The SESTO Magnus Lite AMR platform exhibits a navigation accuracy issue, with observed drift of approximately ±20 mm in both X and Y directions after repeated navigation attempts to the same location. This level of inaccuracy poses a significant challenge for tasks such as pick-and-place operations, where precise positioning is critical for successful item grasping.
+          The SESTO Magnus Lite AMR platform exhibits a navigation accuracy issue, with observed drift of approximately ±20 mm in both X and Y directions after repeated navigation attempts to the same location. An example of this drift is shown in figure 107 where the AMR is seen to have deviated from a marker reference. This level of inaccuracy poses a significant challenge for tasks such as pick-and-place operations, where precise positioning is critical for successful item grasping.
         </p>
         <image-component size = "medium" tag="image" source="assets\software\Sesto inaccuracy.jpg"
           subtitle="Figure 107: Sesto Navigation Inaccuracy"></image-component>
@@ -1779,7 +1772,7 @@
           Based on the datasheet, the Sesto Magnus Lite has a navigation accuracy of ±20 mm, which is consistent with the observed drift during testing. The exact positional readings can be found in Appendix N. This means that even if the AMR successfully reaches the general vicinity of the target location, there is still a possibility that it may be misaligned by up to 20 mm, which can lead to failed grasps if the robot arm relies solely on hardcoded motions based on expected coordinates.
         </p>
         <p>
-          Consideration was placed for the utilisation of a docking marker that the AMR can reference and dock to. However, the placement of the docking marker and low profile design makes it a tripping hazard for people. Hence this idea was scrapped. 
+          Consideration was placed for the utilisation of a docking marker that the AMR can reference and dock to. However, the placement of the docking marker and low profile design makes it a tripping hazard for people as seen in figure 108. Hence this idea was scrapped. 
         </p>
          <image-component size = "medium" tag="image" source="assets\sesto\Sesto docking marker.jpg"
           subtitle="Figure 108: Sesto Docking Marker"></image-component>
@@ -1791,17 +1784,17 @@
       <div id="SS-54">
         <h3>5.4: CAN Bus Communication</h3>
         <p>
-          The CAN bus node provides the low-level hardware communication interface between the ROS2 software stack, and the physical end-effector or peripheral devices connected over the CAN network. The CAN bus node interfaces with the drivers and corresponding CAN peripherals onboard the UNO 238 V2 MiniPC.
+          The CAN bus node provides the low-level hardware communication interface between the ROS2 software stack, and the physical end-effector or peripheral devices connected over the CAN network. The CAN bus node interfaces with the drivers and corresponding CAN peripherals onboard the UNO 238 V2 MiniPC, whose interfaces are shown in figure 109.
         </p>
         <image-component size ="medium" tag="image" source="assets\software\UNO 238 V2.png"
           subtitle="Figure 109: UNO 238 V2 MiniPC available interfaces"></image-component>
         <p>
-          In the context of the robotics system, the CAN node mainly interfaces with the tool changer unit circuits boards, seen in section 3. The interaction between the CAN node and the peripherals can then be illustrated in the diagram below:
+          In the context of the robotics system, the CAN node mainly interfaces with the tool changer unit circuits boards, seen in section 3. The interaction between the CAN node and the peripherals can then be illustrated in figure 110 below:
         </p>
         <image-component tag="image" source="assets\Can bus node interactions.drawio.svg"
           subtitle="Figure 110: CAN Bus Node Interactions"></image-component>
         <p>
-          The CAN Node itself opens various services that the sequencer can call. These services are for the control of the tool changer’s electromagnet, power delivery and the gripper’s open and close command. Upon calling any of these services, the CAN Node transmits a CAN frame that can be seen in the diagram below:
+          The CAN Node itself opens various services that the sequencer can call. These services are for the control of the tool changer’s electromagnet, power delivery and the gripper’s open and close command. Upon calling any of these services, the CAN Node transmits a CAN frame that can be seen in figure 111.
         </p>
         <image-component tag="image" source="assets/software/CAN Frame MiniPC to Toolchanger Robot Side.png"
           subtitle="Figure 111: CAN Frame MiniPC to Toolchanger Robot Side"></image-component>
@@ -1822,7 +1815,7 @@
           The computer vision node is responsible for processing tool recognition data and returning the depth and detection information required for the system to perform pick-and-place operations or to terminate an order when the requested tool is not detected. The detailed processing methodology is discussed in Section 4, Computer Vision. Accordingly, this section focuses on the role of the computer vision node within the control architecture and its interactions with the rest of the software stack.
         </p>
         <p>
-          The interaction diagram below illustrates the relationship between the computer vision node and the wider control stack, with the sequencer node acting as the primary service client.
+          The interaction diagram in figure 112 illustrates the relationship between the computer vision node and the wider control stack, with the sequencer node acting as the primary service client.
         </p>
         <image-component size="large" tag="image" source="assets\Computer Vision Node.drawio.svg"
           subtitle="Figure 112: Computer Vision Node interactions"></image-component>
@@ -1837,7 +1830,7 @@
     a vector-based derivation was used. Under the simplifying assumption that all coordinate
     frames are aligned, rotational transformations reduce to the identity and only translational
     offsets need to be considered. The required position can therefore be obtained through direct
-    vector addition and subtraction. Figure n illustrates the relevant coordinate frames and vectors involved in the derivation.
+    vector addition and subtraction. Figure 113 illustrates the relevant coordinate frames and vectors involved in the derivation.
   </p>
   <image-component tag="image" source="assets\For grippers\New frame transformation picture.png"
           subtitle="Figure 113: CAN Frame MiniPC to Toolchanger Robot Side"></image-component>
@@ -1990,7 +1983,7 @@
         <image-component tag="image" source="assets\Sequencer Node interactions.drawio.svg"
           subtitle="Figure 114: Sequencer Node Interactions"></image-component>
         <p>
-          In the diagram above, the sequencer node interfaces with all the relevant hardware control nodes. Since the sequencer can control all items with proper logic, it plays a critical role in fault handling and recovery. In practical robotic systems, failures such as missing tools, unsuccessful grasps, delayed status updates, or unexpected subsystem states are common. To address this, the sequencer includes conditional branches that alter the execution flow based on returned results. For instance, if a requested screwdriver is not detected at the pickup location, the sequencer can record that outcome, skip the failed pickup, and proceed to inspect the next valid request instead of remaining stuck in an incomplete state. If no valid items remain, the node can trigger a safe homing or recovery procedure. This makes the overall system more robust and better suited for semi-structured real-world operation.
+          In the diagram shown in figure 114, the sequencer node interfaces with all the relevant hardware control nodes. Since the sequencer can control all items with proper logic, it plays a critical role in fault handling and recovery. In practical robotic systems, failures such as missing tools, unsuccessful grasps, delayed status updates, or unexpected subsystem states are common. To address this, the sequencer includes conditional branches that alter the execution flow based on returned results. For instance, if a requested screwdriver is not detected at the pickup location, the sequencer can record that outcome, skip the failed pickup, and proceed to inspect the next valid request instead of remaining stuck in an incomplete state. If no valid items remain, the node can trigger a safe homing or recovery procedure. This makes the overall system more robust and better suited for semi-structured real-world operation.
         </p>
         <video-component tag="toolchanger" source="https://www.youtube.com/embed/rzETe6ZgnwQ?si=YtOYbdHaE5v-xzQ1"
           subtitle="Video: Tool Changer and End Effector Mechanisms and Electrical Integration test"></video-component>
@@ -2002,12 +1995,12 @@
           The webserver node functions as the primary human-machine interface for the robotic system. Its role is to allow users to interact with the robot through a browser-based interface rather than requiring direct access to ROS2 commands, terminals, or internal software tools. This is especially important in application-oriented robotic systems where the end users may not be robotics developers and need a simple method to initiate tasks and observe system status.
         </p>
         <p>
-          From a functional standpoint, the webserver accepts user inputs such as delivery requests, task selections, or other operation commands. These inputs are then passed into the backend control logic, where they are interpreted and relayed to the sequencer or relevant subsystem. In this way, the webserver does not directly command the robot at the hardware level but instead serves as a structured interface between user intent and robotic execution.
+          From a functional standpoint, the webserver accepts user inputs such as delivery requests, task selections, or other operation commands. These inputs are then passed into the backend control logic, where they are interpreted and relayed to the sequencer or relevant subsystem. In this way, the webserver does not directly command the robot at the hardware level but instead serves as a structured interface between user intent and robotic execution. This is shown in the interaction diagram in figure 115.
         </p>
         <image-component tag="image" source="assets\Webserver Node Interactions.drawio.svg"
           subtitle="Figure 115: Webserver Node Interactions"></image-component>
         <p>
-          In the UI, the user has the option to select multiple tools for delivery, which can be seen in the figure n below. They can then select which table do they want the deliveries to be delivered to. Upon clicking the Send Request button, the commands are then sent over to the sequencer node, where the system then decides how to control the hardware to complete the order. 
+          In the UI, the user has the option to select multiple tools for delivery, which can be seen in the figure 116 below. They can then select which table do they want the deliveries to be delivered to. Upon clicking the Send Request button, the commands are then sent over to the sequencer node, where the system then decides how to control the hardware to complete the order. 
         </p>
         <image-component tag="image" source="assets\software\Tool selection of UI.jpg"
           subtitle="Figure 116: Tool Selection in UI"></image-component>
@@ -2041,7 +2034,7 @@
           </tr>
         </table>
           <p>
-            An additional set of buttons and debug console are also present, mainly for resetting the system and conducting tests. 
+            An additional set of buttons and debug console are also present, mainly for resetting the system and conducting tests. This is shown in figure 117.
           </p>
           <image-component tag="image" source="assets\software\Debugging section of UI.jpg"
           subtitle="Figure 117: Debugging Section in UI"></image-component>
@@ -2058,6 +2051,9 @@
           subtitle="Figure 119: ROS2 Computational Graph"></image-component>
         <p>
           Figure 119 presents an overview of the ROS 2 services and actions implemented within the system nodes. After all nodes have been successfully initialised and confirmed to be operational, the system is able to accept incoming tool delivery requests. The flowchart below illustrates the corresponding system workflow and internal control logic executed upon receipt and acceptance of a delivery request.
+        </p>
+        <p>
+          The sequence flowchart in figure 120 shows the idealised flow of the system from the point of receiving a delivery request to the completion of the delivery. The flowchart also includes the various decision points and feedback loops that are present in the system, such as checking for tool availability, monitoring navigation status, and handling edge cases. This flowchart serves as a reference for understanding how the different software components interact to achieve the overall functionality of the robotic system.
         </p>
         <image-component size="medium" tag="image" source="assets\Sequence flowchart of robot functionality.drawio.svg"
           subtitle="Figure 120: Sequence Flowchart of Robot Functionality"></image-component>
@@ -2089,7 +2085,7 @@
         <image-component size = "medium" tag="image" source="assets\safety\Safety Diagram for System.svg"
           subtitle="Figure 121: Safety Diagram for System"></image-component>
         <p>
-          Onboard the AMR and Cobot, there are integrated safety peripherals that prevent the system from injuring or harming users. One of the main changes that the team did to improve the safety further was to merge the estop logic to both the AMR and Cobot. This allows for the system to be shut down fully. The following videos showcase these safety peripherals during the use of the system. 
+          Onboard the AMR and Cobot, there are integrated safety peripherals (See figure 121)that prevent the system from injuring or harming users. One of the main changes that the team did to improve the safety further was to merge the estop logic to both the AMR and Cobot. This allows for the system to be shut down fully. The following videos showcase these safety peripherals during the use of the system. 
         </p>
         <video-component tag="safety" source="https://www.youtube.com/embed/wu3dYoHYmG0?si=Yr-5XQB4kKY31a4s"
           subtitle="Video: Safety feature demonstration"></video-component>
@@ -2243,7 +2239,7 @@
           Prior to the main user validation session, a preliminary user validation test was conducted with the primary stakeholder. The purpose of this initial evaluation was to obtain direct feedback on the prototype system before its deployment to the wider user group. As the stakeholder possessed a strong understanding of the intended application and operational requirements, this stage provided an opportunity to identify minor issues in workflow, interface clarity, and system behaviour that could be improved before the primary user validation was carried out.
         </p>
         <p>
-          During this preliminary validation, the stakeholder interacted with the system and assessed its operation in relation to its intended use case. Feedback was collected through direct observation and discussion, focusing on areas such as usability, task flow, clarity of interaction, and practical suitability. The comments obtained were then used to introduce small refinements to the system to improve its readiness for broader user testing.
+          During this preliminary validation seen in figure 122, the stakeholder interacted with the system and assessed its operation in relation to its intended use case. Feedback was collected through direct observation and discussion, focusing on areas such as usability, task flow, clarity of interaction, and practical suitability. The comments obtained were then used to introduce small refinements to the system to improve its readiness for broader user testing.
         </p>
         <image-component tag="image" source="assets\uservalidation\Preliminary.png"
           subtitle="Figure 122: Preliminary User Validation with Patrick"></image-component>
@@ -2252,7 +2248,7 @@
       <div id="P-712">
         <h3>7.1.2 Primary user validation</h3>
         <p>
-          Following the preliminary refinement stage, the system was subjected to primary user validation involving the intended user group. The objective of this stage was to evaluate the system under more realistic user-facing conditions and to assess its usability, effectiveness, and user acceptance after the initial refinements had been incorporated.
+          Following the preliminary refinement stage, the system was subjected to primary user validation involving the intended user group. The objective of this stage was to evaluate the system under more realistic user-facing conditions and to assess its usability, effectiveness, and user acceptance after the initial refinements had been incorporated. Figures 123 and 124 show the primary user validation sessions, where users were observed interacting with the system and providing feedback on their experience.
         </p>
         <image-component tag="image" source="assets\uservalidation\Primary Collage 1.png"
           subtitle="Figure 123: Primary User Validation - Collage 1"></image-component>
