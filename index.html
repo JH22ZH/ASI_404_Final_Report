@@ -980,6 +980,8 @@
         <p>
           To control the opening and closing motions of the gripper, an STM32F103C8T6 microcontroller was used. The tool-side circuit board, which formed part of the tool changer electronics, was designed to house the control circuitry and embedded firmware responsible for end effector actuation. Further details of this implementation are provided in the following section.
         </p>
+        <image-component size = "large" tag="image" source="assets\For grippers\Elec pics.png"
+          subtitle="Figure n: Manipulator Electrical Block Diagram"></image-component>
       </div>
 
       <div id="EE-323">
@@ -1222,6 +1224,11 @@
         </p>
         <image-component tag="image" source="assets\For grippers\Holder constrains in X and Y.png"
           subtitle="Figure n: Holder Constraints in X and Ys"></image-component>
+          <p>
+            The basket unit as seen in the figure below was designed to be mounted to the tool holder body, to allow for modularity should the basket be damaged or require replacement. The basket was designed to be large enough to accommodate the tools while also being compact to minimise the overall footprint of the storage system. 
+          </p>
+          <image-component size = "medium" tag="image" source="assets\For grippers\Basket .png"
+          subtitle="Figure n: Basket Unit for Tool Storage"></image-component>
         <h4>3D Model of the full Tool Changer Assembly</h4>
         <model-viewer
           src="assets\3dmodels\v2_overall_toolchanger_mount_assembly_for_export.glb"
@@ -2289,6 +2296,11 @@
         <p>
           For the end effector and tool changer subsystems, a more focused design effort on gripper finger geometry may enable the development of a universal gripper capable of handling the full range of tools on the board. In addition, further improvements to the electronic hardware and embedded firmware could expand the level of control available to the Mini PC, thereby increasing the flexibility and functionality of gripper operation.
         </p>
+        <p>
+          The primary limitation of the current computer vision pipeline is its inability to reliably grasp tools that are significantly slanted. This is because the object detection model produces only axis-aligned bounding boxes and has no knowledge of the object's orientation. Future work could explore alternative model architectures such as oriented bounding boxes or key point estimation to address this. 
+        </p>
+        <image-component tag="image" source="assets\fc2\cv\section 7.2.png"
+          subtitle="Figure n: Possible methods to overcome axis-aligned detection limitations for oriented tool grasping"></image-component>
       </div>
 
       <div id="P-73">
