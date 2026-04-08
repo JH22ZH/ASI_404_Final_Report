@@ -347,14 +347,14 @@
       <div id="Intro_1">
         <h2> 1 Introduction </h2>
         <p>
-          This project is on developing a mobile manipulator for NUS’s Innovation & Design Hub to relieve staff workload. It integrates mechanical, electrical, and software design to create a unified robot system with a user-friendly GUI control and seamless system integration. Note that this report is on the overall development, integration and validation of the mobile manipulator system, with more focus on the technical development. The interim report, which has more details on the problem analysis, value proposition and subsystem identification can be found in the interim report. <a href="https://jh22zh.github.io/ASI_404/">Link to Interim Report</a>
+          This project is on developing a mobile manipulator for NUS’s Innovation & Design Hub to relieve staff workload. It integrates mechanical, electrical, and software design to create a unified robot system with a user-friendly GUI control and seamless system integration. Note that this report is on the overall development, integration and validation of the mobile manipulator system, with more focus on the technical development. The interim report, which has more details on the problem analysis, value proposition and initial analysis can be found in the interim report. <a href="https://jh22zh.github.io/ASI_404/">Link to Interim Report</a>
         </p>
       </div>
 
       <div id="Intro_11">
         <h3>1.1 Context</h3>
         <p>
-          Robots are increasingly used to relieve labour shortages and handle repetitive tasks across sectors like warehousing, healthcare, and hospitality. This is accelerating a shift from factory-only deployment to human-centric environments, with robots taking on point-to-point delivery and routine workflows as seen in Figure 1.
+          Robots are increasingly used to relieve labour shortages and handle repetitive tasks across sectors like warehousing, healthcare, and hospitality. This is accelerating a shift from factory-only deployment to human-centric environments, with robots taking on point-to-point delivery and routine workflows as seen in figure 1.
         </p>
         <image-component tag="image" source="assets\Value proposition\articles.png"
           subtitle="Fig 1: A collage of articles showing an increasing interest in Warehouse Automation"></image-component>
@@ -367,10 +367,10 @@
       <div id="Intro_12">
         <h3>1.2 Location and stakeholders</h3>
         <p>
-          The Hub was chosen as a location of interest as it is one of the largest workspaces within NUS with high student traffic from various disciplines to use the facilities to do discussions, fabrication or tinker. The floor plan of the space is shown in Figure 2.
+          The Hub was chosen as a location of interest as it is one of the largest workspaces within NUS with high student traffic from various disciplines to use the facilities to do discussions, fabrication or tinker. The floor plan of the space is shown in figure 2.
         </p>
         <p>
-          The project involves the Hub Technical Staff seen in Figure 3, How Yee Teng (primary) and Patrick Tan Shoong Chin (secondary), as well as the Hub Technical Assistants. To gather insights, data collection through surveys and observations helped the team to understand their roles and contributions as well as understanding what problems the staff faced on the ground.
+          The project involves the Hub Technical Staff seen in figure 3, How Yee Teng (primary) and Patrick Tan Shoong Chin (secondary), as well as the Hub Technical Assistants. To gather insights, data collection through surveys and observations helped the team to understand their roles and contributions as well as understanding what problems the staff faced on the ground.
         </p>
         <image-component tag="image" source="assets\hub\FloorPlan.png"
           subtitle="Fig 2: Floor Plan of the Hub"></image-component>
@@ -537,24 +537,24 @@
         The figure below shows the progress of the frame structure from the interim presentation period.
       </p>
       <image-component size="medium" tag="image" source="assets\fc2\fig 1.jpg"
-          subtitle="Figure : Robot structure as of interim period"></image-component>
+          subtitle="Figure 10: Robot structure as of interim period"></image-component>
       <p>
        The robot structure was designed with consideration of the operational environment of the Hub, the payload capacity of the AMR, and the AMR’s permissible center of gravity as shown in the figure below.
       </p>
       <image-component tag="image" source="assets\fc2\fig 2.png"
-          subtitle="Figure :Design considerations for frame structure"></image-component>
+          subtitle="Figure 11: Design considerations for frame structure"></image-component>
       <p>
         In addition to these considerations, the structure was designed to fulfil several key functional requirements as shown in the figure below.
       </p>
       <image-component tag="image" source="assets\fc2\fig 3.png"
-          subtitle="Figure : Required functionalities of the structure"></image-component>
+          subtitle="Figure 12: Required functionalities of the structure"></image-component>
       <p>
-        Prior to implementing the design, a total of five design iterations were developed and evaluated using a concept selection matrix (figure_). A detailed comparison of these design iterations is provided in Appendix D1-D6.
+        Prior to implementing the design, a total of five design iterations were developed and evaluated using a concept selection matrix (figure 13). A detailed comparison of these design iterations is provided in Appendix D1-D6.
       </p>
       <image-component tag="image" source="assets\fc2\fig 4.png"
-          subtitle="Figure : Concept selection matrix of ideal frame"></image-component>
+          subtitle="Figure 13: Concept selection matrix of ideal frame"></image-component>
       <image-component tag="image" source="assets\fc2\fig 5.png"
-          subtitle="Figure : Definitions used for the concept selection matrix"></image-component>
+          subtitle="Figure 14: Definitions used for the concept selection matrix"></image-component>
       <p>
         From the concept selection matrix, the best performing configuration was identified and taken forward for detailed design. The key design features of the implemented structure are described in the following paragraphs below.
       </p>
@@ -562,27 +562,27 @@
         First, the height and layout of the structure was designed to ensure that the robot arm can effectively reach the required workspaces while maintaining overall system stability.
       </p>
       <image-component tag="image" source="assets\fc2\fig 6.png"
-          subtitle="Figure : Optimized dimensions of structure"></image-component>
+          subtitle="Figure 15: Optimized dimensions of structure"></image-component>
       <p>
         Second, the frame was optimized to be lightweight, while ensuring ease of assembly. 
       </p>
       <image-component tag="image" source="assets\fc2\fig 7.png"
-          subtitle="Figure 7: Frame optimized to be lightweight and easy to assemble"></image-component>
+          subtitle="Figure 16: Frame optimized to be lightweight and easy to assemble"></image-component>
       <p>
         Third, the frame allows for easy future modifications, where additional profiles can be added for reinforcement, and the robot arm position can be adjusted to rebalance the centre of gravity without major redesign.
       </p>
       <image-component tag="image" source="assets\fc2\fig 8.png"
-          subtitle="Figure : Adaptable frame design"></image-component>
+          subtitle="Figure 17: Adaptable frame design"></image-component>
       <p>
         Fourth, a vertical panel with DIN rail mounting was implemented to organise wiring and electronic components. The segregation of control and power panels improves accessibility and simplifies troubleshooting.
       </p>
       <image-component tag="image" source="assets\fc2\fig 9.png"
-          subtitle="Figure : Modular and accessible electronics layout"></image-component>
+          subtitle="Figure 18: Modular and accessible electronics layout"></image-component>
       <p>
         After the structure was designed, structural evaluations such as CG analysis and static analysis were also conducted to validate the stability of the system. Explanation for how analysis was done can be found in appendix D7.
       </p>
       <image-component tag="image" source="assets\fc2\fig 10.png"
-          subtitle="Figure : CG and static analysis (FEA and FOS)"></image-component>
+          subtitle="Figure 19: CG and static analysis (FEA and FOS)"></image-component>
       <p>
         Overall, the interim work established a stable and well-integrated mechanical platform, forming the foundation for further system development in Semester 2.
       </p>
@@ -601,7 +601,7 @@
         An interface panel with push buttons was implemented to enable quick execution of predefined commands. Two E-stop buttons were installed at accessible locations on the robot. These E-stops are integrated with both the robot arm and the AMR, ensuring that both systems stop simultaneously when activated.
       </p>
         <image-component size="medium" tag="image" source="assets\fc2\fig 11.png"
-          subtitle="Figure : Two E-stops and push buttons implemented"></image-component>
+          subtitle="Figure 20: Two E-stops and push buttons implemented"></image-component>
        <p>
         2.	Battery Box
       </p>
@@ -609,7 +609,7 @@
         A battery box is required to safely house the battery. Initially, we designed a quick-release sliding battery box (see appendix D8) so that the battery can be conveniently connected and disconnected to the robot power system in a single action. However, due to time constraints, a commercial Pelican case was adopted as a practical alternative.
       </p>
         <image-component size="medium"tag="image" source="assets\fc2\fig 12.png"
-          subtitle="Figure : Battery box"></image-component>
+          subtitle="Figure 21: Battery box"></image-component>
        <p>
         3.	Adjustable Monitor and External connection ports
       </p>
@@ -617,7 +617,7 @@
         An adjustable monitor and external connector ports (HDMI, USB and LAN ports) were integrated into the system to facilitate easy debugging and system monitoring.
       </p>
       <image-component tag="image" source="assets\fc2\fig 13.png"
-          subtitle="Figure : Adjustable monitor and External connection ports"></image-component>
+          subtitle="Figure 22: Adjustable monitor and External connection ports"></image-component>
       <p>
         4.	Cooling System
       </p>
@@ -625,7 +625,7 @@
         Cooling fans were installed to improve airflow within the enclosure. One fan supplies air to the controller’s intake vent, while another expels hot air at the exhaust vent. The intake fan is positioned at the bottom and the exhaust fan at the top to utilise natural convection. 
       </p>
       <image-component tag="image" source="assets\fc2\fig 14.png"
-          subtitle="Figure : Intake and exhaust fans implemented for airflow in system"></image-component>
+          subtitle="Figure 23: Intake and exhaust fans implemented for airflow in system"></image-component>
       <p>
         5.	Storage Unit
       </p>
@@ -633,7 +633,7 @@
         A compartment was allocated to be a storage unit for miscellaneous components such as tools and accessories, to make things more convenient for users. 
       </p>
       <image-component tag="image" source="assets\fc2\fig 15.png"
-          subtitle="Figure : Storage unit for miscellaneous parts"></image-component>
+          subtitle="Figure 24: Storage unit for miscellaneous parts"></image-component>
       <p>
         6.	External Covers
       </p>
@@ -641,12 +641,12 @@
         Protective external panels and 3D printed corner covers were fabricated from acrylic and PETG respectively, improving both safety and aesthetics. PETG was chosen over PLA for its superior impact resistance.
       </p>
       <image-component size="medium" tag="image" source="assets\fc2\fig 16.png"
-          subtitle="Figure : Acrylic panel covers and 3D printed corners"></image-component>
+          subtitle="Figure 25: Acrylic panel covers and 3D printed corners"></image-component>
       <p>
-        With the addition of new components to the robot, the total payload was reassessed to ensure that the payload of the AMR remained within the 100 kg capacity. The components were weighed, and the robot structure was found to have a total mass of 87.24 kg (Figure _). Accounting for a +5% tolerance to include screws and other miscellaneous items, the estimated total mass increases to 91.61 kg. This verification confirms that the final system remains within the allowable payload limits, ensuring safe operation.
+        With the addition of new components to the robot, the total payload was reassessed to ensure that the payload of the AMR remained within the 100 kg capacity. The components were weighed, and the robot structure was found to have a total mass of 87.24 kg (Figure 26). Accounting for a +5% tolerance to include screws and other miscellaneous items, the estimated total mass increases to 91.61 kg. This verification confirms that the final system remains within the allowable payload limits, ensuring safe operation.
       </p>
       <image-component size="medium" tag="image" source="assets\fc2\fig 17.png"
-          subtitle="Figure : Examples of components weighed"></image-component>
+          subtitle="Figure 26: Examples of components weighed"></image-component>
       <p>
         The video below shows the final robot structure with all the components integrated.
       </p>
@@ -672,7 +672,7 @@
        Building on this baseline architecture, the electrical subsystem was further refined through the integration of additional components required for full system functionality. Key additions include the robot-side and tool-side changer boards, which enable electrical interfacing for the tool changer mechanism, as well as the tool changer electromagnet for end-effector operation (section 3.3). In addition, two DC fans were introduced to provide active cooling for improved thermal management of the enclosed electronics, and a mini monitor was integrated to facilitate system debugging.
       </p>
       <image-component  tag="image" source="assets\fc2\eefig1.png"
-          subtitle="Figure : Final circuit diagram of robot structure"></image-component>
+          subtitle="Figure 27: Final circuit diagram of robot structure"></image-component>
     </div>
 
     <div id="RS_222">
@@ -687,7 +687,7 @@
         ensures that the robot can be stopped quickly from multiple operating positions.
       </p>
       <image-component  tag="image" source="assets\fc2\eefig2.png"
-          subtitle="Figure : Centralised E-stop system implemented via power relay"></image-component>
+          subtitle="Figure 28: Centralised E-stop system implemented via power relay"></image-component>
       <p>
         A video showing the E-stop testing is referenced in Section 6.1 on edge case testing and safety considerations.
       </p>
@@ -899,7 +899,7 @@
   </tr>
 </table>
         <image-component size = "large" tag="image" source="assets\endeffector\grippercc.png"
-          subtitle="Figure n: Concept screening for end effector"></image-component>
+          subtitle="Figure 29: Concept screening for end effector"></image-component>
             <p>
           Due to the wide variety of tools that the robot is required to grasp, careful consideration had to be given to the final gripper designs. An additional factor was the storage fixtures used for the tools. Feedback from stakeholders indicated that the existing tool holders were not to be modified, making them a key design constraint. Although compliant gripper systems can handle a broad range of object geometries, the conditions imposed by the pegboard storage arrangement made the development of a truly universal end effector impractical. As a result, the team elected to develop a system that allows the robot to automatically exchange end effectors according to the tool being handled, thereby enabling more reliable and optimised pickup performance across all tool types.
         </p>
@@ -907,20 +907,20 @@
           A prototype end effector was developed, which was a rack-and-pinion gripper mechanism with swappable fingers. This design was chosen primarily due to being straightforward to implement as shown in the figure above for the concept screening, while also aligning with the direction validated during the interim presentation. The prototype gripper can be seen in the figure below. 
         </p>
         <image-component size = "large" tag="image" source="assets\endeffector\PrototypeGrip.png"
-          subtitle="Figure n: Prototype End Effector"></image-component>
+          subtitle="Figure 30: Prototype End Effector"></image-component>
           <p>
             Non linear dynamic analysis were also performed on the compliant gripper fingers as seen in the figure below to evaluate the deformations when in operation. These results were then validated during grasping tests with various tools. 
           </p>
           <image-component size = "large" tag="image" source="assets\endeffector\gripsim.png"
-          subtitle="Figure n: Gripper simulation results across different contact points"></image-component>
+          subtitle="Figure 31: Gripper simulation results across different contact points"></image-component>
           <image-component size = "large" tag="image" source="assets\toolchanger\toolcc.png"
-          subtitle="Figure n: Prototype End Effector"></image-component>
+          subtitle="Figure 32: Prototype End Effector"></image-component>
           
         <p>
-          Concepts were also evaluated for the tool changer mechanism as shown in figure n, with the utilisation of electromagnets being selected as the approach. Tests were conducted to validate the electromagnet strength with a selected steel plate of certain thickness and were successfully completed as shown in the figure n. 
+          Concepts were also evaluated for the tool changer mechanism as shown in figure 32, with the utilisation of electromagnets being selected as the approach. Tests were conducted to validate the electromagnet strength with a selected steel plate of certain thickness and were successfully completed as shown in the figure 32. 
         </p>
         <image-component size = "small" tag="image" source="assets\toolchanger\Magnet.png"
-          subtitle="Figure n: Prototype End Effector"></image-component>
+          subtitle="Figure 33: Prototype End Effector"></image-component>
           <p>
         Following the validation of these concepts, the next sections will cover the detailed design and development of the finalised end effector and tool changer prototype systems, including the mechanical design, electrical integration, and control strategies implemented to achieve the required functionality.
       </p>
@@ -939,12 +939,12 @@
       <div id="EE-321">
         <h3>3.2.1 Mechanical Development</h3>
         <image-component tag="image" source="assets\For grippers\Exploded view annotated of gripper.png"
-          subtitle="Figure n: Exploded view annotated of gripper"></image-component>
+          subtitle="Figure 34: Exploded view annotated of gripper"></image-component>
         <p>
           Regarding the mechanical design of the end effector, the body was redesigned to further optimise its overall size, with particular emphasis placed on enclosing the mechanism’s dynamic components, namely the rack-and-pinion assembly. This was done to reduce the likelihood of pinch injuries should a user place their fingers near the moving regions of the mechanism during operation. In addition, the overall length of the end effector was reduced to minimise the distance of its centre of mass from the robot flange. As discussed previously, the effective payload capacity of the cobot decreases as the centre of mass of the mounted end effector shifts further away from the flange. Compactness was therefore an important design objective.
         </p>
         <image-component tag="image" source="assets\For grippers\Prototype vs Gripper.png"
-          subtitle="Figure n: Final prototype gripper (On the left), Initial Prototype (On the right)"></image-component>
+          subtitle="Figure 35: Final prototype gripper (On the left), Initial Prototype (On the right)"></image-component>
         <p>
           Most critically, the gripper attachment interface was redesigned to incorporate a universal mounting feature, allowing direct attachment to the slave side of the tool changer. This modification was essential in enabling automatic end effector exchange within the overall system. Further details of this interface are presented in Section 3.3.1.
         </p>
@@ -952,12 +952,12 @@
           The method of swapping gripper fingers was also improved, such that each finger could be secured to the rack using only two M3 × 25 mm screws. This reduced the complexity of finger replacement and improved maintainability during iterative testing and operation.
         </p>
         <image-component tag="image" source="assets\For grippers\Swappable fingers.png"
-          subtitle="Figure n: Swappable Fingers"></image-component>
+          subtitle="Figure 36: Swappable Fingers"></image-component>
          <p>
           Following successful preliminary evaluation of the compliant gripper finger design, this concept was retained in the updated iteration. Experimental testing showed that the compliant fingers were able to successfully grasp screwdrivers, wrenches, and pliers. However, due to the mounting geometry and handling requirements of the mallet, a different gripper finger configuration was required to achieve reliable pickup. For this tool, the selected approach involved lifting the mallet while maintaining its orientation throughout the transfer process until deposition, thereby ensuring stable handling.
         </p>
         <image-component tag="image" source="assets\For grippers\Gripper pictures.png"
-          subtitle="Figure n: Gripper designs for screwdriver and mallet"></image-component>
+          subtitle="Figure 37: Gripper designs for screwdriver and mallet"></image-component>
         
         <h4>3D Model of the Gripper</h4>
         <model-viewer
@@ -981,15 +981,15 @@
           To control the opening and closing motions of the gripper, an STM32F103C8T6 microcontroller was used. The tool-side circuit board, which formed part of the tool changer electronics, was designed to house the control circuitry and embedded firmware responsible for end effector actuation. Further details of this implementation are provided in the following section.
         </p>
         <image-component size = "large" tag="image" source="assets\For grippers\Elec pics.png"
-          subtitle="Figure n: Manipulator Electrical Block Diagram"></image-component>
+          subtitle="Figure 38: Manipulator Electrical Block Diagram"></image-component>
       </div>
 
       <div id="EE-323">
         <h3>3.2.3 Integration and Testing</h3>
         <image-component tag="image" source="assets\For grippers\Undergoing trials.png"
-          subtitle="Figure n: Grippers undergoing trials"></image-component>
+          subtitle="Figure 39: Grippers undergoing trials"></image-component>
         <p>
-          The integration of the electrical subsystem with the mechanical components was a critical phase in the development process. This involved ensuring that all electrical connections were properly made and that the control circuitry functioned as intended. Initial testing focused on validating the functionality of the gripper mechanism, including the opening and closing motions on the specified tools for pickup. Figure n above showcases the grippers undergoing trials. The videos below show the testing of the gripper with the compliant fingers and the mallet configuration, demonstrating successful grasping and handling of the tools.
+          The integration of the electrical subsystem with the mechanical components was a critical phase in the development process. This involved ensuring that all electrical connections were properly made and that the control circuitry functioned as intended. Initial testing focused on validating the functionality of the gripper mechanism, including the opening and closing motions on the specified tools for pickup. Figure 39 above showcases the grippers undergoing trials. The videos below show the testing of the gripper with the compliant fingers and the mallet configuration, demonstrating successful grasping and handling of the tools.
         </p>
         <video-component tag="cantest" source="https://www.youtube.com/embed/zzv4f3nGRJY?si=GBp7xDPt-xhqSi9w"
           subtitle="Video: Grasping test with screwdrivers"></video-component>
@@ -1002,7 +1002,7 @@
           However, for the compliant fingers, the gripper was not able to achieve a reliable grasp on the screwdrivers when the gripper is offset from the ideal grasping position. This is because the compliant fingers rely on deformation to conform to the tool geometry, and significant offsets can lead to insufficient contact and grip strength. It is because of this that the computer vision subsystem was implemented to provide feedback on the gripper position relative to the target tool, allowing for adjustments to be made to ensure a successful grasp. Future iterations of the gripper design could also explore modifications to the finger geometry or material properties to improve robustness against positional offsets.
         </p>
         <image-component tag="image" source="assets\For grippers\example of failed grasps.png"
-          subtitle="Figure n: Example of failed grasps"></image-component>
+          subtitle="Figure 40: Example of failed grasps"></image-component>
       </div>
 
       <div id="EE-33">
@@ -1044,17 +1044,17 @@
           Based on the system requirements, an interaction architecture was then defined between the control boards and the Mini PC, such that the Mini PC serves as the primary computation and supervisory control unit, while the control boards handle local peripheral interfacing, power switching, and actuator-level control.
         </p>
         <image-component tag="image" source="assets\Interaction between MiniPC and toolchanger circuitry.drawio.svg"
-          subtitle="Figure x: Interaction diagram between Mini PC and Tool Changer Circuitry"></image-component>
+          subtitle="Figure 41: Interaction diagram between Mini PC and Tool Changer Circuitry"></image-component>
         <p>
           For the CAN Bus communication circuit, the SN65HVD232 transceiver was selected due to its compatibility with 3.3 V microcontroller logic and its suitability for direct integration with the STM32-based control architecture. In addition, the device is widely used in embedded CAN applications and is supported by substantial reference material and implementation examples, which reduced development risk and simplified hardware validation.
         </p>
         <image-component size = "small" tag="image" source="assets\For toolchanger PCB\CAN Transceivers.png"
-          subtitle="Figure x: CAN Transceivers"></image-component>
+          subtitle="Figure 42: CAN Transceivers"></image-component>
         <p>
           Following the interim presentation, the selected electromagnet required a 24 V supply, while the gripper subsystem only required 12 V operation. As the STM32F103 operates using 3.3 V logic, dedicated switching circuits were required to allow the low-voltage control signals from the microcontroller to safely and reliably switch the higher-voltage loads.
         </p>
         <image-component tag="image" source="assets\For toolchanger PCB\NChannel Low Side Switching of Electromagnet.png"
-          subtitle="Figure x: N-channel Low Side Switching of Electromagnet circuit"></image-component>
+          subtitle="Figure 43: N-channel Low Side Switching of Electromagnet circuit"></image-component>
         <p>
           For the 24 V electromagnet, a low-side switching circuit based on an N-channel MOSFET was implemented. In this topology, the MOSFET is positioned between the load and ground, such that enabling the MOSFET completes the current path through the electromagnet. Since the STM32 microcontroller operates at 3.3 V logic, its GPIO output is insufficient to directly provide the higher gate drive voltage required to fully enhance the selected N-channel MOSFET. A transistor driver stage consisting of an NPN transistor and a PNP transistor was therefore used as a level-shifting interface. 
         </p>
@@ -1062,7 +1062,7 @@
           The 3.3 V GPIO signal first drives the NPN transistor, which then controls the PNP transistor connected to the 12 V rail. When activated, the PNP transistor pulls the MOSFET gate toward 12 V, thereby providing a substantially higher gate-to-source voltage than could be achieved directly from the microcontroller output. This ensures full enhancement of the MOSFET, resulting in a lower R_(DS(on))and reduced power dissipation. A flyback diode was connected across the electromagnet to clamp the reverse voltage generated during turn-off, protecting the switching device against inductive overvoltage.
         </p>
         <image-component tag="image" source="assets\For toolchanger PCB\PChannel High Side switching of end effector power.png"
-          subtitle="Figure x: P-channel High Side Switching of End Effector Power circuit"></image-component>
+          subtitle="Figure 44: P-channel High Side Switching of End Effector Power circuit"></image-component>
         <p>
           For switching the 12 V supply to the end effector, a high-side switching circuit based on a P-channel MOSFET was used. In this case, the MOSFET is placed on the positive supply rail, allowing the load to be disconnected from the 12 V source when required. Because the source terminal of the P-channel MOSFET sits near 12 V during operation, the microcontroller’s 3.3 V logic output alone is insufficient to directly pull the gate to the required level for effective switching. To address this, an NPN transistor was introduced to pull the MOSFET gate toward ground when commanded, producing a sufficiently negative V_GSto turn the P-channel MOSFET on. When the transistor is turned off, the gate is pulled back toward the source potential, turning the MOSFET off. This arrangement allowed the microcontroller to control the 12 V output rail safely using its 3.3 V logic levels.
         </p>
@@ -1070,12 +1070,12 @@
           To enable repeated coupling and decoupling between the robot-side and tool-side control boards, a pogo-pin contact interface was adopted. Spring-loaded pogo pins such as the ones shown in Figure x below were placed on the tool side, with matching pogo pads on the robot side. Appendix F10 and F11 provide the specifications of the pogo pins used. 
         </p>
         <image-component size ="small" tag="image" source="assets/For toolchanger PCB/Pogo Pin DIP.jpg"
-          subtitle="Figure x: Pogo Pins"></image-component>
+          subtitle="Figure 45: Pogo Pins"></image-component>
         <p>
           From these requirements, a hardware block diagram was developed to define the major functional sections of the circuit board and to map the selected components to each subsystem requirement.
         </p>
          <image-component tag="image" source="assets\Hardware Diagram for Toolchanger boards etc.drawio.svg"
-          subtitle="Figure x: Hardware Diagram for Toolchanger Boards"></image-component>
+          subtitle="Figure 46: Hardware Diagram for Toolchanger Boards"></image-component>
         <p>
           Considering the tight dimensional constraints imposed by the mechanical design of the tool changing system, the control board dimensions were fixed at 30 mm × 40 mm × 10 mm in length, width, and height respectively. Under these constraints, the use of off-the-shelf development boards, prebuilt modules, or prototype perfboard construction was not suitable for the deployed prototype. As a result, a custom printed circuit board was designed in KiCad, based on circuit simulation, calculation, and validation carried out using LTspice and SMath Solver.
         </p>
@@ -1083,7 +1083,7 @@
           The board development was done iteratively, starting with the design and testing of individual circuit sections such as the CAN transceiver interface, the MOSFET switching circuits, and the microcontroller firmware. After validating each section independently, the full circuit was integrated into a single board design, which was then fabricated and assembled for final testing and deployment. The figure below shows the iterative prototypes developed during the design process, leading up to the final integrated control board design. See Appendix F13 to F16 for the prototype iterations in more detail. 
         </p>
          <image-component tag="image" source="assets\For toolchanger PCB\Prototype Boards.png"
-          subtitle="Figure x: Iterative Prototypes for Tool Changer Control Board"></image-component>
+          subtitle="Figure 47: Iterative Prototypes for Tool Changer Control Board"></image-component>
         <p>
           The final control board integrates the STM32F103C8T6 microcontroller, the low-side and high-side switching circuits, and an onboard CAN Bus 2.0B transceiver into a single compact design. In the tool-side configuration, the board additionally supports up to six timer-based input/output channels, allowing it to control end effectors with as many as six servos. The figures below showcase the key components on the board. For the selection of components and calculations, see Appendix F1. 
         </p>
@@ -1099,10 +1099,10 @@
         </model-viewer>
 
         <image-component tag="image" source="assets\For toolchanger PCB\Front view annotated.png"
-          subtitle="Figure x: Front View of the Tool Changer Control Board"></image-component>
+          subtitle="Figure 48: Front View of the Tool Changer Control Board"></image-component>
         
         <image-component tag="image" source="assets\For toolchanger PCB\Back view annotated.png"
-          subtitle="Figure x: Back View of the Tool Changer Control Board"></image-component>
+          subtitle="Figure 49: Back View of the Tool Changer Control Board"></image-component>
         <p>
           Appendix F2 to F8 goes through the board layers in more detail. 
         </p>
@@ -1110,17 +1110,17 @@
           To validate the fabricated control boards, firmware was first uploaded through the onboard debugger interface, followed by LED tests to confirm basic microcontroller operation. Communication tests were then carried out to verify the CAN circuitry by transmitting signals from the robot-side board to the tool-side board, with onboard debugging LEDs used as visual indicators of successful data exchange. Finally, the MOSFET and transistor switching circuits were tested to confirm correct control of the 12 V supply and the electromagnet, both of which were successfully validated.
         </p>
         <image-component tag="image" source="assets\For toolchanger PCB\testingboards.jpg"
-          subtitle="Figure x: Testing the Control Boards"></image-component>
+          subtitle="Figure 50: Testing the Control Boards"></image-component>
         
         <video-component tag="cantest" source="https://www.youtube.com/embed/2dQB4g_SVxs?si=tBOHJKejRftSuvOc"
           subtitle="Video: CAN bus communication test"></video-component>
 
         <p>
-          Upon completion of these electrical tests, the boards were integrated into the mechanical housings for the Robot-side and Tool-side assemblies, as seen in figure n below. More details on the mechanical design of the housings are provided in the following sections.
+          Upon completion of these electrical tests, the boards were integrated into the mechanical housings for the Robot-side and Tool-side assemblies, as seen in figure 51 below. More details on the mechanical design of the housings are provided in the following sections.
         </p>
 
         <image-component tag="image" source="assets\For grippers\board implementation full.png"
-          subtitle="Figure x: The boards integrated into the mechanical housings"></image-component>
+          subtitle="Figure 51: The boards integrated into the mechanical housings"></image-component>
 
       </div>
 
@@ -1143,7 +1143,7 @@
       <div id="EE-333">
         <h3>3.3.3 The Robot Side Unit</h3>
          <image-component size ="small"tag="image" source="assets\For grippers\Robot side with Camera.png"
-          subtitle="Figure n: Robot Side Unit with Camera" width="40px"
+          subtitle="Figure 52: Robot Side Unit with Camera" width="40px"
           height="auto"></image-component>
         <p>
           The Robot side tool unit is meant to house the electromagnet and corresponding circuit board, with a major consideration for the alignment of the Tool side unit when docking. Successful, repeatable alignment of the tool side unit is crucial for both mechanical and electrical connections.
@@ -1152,17 +1152,17 @@
           The docking interface was designed with chamfered alignment features to improve passive self-alignment between the robot-side and tool-side units. Tapered ends were applied to the tool-side alignment pins, while chamfered entry features were incorporated into the mating holes on the robot-side interface. The purpose of these lead-in geometries was to compensate for minor positional errors in the robot approach by guiding the mating parts into alignment during contact. 
         </p>
         <image-component tag="image" source="assets\For grippers\Side view of locating pins and chamfers.png"
-          subtitle="Figure n: Section View of Locating Pins and Chamfers"></image-component>
+          subtitle="Figure 53: Section View of Locating Pins and Chamfers"></image-component>
         <p>
           This design reduces sensitivity to small lateral misalignments by converting initial contact forces into corrective guiding forces, allowing the interface to self-center before full engagement of the electromagnetic and electrical connection surfaces. As a result, the mechanism achieves more reliable and repeatable docking, while also reducing the risk of collision, jamming, and localized wear at the mating interface. The selected chamfer geometry was sufficient to tolerate approximately ±1 mm of positioning error during insertion.
         </p>
         <image-component tag="image" source="assets\For grippers\Free Body Diagram of the Alignment pins working.png"
-          subtitle="Figure n: Free Body Diagram of the Alignment Pins Working"></image-component>
+          subtitle="Figure 54: Free Body Diagram of the Alignment Pins Working"></image-component>
         <p>
           The mounting of the camera was done on the robot side for the detection of the tools and assisting in grabbing. Further elaboration on the exact software is shown in section 4. In terms of the mechanical mounting, consideration was given to the camera’s RGB and Depth FOV, to ensure that the camera image was not blocked when the Tool side with the end effector was docked together. 
         </p>
         <image-component size = "medium" tag="image" source="assets\For grippers\FOV Consideration of the Camera mount (Annotated).png"
-          subtitle="Figure n: FOV Consideration of the Camera Mount"></image-component>
+          subtitle="Figure 55: FOV Consideration of the Camera Mount"></image-component>
       </div>
 
       <div id="EE-334">
@@ -1172,12 +1172,12 @@
         </p>
         
         <image-component tag="image" source="assets\For grippers\Tool Side of Toolchanger.png"
-          subtitle="Figure n: Tool Side of Tool Changer"></image-component>
+          subtitle="Figure 56: Tool Side of Tool Changer"></image-component>
         <p>
           Mounting holes are placed at the underside of the holder for customisability in gripper placements and options. Additionally, the edges of the holder are designed to double function as the supports on the tool holder.
         </p>
         <image-component size="medium" tag="image" source="assets\For grippers\High flexibility in the mounting.png"
-          subtitle="Figure n: High Flexibility in Mounting"></image-component>
+          subtitle="Figure 57: High Flexibility in Mounting"></image-component>
         <h4>3D Model of the Tool Changer Unit</h4>
           <model-viewer
           src="assets\3dmodels\toolchanger_master_assembly.glb"
@@ -1205,7 +1205,7 @@
       <div id="EE-336">
         <h3>3.3.6 The Tool Holder</h3>
         <image-component tag="image" source="assets\For grippers\Tool changer holder.png"
-          subtitle="Figure n: Tool Holder"></image-component>
+          subtitle="Figure 58: Tool Holder"></image-component>
         <p>
           The tool changer holder was created with the following considerations on the robot's physical approach for docking and undocking alongside the part complexity. 
         </p>
@@ -1216,19 +1216,19 @@
           In this application, robustness and repeatability were prioritized over passive geometric assistance. The chosen holder geometry ensures the robot executes a deterministic extraction sequence that is easier to validate and better suited to autonomous operation.
         </p>
         <image-component tag="image" source="assets\For grippers\Docking sequence for tool attachment.png"
-          subtitle="Figure n: Docking Sequence for Tool Attachment"></image-component>
+          subtitle="Figure 59: Docking Sequence for Tool Attachment"></image-component>
         <image-component tag="image" source="assets\For grippers\Docking sequence for tool return.png"
-          subtitle="Figure n: Docking Sequence for Tool Return"></image-component>
+          subtitle="Figure 60: Docking Sequence for Tool Return"></image-component>
         <p>
          The retaining “fingers” of the tool holder were intentionally designed to constrain the tool in the X and Y directions. This was necessary because the end effector behaves as a separate rigid body with respect to the main robotic platform. During AMR motion, especially under sharp angular turning, inertial loading acting on the gripper can generate lateral displacement relative to the holder. Without sufficient constraint, this could result in unintended disengagement of the tool from its storage interface. The addition of X- and Y-axis constraint therefore improves retention security during dynamic operation.  
         </p>
         <image-component tag="image" source="assets\For grippers\Holder constrains in X and Y.png"
-          subtitle="Figure n: Holder Constraints in X and Ys"></image-component>
+          subtitle="Figure 61: Holder Constraints in X and Ys"></image-component>
           <p>
             The basket unit as seen in the figure below was designed to be mounted to the tool holder body, to allow for modularity should the basket be damaged or require replacement. The basket was designed to be large enough to accommodate the tools while also being compact to minimise the overall footprint of the storage system. 
           </p>
           <image-component size = "medium" tag="image" source="assets\For grippers\Basket .png"
-          subtitle="Figure n: Basket Unit for Tool Storage"></image-component>
+          subtitle="Figure 62: Basket Unit for Tool Storage"></image-component>
         <h4>3D Model of the full Tool Changer Assembly</h4>
         <model-viewer
           src="assets\3dmodels\v2_overall_toolchanger_mount_assembly_for_export.glb"
@@ -1245,16 +1245,16 @@
       <div id="EE-34">
         <h3>3.4 Overall integration and testing of tool changer and end effector</h3>
         <image-component tag="image" source="assets\For grippers\Toolchanger system integrated.jpg"
-          subtitle="Figure n: Integrated Tool Changer System mounted on the robot"></image-component>
+          subtitle="Figure 63: Integrated Tool Changer System mounted on the robot"></image-component>
         <p>
           After the individual development of the end effector and tool changer subsystems, the final phase of this section involved the integration of all components into a cohesive system as shown in the figure above, followed by comprehensive testing to validate functionality and performance. This process included mechanical assembly, electrical wiring, firmware deployment, and system-level validation through a series of test scenarios designed to evaluate the reliability and effectiveness of the tool changing mechanism under realistic operating conditions.
         </p>
         <p>
-          The tool changing system was subjected to a range of tests, including repeated docking and undocking cycles to assess the durability and reliability of the mechanical interfaces, as well as functional tests to confirm the correct operation of the electrical control circuits and the successful actuation of the gripper mechanism as shown in the figure n below.
+          The tool changing system was subjected to a range of tests, including repeated docking and undocking cycles to assess the durability and reliability of the mechanical interfaces, as well as functional tests to confirm the correct operation of the electrical control circuits and the successful actuation of the gripper mechanism as shown in the figure 64 below.
         </p>
 
         <image-component tag="image" source="assets\For grippers\Docking tests with pogo pin engagement.png"
-          subtitle="Figure n: Docking tests for toolchanger mechanism"></image-component>
+          subtitle="Figure 64: Docking tests for toolchanger mechanism"></image-component>
 
         <p>
           The videos below demonstrate key aspects of the integrated system in action, showcasing the tool changer’s ability to autonomously exchange end effectors and transmit data. The video showcasing CAN Bus transmission code is in section 5, under the software control stack. Over 300 docking/undocking cycles were completed and only 2 failures are recorded, due to firmware bugs that were subsequently fixed.
@@ -1288,17 +1288,17 @@
           Figure _ shows the pegboard setup, which is divided into three sections, location 1, 2, and 3. Each section is designated for a specific category of tools - location 1 stores Phillips screwdrivers, location 2 stores flathead screwdrivers, and location 3 stores a mallet
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 1.png"
-          subtitle="Fig n: Pegboard setup"></image-component>
+          subtitle="Figure 65: Pegboard setup"></image-component>
         <p>
           The corresponding tool classes are defined as follows:
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 2.png"
-          subtitle="Fig n: Classes used in the computer vision model"></image-component>
+          subtitle="Figure 66: Classes used in the computer vision model"></image-component>
         <p>
           The user will first input a tool name into the system. Based on the user’s selected tool type, the robot arm first moves to the designated location. The camera is then activated to capture an image of the scene. Object detection is performed using YOLOv11n, after which the 3D coordinates (XYZ) of the closest instance of the selected tool are computed relative to the camera frame. These coordinates are then transformed into the robot arm frame to guide the robot arm for grasping (frame transformation is covered in section 5.5). A visual illustration of this process is shown below.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 3.png"
-          subtitle="Figure N Example scenario of the workflow"></image-component>
+          subtitle="Figure 67: Example scenario of the workflow"></image-component>
         <p>
           Due to time constraints, the project scope was narrowed down based on the following assumptions:
         </p>
@@ -1306,13 +1306,13 @@
           1.	The tools are always positioned upright. While some deviations from vertical alignment are acceptable, they are not exaggeratedly slanted, messy or occluded.
         </p>
         <p>
-          2.	The screwdrivers’ arrangements are always consistent. For example, large flatheads (PH–L) will always be placed at the 2 leftmost holders, medium flatheads (PH–M) will be placed at the middle 2 holders, small flatheads (PH-S) will be placed at the 2 rightmost holders (Figure_).
+          2.	The screwdrivers’ arrangements are always consistent. For example, large flatheads (PH–L) will always be placed at the 2 leftmost holders, medium flatheads (PH–M) will be placed at the middle 2 holders, small flatheads (PH-S) will be placed at the 2 rightmost holders (Figure 68).
         </p>
         <p>
           Based on our observations and feedback from the Hub staff, these assumptions are reasonable as the tool holders are already sized according to fit specific screwdriver sizes. As a result, users tend to return tools to their designated positions, and in most cases place them upright, maintaining a consistent and structured layout.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 4.png"
-          subtitle="Figure n Screwdrivers are consistently returned to their designated holders due to size-specific holder design"></image-component>
+          subtitle="Figure 68: Screwdrivers are consistently returned to their designated holders due to size-specific holder design"></image-component>
       </div>
 
       <div id="CV-411">
@@ -1329,17 +1329,17 @@
           Apart from that, the dark screwdriver tips blend with the black pegboard on certain occasions, making classifications based on screwdriver tips an unreliable method.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 5.png"
-          subtitle="Figure N Challenges faced with orignial screwdriver set"></image-component>
+          subtitle="Figure 69: Challenges faced with original screwdriver set"></image-component>
         <p>
           To tackle these challenges, the screwdrivers were color coded with distinct colors to make class classification easier for the model.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 6.png"
-          subtitle="Figure 6 Screwdrivers modified by colour coding"></image-component>
+          subtitle="Figure 70: Screwdrivers modified by colour coding"></image-component>
           <p>
             Other solutions that did not involve color coding the screwdrivers were explored but were not selected after evaluating their trade-offs (see figure_). Ultimately, color coding was chosen as it is simple and provides the most reliable predictions.
           </p>
         <image-component tag="image" source="assets\fc2\cv\fig 7.png"
-          subtitle="Figure 7 Alternative methods considered to colour coding"></image-component>
+          subtitle="Figure 71: Alternative methods considered to colour coding"></image-component>
       </div>
 
       <div id="CV-412">
@@ -1348,9 +1348,9 @@
           Two hardware components form the physical foundation of the system: the Intel RealSense D435if depth camera, which handles scene capture, and the Advantech UNO-238V, which serves as the onboard robot PC. Their specifications are shown in figure_
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 8.png"
-          subtitle="Figure 8 Hardware tools usedR"></image-component>
+          subtitle="Figure 72: Hardware tools usedR"></image-component>
         <image-component tag="image" source="assets\fc2\cv\fig 9.png"
-          subtitle="Figure 9 Hardware specifications"></image-component>
+          subtitle="Figure 73: Hardware specifications"></image-component>
         <p>
          Stream configuration:
         </p>
@@ -1375,7 +1375,7 @@
           The model development phase focuses on training the object detection model using a custom dataset. The computer vision pipeline development phase involves integrating the trained model with depth processing to compute 3D coordinates of detected objects. Finally, the 3D coordinate validation phase evaluates the accuracy and stability of the computed coordinates.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 10.png"
-          subtitle="Figure 10 Project phases"></image-component>
+          subtitle="Figure 74: Project phases"></image-component>
       </div>
 
       <div id="CV-42">
@@ -1394,19 +1394,19 @@
           As the exact robot position was not defined initially, images from group A-C were captured using a stand approximating the expected position. Once the robot's position was finalized, subsequent images (Group D – I) were captured at the actual position under varied real-world conditions (see appendix H1).
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 11.png"
-          subtitle="Figure 11Variation groups of dataset images"></image-component>
+          subtitle="Figure 75: Variation groups of dataset images"></image-component>
         <p>
           Below are some examples of images from the dataset for each variation group:
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 12.png"
-          subtitle="Figure 12 Screwdriver dataset. (Variation groups A-C)"></image-component>
+          subtitle="Figure 76: Screwdriver dataset. (Variation groups A-C)"></image-component>
           <image-component tag="image" source="assets\fc2\cv\fig 13.png"
-          subtitle="Figure 13  Screwdriver dataset (Variation groups D – I)"></image-component>
+          subtitle="Figure 77: Screwdriver dataset (Variation groups D – I)"></image-component>
           <p>
             As for the mallet dataset, as it is only a single tool class with no size variants, only 66 images were collected at location 3 across varied positions and lighting conditions.
           </p>
         <image-component tag="image" source="assets\fc2\cv\fig 14.png"
-          subtitle="Figure 14 Mallet dataset"></image-component>
+          subtitle="Figure 78: Mallet dataset"></image-component>
       </div>
 
       <div id="CV-422">
@@ -1415,7 +1415,7 @@
           After data collection, all images were annotated to serve as ground truth for model training using Roboflow. Bounding boxes were drawn as tightly as possible around each object. For occluded objects, annotations were only made when the class could be confidently identified from visible features, to avoid introducing ambiguous training signals (see Figure _).
         </p>
        <image-component tag="image" source="assets\fc2\cv\fig 15.png"
-          subtitle="Figure 15 Annotation convention used when labelling dataset"></image-component>
+          subtitle="Figure 79: Annotation convention used when labelling dataset"></image-component>
       </div>
 
       <div id="CV-423">
@@ -1424,7 +1424,7 @@
           The dataset was split into 3 sets as shown below.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 16.png"
-          subtitle="Dataset split"></image-component>
+          subtitle="Figure 80: Dataset split"></image-component>
         <p>
           Model training and performance evaluation were done on 2 types of YOLO models, namely the YOLOv11n and YOLOv26n. Ultimately, YOLOv11n was the chosen one due to its better performance. 
         </p>
@@ -1432,14 +1432,14 @@
           The training configurations for both models are as follows (figure_) 
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 17.png"
-          subtitle="Figure 17 Training configurations"></image-component>
+          subtitle="Figure 81: Training configurations"></image-component>
         <p>
           The test set was used for performance evaluation. The performance comparisons between models are shown in the figures below. See appendix H2 for definitions of key metrics, and appendix H3 for additional training results.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 18.png"
-          subtitle="Figure 18 Performance results"></image-component>
+          subtitle="Figure 82: Performance results"></image-component>
           <image-component tag="image" source="assets\fc2\cv\fig 19.png"
-          subtitle="Figure 19 Confusion matrix"></image-component>
+          subtitle="Figure 83: Confusion matrix"></image-component>
         <p>
           From the results, YOLOv11n performs better than YOLOv26n across all evaluation metrics, achieving higher mAP, precision, and recall, which means more accurate detections and fewer missed objects. This is reflected in the confusion matrices, where YOLOv11n shows a clean diagonal with minimal errors, while YOLOv26n has more missed detections and slightly more spread. Although YOLOv26n is slightly faster, the difference is small compared to the drop in accuracy. Therefore, YOLOv11n is selected as the final model due to its better overall performance and robustness.
         </p>
@@ -1454,7 +1454,7 @@
           The computer vision pipeline is deployed as a ROS2 service node. When the software control stack (section 5.4) issues a request specifying a target tool class, the client node activates the RealSense camera, runs the computer vision pipeline described in this section, and returns the estimated XYZ coordinates of the nearest matching target tool back to the client. The camera is then deactivated after each service call. The following subsection details each stage of this pipeline.
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 20.png"
-          subtitle="Figure 20 Computer vision pipeline integrated with ROS"></image-component>
+          subtitle="Figure 84: Computer vision pipeline integrated with ROS"></image-component>
 
       </div>
 
@@ -1470,7 +1470,7 @@
           This stream alignment step is necessary for the deprojection function in Section 4.3.4, which requires each pixel's 2D coordinate and depth value to refer to the same point in space.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 21.png"
-          subtitle="Figure 21 Depth frame aligned with RGB frame"></image-component>
+          subtitle="Figure 85: Depth frame aligned with RGB frame"></image-component>
       </div>
 
       <div id="CV-432">
@@ -1482,7 +1482,7 @@
           For screwdrivers, the grasp point is set at 15% of the bounding box height from the top, targeting the handle end. For the mallet, it is set at 40% from the top, targeting the shaft. This ensures that the computed 3D coordinate corresponds to a physically meaningful grasp location.
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 22.png"
-          subtitle="Figure 22 Grasp point computation"></image-component>
+          subtitle="Figure 86: Grasp point computation"></image-component>
       </div>
 
       <div id="CV-433">
@@ -1500,7 +1500,7 @@
           1. SDK Filtering:
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 23.png"
-          subtitle="Figure 23 SDK filter"></image-component>
+          subtitle="Figure 87: SDK filter"></image-component>
           <p>
            2.	Patch-based depth sampling 
           </p>
@@ -1508,12 +1508,12 @@
             From the depth map (figure_), we can see that certain regions on the screwdriver handle could still contain zero depth values (black pixels). If only a single depth value at (cx,cy) is used, it may coincide with these invalid pixels, resulting in incorrect 3D coordinates.
           </p>
            <image-component tag="image" source="assets\fc2\cv\fig 24.png"
-          subtitle="Figure 24 Depth map"></image-component>
+          subtitle="Figure 88: Depth map"></image-component>
           <p>
             To solve this, a 9 × 17 pixel sample patch centered around the grasp point is sampled, as shown in figure_. Within the patch, pixels with zero depth values are first discarded. Among the remaining pixels, those whose depth values falling within a set tolerance of the patch median are retained (the green pixels). Doing so helps eliminate potential inconsistent or unwanted depth data within the patch. These remaining valid pixels are then passed to the 3D coordinate computation stage described in the next section.
           </p>
            <image-component tag="image" source="assets\fc2\cv\fig 25.png"
-          subtitle="Figure 25 Depth filtering (accepting green pixels only)"></image-component>
+          subtitle="Figure 89: Depth filtering (accepting green pixels only)"></image-component>
       </div>
 
       <div id="CV-434">
@@ -1525,7 +1525,7 @@
           In this pipeline, the RealSense SDK function rs.rs2_deproject_pixel_to_point() is used to perform this conversion. This function takes in the pixel coordinate (px,py), the corresponding depth value Z and the camera intrinsic parameters, to return the 3D coordinates (see figure_)
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 26.png"
-          subtitle="Figure 26 Deprojection function"></image-component>
+          subtitle="Figure 90: Deprojection function"></image-component>
         <p>
           To improve robustness, deprojection is not performed on a single pixel. Instead, all valid pixels within the sampled patch from section 4.3.3, are individually deprojected, and the final XYZ is computed as the median of these points. This reduces the effect of depth noise and ensures a more stable estimate of the object position.
         </p>
@@ -1536,7 +1536,7 @@
           Further details on the underlying projection and deprojection model are provided in Appendix H4.
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 27.png"
-          subtitle="Figure 27 Frame of coordinates computed"></image-component>
+          subtitle="Figure 91: Frame of coordinates computed"></image-component>
       </div>
 
       <div id="CV-435">
@@ -1545,7 +1545,7 @@
           Once all detections in the scene have been processed and assigned 3D coordinates, the pipeline filters only those matching the requested tool class. Among the remaining detections, the system returns the coordinate value of the target class that is closest to the camera's optical axis. Closest proximity is computed as the Euclidean distance in the XY plane from the camera origin (0, 0) to the grasp point of each detection, as illustrated in Figure _.
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 28.png"
-          subtitle="Figure 28 Nearest target tool selection based on euclidean of XY"></image-component>
+          subtitle="Figure 92: Nearest target tool selection based on euclidean of XY"></image-component>
         <p>
           This approach is used instead of full 3D Euclidean distance as the camera surface may not always be perfectly parallel to the pegboard due to robot misalignment, causing Z values to vary across the scene even when all tools lie on the same physical plane. Including Z would therefore introduce unintended bias into the selection. Thus, restricting the calculation to the XY plane ensures that tool selection remains consistent and predictable with respect to the actual tool position.
         </p>
@@ -1553,7 +1553,7 @@
           The result of the target selection is returned to the client via a service response. In the successful case, the response contains the 3D coordinates (X, Y, Z) of the selected target for downstream motion execution. If no matching object is detected, a failure response is returned, which is displayed as a “NOT FOUND” message on screen.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 29.png"
-          subtitle="Figure 29 No screwdriver found in scene"></image-component>
+          subtitle="Figure 93: No screwdriver found in scene"></image-component>
       </div>
 
       <div id="CV-44">
@@ -1568,9 +1568,9 @@
          When testing the full computer vision pipeline on the actual deployment conditions, we observed that the grasp point is consistently aligned with the gripper center (figure_). Of the 150 grip tests done for the screwdriver, 149 were successful whilst 1 failed due to collision with the screwdriver above. The mallet test also showed consistent results, though it wasn’t as rigorously tested as it wasn’t the focus of the project (it is a proof-of-concept for the tool changer system (figure_))
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 30.png"
-          subtitle="Figure 30 XYZ accuracy test on screwdriver"></image-component>
+          subtitle="Figure 94: XYZ accuracy test on screwdriver"></image-component>
           <image-component tag="image" source="assets\fc2\cv\fig 31.png"
-          subtitle="Figure 31 XYZ accuracy test on mallet"></image-component>
+          subtitle="Figure 95: XYZ accuracy test on mallet"></image-component>
         <p>
           Prior to these validation tests done on the actual deployment scene, some preliminary tests were also conducted to gauge the accuracy of the computed coordinates. Refer to appendix H5 for these tests.
         </p>
@@ -1593,7 +1593,7 @@
           Bounding box smoothing was performed by running object detection across 5 RGB frames and computing the average grasp point (cx, cy) to reduce detection jitter. However, as shown in Figure_, detected grasp point locations varied by at most ~1px across frames, indicating that the bounding box predictions were already sufficiently stable and that averaging provided negligible benefit. This method was therefore not adopted.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 32.png"
-          subtitle="Figure 32 Bounding box variation across 5 RGB frames"></image-component>
+          subtitle="Figure 96: Bounding box variation across 5 RGB frames"></image-component>
       </div>
 
       <div id="CV-452">
@@ -1602,7 +1602,7 @@
           This method was explored to reduce frame-to-frame depth noise by estimating the XYZ coordinates as the median across 10 depth frames per capture. As shown in figure _, benchmarking over 50 captures showed only a small reduction in variance compared to single-frame estimates (Euclidean standard deviation: 1.832 mm → 1.386 mm). Since the improvement (~0.45 mm) is small, the added computation cost was not justified. Thus, this method was not adopted.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 33.png"
-          subtitle="Figure 33 Variance comparison of single vs multiple depth frame method"></image-component>
+          subtitle="Figure 97: Variance comparison of single vs multiple depth frame method"></image-component>
         <p>
         This method, however, may be more useful in scenarios where inference is performed on a live video stream, and the camera or objects are in motion, unlike the static setup in this project where both the camera and tools remain stationary. In such cases, frame-to-frame variation in the estimated XYZ values becomes more pronounced, and aggregating multiple depth frames can improve stability. As shown in the video below, for such scenarios, taking the median across multiple frames results in more stable coordinate estimates.
         </p>
@@ -1620,12 +1620,12 @@
           Firstly, the screwdriver was tilted such that the grasp point lies at the edge of the screwdriver contour (figure_). As seen from the video below, although the robot still managed to grasp it, it almost didn't.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 34.png"
-          subtitle="Figure 34 Grasp point falls on edge of screwdriver handle"></image-component>
+          subtitle="Figure 98: Grasp point falls on edge of screwdriver handle"></image-component>
         <p>
           Next, we tried tilting the screwdriver furthermore, until the grasp point does not lie on the screwdriver anymore (figure). As seen from the video below, the gripper went too much forward into the pegboard and did not manage to grab the screwdriver.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 35.png"
-          subtitle="Figure 35 Grasp point does not fall on screwdriver handle"></image-component>
+          subtitle="Figure 99: Grasp point does not fall on screwdriver handle"></image-component>
         <p>
           To be able to grab slanted objects, other types of models could be used. These will be discussed in section 7.2
         </p>
@@ -1645,14 +1645,14 @@
           From the interim presentation, a user sequence diagram, shown in Figure N, and an initial software architecture diagram, shown in Figure N, were developed to represent the idealised control flow and software structure of the system.
         </p>
         <image-component tag="image" source="assets\software\task3.png"
-          subtitle="Figure n: Interaction diagram"></image-component>
+          subtitle="Figure 100: Interaction diagram"></image-component>
         <image-component tag="image" source="assets\software\C4 Model Diagram.drawio.svg"
-          subtitle="Figure n: Initial software architecture diagram"></image-component>
+          subtitle="Figure 101: Initial software architecture diagram"></image-component>
         <p>
           For the final deployed prototype, the software architecture was further streamlined, as illustrated in the updated diagram shown below.
         </p>
          <image-component tag="image" source="assets\C4 Model Diagram Updated.drawio.svg"
-          subtitle="Figure n: Updated software architecture diagram"></image-component>
+          subtitle="Figure 102: Updated software architecture diagram"></image-component>
         <p>
           Throughout the development of the final prototype software, the implementation approach was continually refined and, where necessary, restructured to meet the practical operating requirements of the system. The following sections describe in detail the individual nodes and their respective functionalities that enable the overall system to operate.
         </p>
@@ -1670,7 +1670,7 @@
           From the interim presentation, various trajectory planners were tested and the PILZ trajectory planner was selected for stable trajectory planning and ability for linear trajectory application.
         </p>
          <image-component tag="image" source="assets\Master action node interactions.drawio.svg"
-          subtitle="Figure n: Master Cobot Action Node Interactions"></image-component>
+          subtitle="Figure 103: Master Cobot Action Node Interactions"></image-component>
         <p>
           The diagram above shows how the node, called the Master Cobot Action Node, interacts with the other software subsystems in the overall architecture. The node’s endpoints feature Ros2 services that allow for the control and data reading of the cobot during its execution. The sequencer node, the node that handles the direct systems, mainly interacts via this service calls which are sequence requests. 
         </p>
@@ -1684,7 +1684,7 @@
           The SESTO node is responsible for managing communication with the SESTO Magnus Lite AMR platform and providing the rest of the software system with an interface for navigation-related and control functions. Its primary function is to accept location-based commands from the sequencer and convert them into navigation requests that can be understood by the mobile platform. This involves calling external APIs, sending requests to the base controller, or continuously polling platform status to monitor progress. 
         </p>
         <image-component tag="image" source="assets\Sesto Communication.drawio.svg"
-          subtitle="Figure n: SESTO Node Communication"></image-component>
+          subtitle="Figure 104: SESTO Node Communication"></image-component>
         <p>
           From the diagram above, the main interactions with the software architecture involve the SESTO node accepting service and action requests from the sequencer. These service cand action request are directly tied to API calls that are done to the SESTO’s onboard API server to execute the motions. The table below shows the endpoints utilised for the system.
         </p>
@@ -1752,12 +1752,12 @@
           When the AMR reaches its destination, it will enter in Station-Lock mode, where no navigation requests will be accepted until specifically released. This is used as an intermediary safety layer to prevent any navigation requests from being submitted which may lead to unsafe conditions if the arm also were to be moving simultaneously. The release of this Station-Lock is done via the API endpoint /amrs/release/station.
         </p>
         <image-component tag="image" source="assets\sesto\Sesto at station lock.jpg"
-          subtitle="Figure n: Sesto at Station Lock"></image-component>
+          subtitle="Figure 105: Sesto at Station Lock"></image-component>
         <p>
           For the creation of new waypoints, this can also be done using API calls to the system but for convenience, the Fleet Server UI seen in figure x, onboard the AMR was utilised as the GUI overlay shows the location of the endpoints, leading to easier implementation. Each key point can then be referenced in the API calls.
         </p>
         <image-component tag="image" source="assets\software\Sesto Fleet Server.jpg"
-          subtitle="Figure n: Sesto Fleet Server"></image-component>
+          subtitle="Figure 106: Sesto Fleet Server"></image-component>
         <p>
           In figure x to n shows the physical locations of these waypoints.  
         </p>
@@ -1771,7 +1771,7 @@
           The SESTO Magnus Lite AMR platform exhibits a navigation accuracy issue, with observed drift of approximately ±20 mm in both X and Y directions after repeated navigation attempts to the same location. This level of inaccuracy poses a significant challenge for tasks such as pick-and-place operations, where precise positioning is critical for successful item grasping.
         </p>
         <image-component size = "medium" tag="image" source="assets\software\Sesto inaccuracy.jpg"
-          subtitle="Figure n: Sesto Navigation Inaccuracy"></image-component>
+          subtitle="Figure 107: Sesto Navigation Inaccuracy"></image-component>
         <p>
           Based on the datasheet, the Sesto Magnus Lite has a navigation accuracy of ±20 mm, which is consistent with the observed drift during testing. The exact positional readings can be found in Appendix N. This means that even if the AMR successfully reaches the general vicinity of the target location, there is still a possibility that it may be misaligned by up to 20 mm, which can lead to failed grasps if the robot arm relies solely on hardcoded motions based on expected coordinates.
         </p>
@@ -1779,7 +1779,7 @@
           Consideration was placed for the utilisation of a docking marker that the AMR can reference and dock to. However, the placement of the docking marker and low profile design makes it a tripping hazard for people. Hence this idea was scrapped. 
         </p>
          <image-component size = "medium" tag="image" source="assets\sesto\Sesto docking marker.jpg"
-          subtitle="Figure n: Sesto Docking Marker"></image-component>
+          subtitle="Figure 108: Sesto Docking Marker"></image-component>
         <p>
           To mitigate this issue, the system incorporates computer vision techniques to dynamically adjust the robot's position during pick-and-place tasks. By using visual feedback from the camera, the robot can detect the actual location of the target item and make real-time adjustments to its position, compensating for any drift caused by navigation inaccuracies. 
         </p>
@@ -1791,17 +1791,17 @@
           The CAN bus node provides the low-level hardware communication interface between the ROS2 software stack, and the physical end-effector or peripheral devices connected over the CAN network. The CAN bus node interfaces with the drivers and corresponding CAN peripherals onboard the UNO 238 V2 MiniPC.
         </p>
         <image-component size ="medium" tag="image" source="assets\software\UNO 238 V2.png"
-          subtitle="Figure n: UNO 238 V2 MiniPC available interfaces"></image-component>
+          subtitle="Figure 109: UNO 238 V2 MiniPC available interfaces"></image-component>
         <p>
           In the context of the robotics system, the CAN node mainly interfaces with the tool changer unit circuits boards, seen in section 3. The interaction between the CAN node and the peripherals can then be illustrated in the diagram below:
         </p>
         <image-component tag="image" source="assets\Can bus node interactions.drawio.svg"
-          subtitle="Figure n: CAN Bus Node Interactions"></image-component>
+          subtitle="Figure 110: CAN Bus Node Interactions"></image-component>
         <p>
           The CAN Node itself opens various services that the sequencer can call. These services are for the control of the tool changer’s electromagnet, power delivery and the gripper’s open and close command. Upon calling any of these services, the CAN Node transmits a CAN frame that can be seen in the diagram below:
         </p>
         <image-component tag="image" source="assets/software/CAN Frame MiniPC to Toolchanger Robot Side.png"
-          subtitle="Figure n: CAN Frame MiniPC to Toolchanger Robot Side"></image-component>
+          subtitle="Figure 111: CAN Frame MiniPC to Toolchanger Robot Side"></image-component>
         <p>
           In this CAN frame, the commands for the electromagnet, power delivery and gripper state are seen in the bit 6, 5 and 4 fields whilst bit 3 to 0 are reserved for other command structures. 
         </p>
@@ -1822,7 +1822,7 @@
           The interaction diagram below illustrates the relationship between the computer vision node and the wider control stack, with the sequencer node acting as the primary service client.
         </p>
         <image-component size="large" tag="image" source="assets\Computer Vision Node.drawio.svg"
-          subtitle="Figure n: Computer Vision Node interactions"></image-component>
+          subtitle="Figure 112: Computer Vision Node interactions"></image-component>
         <p>
           Upon receiving a request from the sequencer node, the computer vision node takes in the name of the requested tool and begins processing the visual input to determine whether the tool is present. If the request is completed successfully and valid frame data is returned, the sequencer node then computes the new target coordinates required for motion execution. While this process is based on frame transformations, it was simplified into vector calculations under the assumption of fixed frame relationships. The following sections describe this calculation in greater detail.
         </p>
@@ -1837,7 +1837,7 @@
     vector addition and subtraction. Figure n illustrates the relevant coordinate frames and vectors involved in the derivation.
   </p>
   <image-component tag="image" source="assets\For grippers\New frame transformation picture.png"
-          subtitle="Figure n: CAN Frame MiniPC to Toolchanger Robot Side"></image-component>
+          subtitle="Figure 113: CAN Frame MiniPC to Toolchanger Robot Side"></image-component>
 
   <h4>5.5.2 Symbol Definitions</h4>
 
@@ -1985,7 +1985,7 @@
           From a functional perspective, the sequencer receives higher-level requests that correspond to complete robotic actions, such as performing a delivery, retrieving a tool, returning to a home pose, or executing a pickup sequence. Rather than directly controlling motors or actuators, the sequencer breaks each high-level task into a series of ordered sub-operations. These sub-operations are then issued to the relevant nodes using ROS2 services, actions, or topic-based communication depending on the nature of the task. This design allows the logic of the task flow to be managed in one place, while hardware-specific or subsystem-specific details remain isolated in their own nodes.
         </p>
         <image-component tag="image" source="assets\Sequencer Node interactions.drawio.svg"
-          subtitle="Figure n: Sequencer Node Interactions"></image-component>
+          subtitle="Figure 114: Sequencer Node Interactions"></image-component>
         <p>
           In the diagram above, the sequencer node interfaces with all the relevant hardware control nodes. Since the sequencer can control all items with proper logic, it plays a critical role in fault handling and recovery. In practical robotic systems, failures such as missing tools, unsuccessful grasps, delayed status updates, or unexpected subsystem states are common. To address this, the sequencer includes conditional branches that alter the execution flow based on returned results. For instance, if a requested screwdriver is not detected at the pickup location, the sequencer can record that outcome, skip the failed pickup, and proceed to inspect the next valid request instead of remaining stuck in an incomplete state. If no valid items remain, the node can trigger a safe homing or recovery procedure. This makes the overall system more robust and better suited for semi-structured real-world operation.
         </p>
@@ -2002,12 +2002,12 @@
           From a functional standpoint, the webserver accepts user inputs such as delivery requests, task selections, or other operation commands. These inputs are then passed into the backend control logic, where they are interpreted and relayed to the sequencer or relevant subsystem. In this way, the webserver does not directly command the robot at the hardware level but instead serves as a structured interface between user intent and robotic execution.
         </p>
         <image-component tag="image" source="assets\Webserver Node Interactions.drawio.svg"
-          subtitle="Figure n: Webserver Node Interactions"></image-component>
+          subtitle="Figure 115: Webserver Node Interactions"></image-component>
         <p>
           In the UI, the user has the option to select multiple tools for delivery, which can be seen in the figure n below. They can then select which table do they want the deliveries to be delivered to. Upon clicking the Send Request button, the commands are then sent over to the sequencer node, where the system then decides how to control the hardware to complete the order. 
         </p>
         <image-component tag="image" source="assets\software\Tool selection of UI.jpg"
-          subtitle="Figure n: Tool Selection in UI"></image-component>
+          subtitle="Figure 116: Tool Selection in UI"></image-component>
           <p>
             In the lower dialogue box, the user can monitor the delivery with parameters. These parameters dynamically update based on the feedback from the sequencer node. A description of these parameters can be seen in the table below:
           </p>
@@ -2041,23 +2041,23 @@
             An additional set of buttons and debug console are also present, mainly for resetting the system and conducting tests. 
           </p>
           <image-component tag="image" source="assets\software\Debugging section of UI.jpg"
-          subtitle="Figure n: Debugging Section in UI"></image-component>
+          subtitle="Figure 117: Debugging Section in UI"></image-component>
         <p>
-          Figure n shows the web UI prototype in its entirety. The videos in section 5.8 also show the webserver in action, where the user can monitor the delivery process and see the feedback from the system.
+          Figure 118 shows the web UI prototype in its entirety. The videos in section 5.8 also show the webserver in action, where the user can monitor the delivery process and see the feedback from the system.
         </p>
         <image-component tag="image" source="assets\software\ASI-404 - Robot System UI Control Prototype_Cropped.png"
-          subtitle="Figure n: The Complete Web UI Prototype"></image-component>
+          subtitle="Figure 118: The Complete Web UI Prototype"></image-component>
       </div>
 
       <div id="SS-58">
         <h3>5.8: Overall software functionality</h3>
         <image-component tag="image" source="assets\ROS2 Computational Graph.drawio.svg"
-          subtitle="Figure n: ROS2 Computational Graph"></image-component>
+          subtitle="Figure 119: ROS2 Computational Graph"></image-component>
         <p>
-          Figure N presents an overview of the ROS 2 services and actions implemented within the system nodes. After all nodes have been successfully initialised and confirmed to be operational, the system is able to accept incoming tool delivery requests. The flowchart below illustrates the corresponding system workflow and internal control logic executed upon receipt and acceptance of a delivery request.
+          Figure 119 presents an overview of the ROS 2 services and actions implemented within the system nodes. After all nodes have been successfully initialised and confirmed to be operational, the system is able to accept incoming tool delivery requests. The flowchart below illustrates the corresponding system workflow and internal control logic executed upon receipt and acceptance of a delivery request.
         </p>
         <image-component size="medium" tag="image" source="assets\Sequence flowchart of robot functionality.drawio.svg"
-          subtitle="Figure n: Sequence Flowchart of Robot Functionality"></image-component>
+          subtitle="Figure 120: Sequence Flowchart of Robot Functionality"></image-component>
         <p>
           The videos below showcase the full system running autonomously with the webserver integration. The first video shows the system collecting and delivering the requested screwdrivers based on user input and the second video shows the system returning back to the home position after the delivery is completed and acknowledged.
         </p>
@@ -2084,7 +2084,7 @@
         <h3>6.1 Safety implementation</h3>
         
         <image-component size = "medium" tag="image" source="assets\safety\Safety Diagram for System.svg"
-          subtitle="Figure n: Safety Diagram for System"></image-component>
+          subtitle="Figure 121: Safety Diagram for System"></image-component>
         <p>
           Onboard the AMR and Cobot, there are integrated safety peripherals that prevent the system from injuring or harming users. One of the main changes that the team did to improve the safety further was to merge the estop logic to both the AMR and Cobot. This allows for the system to be shut down fully. The following videos showcase these safety peripherals during the use of the system. 
         </p>
@@ -2243,7 +2243,7 @@
           During this preliminary validation, the stakeholder interacted with the system and assessed its operation in relation to its intended use case. Feedback was collected through direct observation and discussion, focusing on areas such as usability, task flow, clarity of interaction, and practical suitability. The comments obtained were then used to introduce small refinements to the system to improve its readiness for broader user testing.
         </p>
         <image-component tag="image" source="assets\uservalidation\Preliminary.png"
-          subtitle="Figure n: Preliminary User Validation with Patrick"></image-component>
+          subtitle="Figure 122: Preliminary User Validation with Patrick"></image-component>
       </div>
 
       <div id="P-712">
@@ -2252,9 +2252,9 @@
           Following the preliminary refinement stage, the system was subjected to primary user validation involving the intended user group. The objective of this stage was to evaluate the system under more realistic user-facing conditions and to assess its usability, effectiveness, and user acceptance after the initial refinements had been incorporated.
         </p>
         <image-component tag="image" source="assets\uservalidation\Primary Collage 1.png"
-          subtitle="Figure n: Primary User Validation - Collage 1"></image-component>
+          subtitle="Figure 123: Primary User Validation - Collage 1"></image-component>
         <image-component tag="image" source="assets\uservalidation\Primary Collage 2.png"
-          subtitle="Figure n: Primary User Validation - Collage 2"></image-component>
+          subtitle="Figure 124: Primary User Validation - Collage 2"></image-component>
         <p>
           During this round of feedback, key feedback points obtained from the students and stakeholders were on points such as the user experience, suitability for the intended environment and workflow, maintainability of the system and general improvements and recommendations for future works. The summary of each feedback can be found in the table below. 
         </p>
@@ -2300,7 +2300,7 @@
           The primary limitation of the current computer vision pipeline is its inability to reliably grasp tools that are significantly slanted. This is because the object detection model produces only axis-aligned bounding boxes and has no knowledge of the object's orientation. Future work could explore alternative model architectures such as oriented bounding boxes or key point estimation to address this. 
         </p>
         <image-component tag="image" source="assets\fc2\cv\section 7.2.png"
-          subtitle="Figure n: Possible methods to overcome axis-aligned detection limitations for oriented tool grasping"></image-component>
+          subtitle="Figure 125: Possible methods to overcome axis-aligned detection limitations for oriented tool grasping"></image-component>
       </div>
 
       <div id="P-73">
@@ -2312,7 +2312,7 @@
           Although the current system remains a prototype and would require further refinement, optimisation, and targeted development before it is suitable for long-term real-world deployment, it has nevertheless demonstrated the feasibility and potential of such a solution. More importantly, the project highlights how industrial robotic systems can be adapted beyond conventional manufacturing settings to support workflow improvement and efficiency enhancement in other operational environments.
         </p>
         <image-component size="medium" tag="image" source="assets\grpmempic\ASI 404 Team Photo.jpg"
-          subtitle="Figure x: The team and the prototype"></image-component>
+          subtitle="Figure 126: The team and the prototype"></image-component>
       </div>
 
     </div>
@@ -2657,23 +2657,35 @@
       <h3>
        H1
       </h3>
-      <image-component size="large" tag="image" source="dwa"
-          subtitle="PLACEHOLDER"></image-component>
+      <image-component size="large" tag="image" source="assets\fc2\cv\H1.png"
+          ></image-component>
       <h3>
        H2
       </h3>
-      <image-component size="large" tag="image" source="adwa"
-          subtitle="PLACEHOLDER"></image-component>
+      <image-component size="large" tag="image" source="assets\fc2\cv\H2.png"
+          ></image-component>
       <h3>
        H3
       </h3>
-      <image-component size="large" tag="image" source="adwa"
-          subtitle="PLACEHOLDER"></image-component>
+      <image-component size="large" tag="image" source="assets\fc2\cv\H3.png"
+          ></image-component>
       <h3>
        H4
       </h3>
-      <image-component size="large" tag="image" source="adwa"
-          subtitle="PLACEHOLDER"></image-component>
+      <image-component size="large" tag="image" source="assets\fc2\cv\H4.png"
+          ></image-component>
+      <h3>
+       H5
+      </h3>
+      <image-component size="large" tag="image" source="assets\fc2\cv\H5.png"
+         ></image-component>
+      <h3>
+       H6
+      </h3>
+      <image-component size="large" tag="image" source="assets\fc2\cv\H6(1).png"
+         ></image-component>
+      <image-component size="large" tag="image" source="assets\fc2\cv\H6(1).png"
+         ></image-component>
     </div>
 
   </div>
