@@ -666,10 +666,10 @@
     <div id="RS_221">
       <h4>2.2.1 Final Circuit Design</h4>
       <p>
-        Figure _ shows the finalised circuit diagram of the robot structure. As outlined in the interim report, the AMR provides a maximum output of 48 V at 20 A (~960 W), which is insufficient to reliably support the robot arm and its controller, specified at approximately 1 kVA (on continuous operation). To address this, a dual-power architecture was adopted - the robot arm is powered by a dedicated 72 V, 1152 Wh battery pack via an inverter, while auxiliary components such as the onboard computer and networking devices are powered directly from the AMR. This architecture ensures reliable operation and sufficient power availability.
+        Figure 27 shows the finalised circuit diagram of the robot structure. As outlined in the interim report, the AMR provides a maximum output of 48 V at 20 A (~960 W), which is insufficient to reliably support the robot arm and its controller, specified at approximately 1 kVA (on continuous operation). To address this, a dual-power architecture was adopted - the robot arm is powered by a dedicated 72 V, 1152 Wh battery pack via an inverter, while auxiliary components such as the onboard computer and networking devices are powered directly from the AMR. This architecture ensures reliable operation and sufficient power availability.
       </p>
       <p>
-       Building on this baseline architecture, the electrical subsystem was further refined through the integration of additional components required for full system functionality. Key additions include the robot-side and tool-side changer boards, which enable electrical interfacing for the tool changer mechanism, as well as the tool changer electromagnet for end-effector operation (section 3.3). In addition, two DC fans were introduced to provide active cooling for improved thermal management of the enclosed electronics, and a mini monitor was integrated to facilitate system debugging. The circuit diagram is shown in figure 27.
+       Building on this baseline architecture, the electrical subsystem was further refined through the integration of additional components required for full system functionality. Key additions include the robot-side and tool-side changer boards, which enable electrical interfacing for the tool changer mechanism, as well as the tool changer electromagnet for end-effector operation (section 3.3). In addition, two DC fans were introduced to provide active cooling for improved thermal management of the enclosed electronics, and a mini monitor was integrated to facilitate system debugging.
       </p>
       <image-component  tag="image" source="assets\fc2\eefig1.png"
           subtitle="Figure 27: Final circuit diagram of robot structure"></image-component>
@@ -1324,9 +1324,6 @@
           model has no reference for relative size comparison. Apart from that, the dark screwdriver tips sometimes
           blend into the black pegboard, making classification based on screwdriver tips unreliable.
         </p>
-        <p>
-          Apart from that, the dark screwdriver tips blend with the black pegboard on certain occasions, making classifications based on screwdriver tips an unreliable method.
-        </p>
         <image-component tag="image" source="assets\fc2\cv\fig 5.png"
           subtitle="Figure 69: Challenges faced with original screwdriver set"></image-component>
         <p>
@@ -1347,7 +1344,7 @@
           Two hardware components form the physical foundation of the system: the Intel RealSense D435if depth camera, which handles scene capture, and the Advantech UNO-238V, which serves as the onboard robot PC (Shown in figure 72). Their specifications are shown in figure 73.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 8.png"
-          subtitle="Figure 72: Hardware tools usedR"></image-component>
+          subtitle="Figure 72: Hardware tools used"></image-component>
         <image-component tag="image" source="assets\fc2\cv\fig 9.png"
           subtitle="Figure 73: Hardware specifications"></image-component>
         <p>
@@ -1445,6 +1442,8 @@
         <p>
           A video comparison is included below to make the performance differences easier to observe, even though the application performs inference on images.
         </p>
+        <video-component tag="modelcomparison" source="https://www.youtube.com/embed/jJnHiJFzkSI?si=gUW5HGwRN7Mo1txS"
+          subtitle="Video: Performance comparison of YOLOv11 and YOLOv26"></video-component>
       </div>
 
       <div id="CV-43">
@@ -1532,7 +1531,7 @@
           As the depth frame is aligned to the RGB frame (Section 4.3.1), and the RGB camera intrinsics are used in the deprojection function, the resulting coordinates are expressed relative to the RGB camera optical frame (see figure 91).
         </p>
         <p>
-          Further details on the underlying projection and deprojection model are provided in Appendix H4.
+          Further details on the underlying projection and deprojection model are provided in Appendix H4 - H5.
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 27.png"
           subtitle="Figure 91: Frame of coordinates computed"></image-component>
@@ -1571,11 +1570,15 @@
           <image-component tag="image" source="assets\fc2\cv\fig 31.png"
           subtitle="Figure 95: XYZ accuracy test on mallet"></image-component>
         <p>
-          Prior to these validation tests done on the actual deployment scene, some preliminary tests were also conducted to gauge the accuracy of the computed coordinates. Refer to appendix H5 for these tests.
+          Prior to these validation tests done on the actual deployment scene, some preliminary tests were also conducted to gauge the accuracy of the computed coordinates. Refer to appendix H6 for these tests.
         </p>
         <p>
           Below are some videos showing the computer pipeline in action.
         </p>
+        <video-component tag="cvpipeline" source="https://www.youtube.com/embed/6N3KRozOL5k?si=fj1HdROJKP7zSAO0"
+          subtitle="Video: Computer vision pipeline deployment"></video-component>
+          <video-component tag="cvpipeline2" source="https://www.youtube.com/embed/hEY9Ne10gpc?si=a26mozrKXWhRfKYj"
+          subtitle="Video: Scenario where target tool is not found"></video-component>
       </div>
 
       <div id="CV-45">
@@ -1603,14 +1606,14 @@
         <image-component tag="image" source="assets\fc2\cv\fig 33.png"
           subtitle="Figure 97: Variance comparison of single vs multiple depth frame method"></image-component>
         <p>
-        This method, however, may be more useful in scenarios where inference is performed on a live video stream, and the camera or objects are in motion, unlike the static setup in this project where both the camera and tools remain stationary. In such cases, frame-to-frame variation in the estimated XYZ values becomes more pronounced, and aggregating multiple depth frames can improve stability. As shown in the video below, for such scenarios, taking the median across multiple frames results in more stable coordinate estimates.
+        This method, however, may be more useful in scenarios where inference is performed on a live video stream, and the camera or objects are in motion, unlike the static setup in this project where both the camera and tools remain stationary. In such cases, frame-to-frame variation in the estimated XYZ values becomes more pronounced, and aggregating multiple depth frames can improve stability.
         </p>
       </div>
 
       <div id="CV-46">
         <h4>4.6 Limitations of Current Pipeline</h4>
         <p>
-          A limitation of the current pipeline is that it performs poorly on edges such as when the screwdrivers are messy, slanted, or occluded (see Figure _). As the system relies on axis-aligned bounding boxes and a fixed grasp point, it does not account for object orientation. Consequently, the computed grasp point (cx ,cy ) may fall outside the object or on a non-graspable region, such as the shaft. Occlusion can also reduce detection accuracy and lead to incorrect classifications.
+          A limitation of the current pipeline is that it performs poorly on edges such as when the screwdrivers are messy, slanted, or occluded. As the system relies on axis-aligned bounding boxes and a fixed grasp point, it does not account for object orientation. Consequently, the computed grasp point (cx ,cy ) may fall outside the object or on a non-graspable region, such as the shaft. Occlusion can also reduce detection accuracy and lead to incorrect classifications.
         </p>
         <p>
           Several tests at various screwdriver angles were done.
@@ -1620,11 +1623,15 @@
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 34.png"
           subtitle="Figure 98: Grasp point falls on edge of screwdriver handle"></image-component>
+        <video-component tag="cvpipeline3" source="https://www.youtube.com/embed/mV-ERfnv3TE?si=Q_EmCxAGy10soGHi"
+          subtitle="Video: Grasp point falls on edge of tool handle"></video-component>
         <p>
           Next, we tried tilting the screwdriver furthermore, until the grasp point does not lie on the screwdriver anymore (figure 99). As seen from the video below, the gripper went too much forward into the pegboard and did not manage to grab the screwdriver.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 35.png"
           subtitle="Figure 99: Grasp point does not fall on screwdriver handle"></image-component>
+        <video-component tag="cvpipeline4" source="https://www.youtube.com/embed/mhRratmBSiY?si=WDnRtB9kUdi3O8FO"
+          subtitle="Video: Grasp point does not fall on tool handle"></video-component>
         <p>
           To be able to grab slanted objects, other types of models could be used. These will be discussed in section 7.2.
         </p>
@@ -2443,42 +2450,42 @@
       D1
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\Appendix\D1.png"
-          subtitle="Sample Mass Calculation"></image-component>
+          subtitle="Pre-design evaluation"></image-component>
       <h3>
       D2
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\Appendix\D2.png"
-          subtitle="Sample Mass Calculation"></image-component>
+          subtitle="Iteration 1"></image-component>
       <h3>
       D3
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\Appendix\D3.png"
-          subtitle="Simulation Parameters"></image-component>
+          subtitle="Iteration 2"></image-component>
       <h3>
       D4
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\Appendix\D4.png"
-          subtitle="Factor of Safety"></image-component>
+          subtitle="Iteration 3"></image-component>
       <h3>
       D5
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\Appendix\D5.png"
-          subtitle="Factor of Safety"></image-component>
+          subtitle="Iteration 4"></image-component>
       <h3>
       D6
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\Appendix\D6.png"
-          subtitle="Factor of Safety"></image-component>
+          subtitle="Iteration 5"></image-component>
       <h3>
       D7
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\Appendix\D7.png"
-          subtitle="Factor of Safety"></image-component>
+          subtitle="Simulation Parameters"></image-component>
       <h3>
       D8
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\Appendix\D8.png"
-          subtitle="Factor of Safety"></image-component>
+          subtitle="Quick-release sliding battery box design"></image-component>
       
     </div>
 
@@ -2657,34 +2664,34 @@
        H1
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\cv\H1.png"
-          ></image-component>
+          subtitle="Dataset images captured at estimated and actual robot positions"></image-component>
       <h3>
        H2
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\cv\H2.png"
-          ></image-component>
+          subtitle="Definitions of key performance metrics used"></image-component>
       <h3>
        H3
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\cv\H3.png"
-          ></image-component>
+          subtitle="Additional training results"></image-component>
       <h3>
        H4
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\cv\H4.png"
-          ></image-component>
+          subtitle="Effect of depth value on 3D coordinate computation"></image-component>
       <h3>
        H5
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\cv\H5.png"
-         ></image-component>
+          subtitle="Deprojection implementation in computer vision pipeline"></image-component>
       <h3>
        H6
       </h3>
       <image-component size="large" tag="image" source="assets\fc2\cv\H6(1).png"
-         ></image-component>
-      <image-component size="large" tag="image" source="assets\fc2\cv\H6(1).png"
-         ></image-component>
+          subtitle="XYZ coordinate accuracy test on actual pegboard scene"></image-component>
+      <image-component size="large" tag="image" source="assets\fc2\cv\H6(2).png"
+          subtitle="XYZ coordinate accuracy test on flat wall"></image-component>
     </div>
 
   </div>
