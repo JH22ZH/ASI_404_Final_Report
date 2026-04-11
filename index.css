@@ -241,6 +241,68 @@ th, td {
   padding: 60px 40px;
 }
 
+.design-spec-table-met {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.design-spec-table-met th,
+.design-spec-table-met td {
+  border: 2px solid #222;
+  padding: 8px 10px;
+  font-size: 16px;
+}
+
+.design-spec-table-met th {
+  background-color: #fff200;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+.design-spec-table-met td {
+  background-color: #efefef;
+  color: black;
+}
+
+.design-spec-table-met .section {
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.design-spec-table-met .overall {
+  background-color: #d9e6f2;
+}
+
+.design-spec-table-met .grippers {
+  background-color: #cfe8f3;
+}
+
+.design-spec-table-met .tool-changer {
+  background-color: #f1dfd3;
+}
+
+.design-spec-table-met .center-text {
+  text-align: center;
+}
+
+.design-spec-table-met .requirement-header {
+  background-color: #4f81bd;
+  color: white;
+  font-weight: bold;
+}
+
+.design-spec-table-met .requirement-cell {
+  background-color: #dbe5f1;
+  text-align: center;
+  font-weight: bold;
+}
+
 .side-collage {
   position: fixed;
   top: 0;

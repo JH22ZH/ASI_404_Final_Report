@@ -1247,7 +1247,7 @@
 
       <div id="EE-34">
         <h3>3.4 Overall integration and testing of tool changer and end effector</h3>
-        <image-component tag="image" source="assets\For grippers\Toolchanger system integrated.jpg"
+        <image-component size = "medium" tag="image" source="assets\For grippers\Toolchanger system integrated.jpg"
           subtitle="Figure 63: Integrated Tool Changer System mounted on the robot"></image-component>
         <p>
           After the individual development of the end effector and tool changer subsystems, the final phase of this section involved the integration of all components into a cohesive system as shown in figure 63, followed by comprehensive testing to validate functionality and performance. This process included mechanical assembly, electrical wiring, firmware deployment, and system-level validation through a series of test scenarios designed to evaluate the reliability and effectiveness of the tool changing mechanism under realistic operating conditions.
@@ -1269,6 +1269,91 @@
         </p>
         <video-component tag="testing" source="https://www.youtube.com/embed/LISxjKM-Umo?si=gUK-EqzXExkjav08"
           subtitle="Video: Tool changer with pick and place testing"></video-component>
+        <p>
+          When referencing the specification table on the size, mass and pick capabilities of the system, the system meets the requirements as follows:
+        </p>
+        <table class="design-spec-table-met">
+          <tr>
+            <th colspan="3">Design Specifications</th>
+            <th class="requirement-header">Requirement met</th>
+          </tr>
+
+          <tr>
+            <td class="section overall" rowspan="4">Overall<br>system</td>
+            <td>Dimensional Requirement</td>
+            <td>165 x 230 x 135 (L x W x H)</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+          <tr>
+            <td>Maximum Mass</td>
+            <td>2kg</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+          <tr>
+            <td>Actuation Mode</td>
+            <td>Electric</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td>&lt;500 SGD</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+
+          <tr>
+            <td class="section grippers" rowspan="5">Grippers</td>
+            <td>Max gripper length</td>
+            <td>130mm</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+          <tr>
+            <td>Maximum Mass</td>
+            <td>1kg</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+          <tr>
+            <td>Control Mode</td>
+            <td>Open/Closed Loop</td>
+            <td class="requirement-cell">YES - OPEN LOOP</td>
+          </tr>
+          <tr>
+            <td>Minimum Gripping force</td>
+            <td>1kg</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+          <tr>
+            <td>Payload support</td>
+            <td>1 - 3kg</td>
+            <td class="requirement-cell">NO</td>
+          </tr>
+
+          <tr>
+            <td class="section tool-changer" rowspan="5">Tool<br>Changer<br>System</td>
+            <td>Maximum Mass</td>
+            <td>1kg</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+          <tr>
+            <td>Max supporting payload mass</td>
+            <td>10kg (Safety Factor of 2)</td>
+            <td class="requirement-cell">NO</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="center-text">Holds gripper system under power loss</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="center-text">Fully controllable by robot system</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="center-text">Able to transmit power and signal to gripper</td>
+            <td class="requirement-cell">YES</td>
+          </tr>
+        </table>
+        <p>
+          While most of the requirements were met, the system was not able to meet the payload support requirement for both the gripper and tool changer subsystem. The gripper was only able to reliably grasp up to 1kg of payload, while the tool changer was only able to support up to 5kg of payload before failure. This was due to limitations in the strength of the electromagnet used in the tool changer, as well as limitations in the mechanical design of the gripper and tool holder. Future iterations of the design could explore stronger electromagnets, improved gripper designs, and more robust tool holder geometries to increase the maximum payload capacity of the system.
+        </p>
       </div>
       
     </div>
@@ -1286,7 +1371,7 @@
         <p>
           Figure 65 shows the pegboard setup, which is divided into three sections, location 1, 2, and 3. Each section is designated for a specific category of tools - location 1 stores Phillips screwdrivers, location 2 stores flathead screwdrivers, and location 3 stores a mallet
         </p>
-        <image-component tag="image" source="assets\fc2\cv\fig 1.png"
+        <image-component size = "medium" tag="image" source="assets\fc2\cv\fig 1.png"
           subtitle="Figure 65: Pegboard setup"></image-component>
         <p>
           The corresponding tool classes are defined as follows in figure 66:
@@ -1329,7 +1414,7 @@
         <p>
           To tackle these challenges, the screwdrivers were color coded with distinct colors to make class classification easier for the model as shown in figure 70.
         </p>
-        <image-component tag="image" source="assets\fc2\cv\fig 6.png"
+        <image-component size = "medium" tag="image" source="assets\fc2\cv\fig 6.png"
           subtitle="Figure 70: Screwdrivers modified by colour coding"></image-component>
           <p>
             Other solutions that did not involve color coding the screwdrivers were explored but were not selected after evaluating their trade-offs (see figure 71). Ultimately, color coding was chosen as it is simple and provides the most reliable predictions.
@@ -1370,7 +1455,7 @@
         <p>
           The model development phase shown in figure 74 focuses on training the object detection model using a custom dataset. The computer vision pipeline development phase involves integrating the trained model with depth processing to compute 3D coordinates of detected objects. Finally, the 3D coordinate validation phase evaluates the accuracy and stability of the computed coordinates.
         </p>
-        <image-component tag="image" source="assets\fc2\cv\fig 10.png"
+        <image-component size = "medium" tag="image" source="assets\fc2\cv\fig 10.png"
           subtitle="Figure 74: Project phases"></image-component>
       </div>
 
@@ -1467,7 +1552,7 @@
         <p>
           This stream alignment step is necessary for the deprojection function in Section 4.3.4, which requires each pixel's 2D coordinate and depth value to refer to the same point in space.
         </p>
-        <image-component tag="image" source="assets\fc2\cv\fig 21.png"
+        <image-component size = "medium" tag="image" source="assets\fc2\cv\fig 21.png"
           subtitle="Figure 85: Depth frame aligned with RGB frame"></image-component>
       </div>
 
@@ -1621,14 +1706,14 @@
         <p>
           Firstly, the screwdriver was tilted such that the grasp point lies at the edge of the screwdriver contour (figure 98). As seen from the video below, although the robot still managed to grasp it, it almost didn't.
         </p>
-        <image-component tag="image" source="assets\fc2\cv\fig 34.png"
+        <image-component size = "medium" tag="image" source="assets\fc2\cv\fig 34.png"
           subtitle="Figure 98: Grasp point falls on edge of screwdriver handle"></image-component>
         <video-component tag="cvpipeline3" source="https://www.youtube.com/embed/mV-ERfnv3TE?si=Q_EmCxAGy10soGHi"
           subtitle="Video: Grasp point falls on edge of tool handle"></video-component>
         <p>
           Next, we tried tilting the screwdriver furthermore, until the grasp point does not lie on the screwdriver anymore (figure 99). As seen from the video below, the gripper went too much forward into the pegboard and did not manage to grab the screwdriver.
         </p>
-        <image-component tag="image" source="assets\fc2\cv\fig 35.png"
+        <image-component size = "medium" tag="image" source="assets\fc2\cv\fig 35.png"
           subtitle="Figure 99: Grasp point does not fall on screwdriver handle"></image-component>
         <video-component tag="cvpipeline4" source="https://www.youtube.com/embed/mhRratmBSiY?si=WDnRtB9kUdi3O8FO"
           subtitle="Video: Grasp point does not fall on tool handle"></video-component>
