@@ -567,7 +567,7 @@
       <image-component tag="image" source="assets\fc2\fig 3.png"
           subtitle="Figure 12: Required functionalities of the structure"></image-component>
       <p>
-        Prior to implementing the design, a total of five design iterations were developed and evaluated using a concept selection matrix (figure 13 and 14). A detailed comparison of these design iterations is provided in Appendix D1-D6.
+        Prior to implementing the design, a total of five design iterations were developed and evaluated using a concept selection matrix (figure 13 and 14). A detailed comparison of these design iterations is provided in <a href="#Appendix_D">Appendix D1-D6</a>.
       </p>
       <image-component tag="image" source="assets\fc2\fig 4.png"
           subtitle="Figure 13: Concept selection matrix of ideal frame"></image-component>
@@ -597,7 +597,7 @@
       <image-component tag="image" source="assets\fc2\fig 9.png"
           subtitle="Figure 18: Modular and accessible electronics layout"></image-component>
       <p>
-        After the structure was designed, structural evaluations such as CG analysis and static analysis (Shown in Figure 19) were also conducted to validate the stability of the system. Explanation for how analysis was done can be found in appendix D7.
+        After the structure was designed, structural evaluations such as CG analysis and static analysis (Shown in Figure 19) were also conducted to validate the stability of the system. Explanation for how analysis was done can be found in <a href="#Appendix_D">Appendix D7</a>.
       </p>
       <image-component tag="image" source="assets\fc2\fig 10.png"
           subtitle="Figure 19: CG and static analysis (FEA and FOS)"></image-component>
@@ -624,7 +624,7 @@
         2.	Battery Box
       </p>
       <p>
-        A battery box is required to safely house the battery. Initially, we designed a quick-release sliding battery box (see appendix D8) so that the battery can be conveniently connected and disconnected to the robot power system in a single action. However, due to time constraints, a commercial Pelican case was adopted as a practical alternative seen in figure 21.
+        A battery box is required to safely house the battery. Initially, we designed a quick-release sliding battery box (see <a href="#Appendix_D">Appendix D8</a>) so that the battery can be conveniently connected and disconnected to the robot power system in a single action. However, due to time constraints, a commercial Pelican case was adopted as a practical alternative seen in figure 21.
       </p>
         <image-component size="medium"tag="image" source="assets\fc2\fig 12.png"
           subtitle="Figure 21: Battery box"></image-component>
@@ -935,7 +935,7 @@
           subtitle="Figure 32: Prototype End Effector"></image-component>
           
         <p>
-          Concepts were also evaluated for the tool changer mechanism as shown in figure 32, with the utilisation of electromagnets being selected as the approach. Tests were conducted to validate the electromagnet strength with a selected steel plate of certain thickness and were successfully completed as shown in the figure 33. The exact calculations for the thickness of steel is shown in Appendix E.
+          Concepts were also evaluated for the tool changer mechanism as shown in figure 32, with the utilisation of electromagnets being selected as the approach. Tests were conducted to validate the electromagnet strength with a selected steel plate of certain thickness and were successfully completed as shown in the figure 33. The exact calculations for the thickness of steel is shown in <a href="#Appendix_E">Appendix E8</a>.
         </p>
         <image-component size = "small" tag="image" source="assets\toolchanger\Magnet.png"
           subtitle="Figure 33: Prototype End Effector"></image-component>
@@ -1069,6 +1069,9 @@
         <p>
           Following the interim presentation, the selected electromagnet required a 24 V supply, while the gripper subsystem only required 12 V operation. As the STM32F103 operates using 3.3 V logic, dedicated switching circuits were required to allow the low-voltage control signals from the microcontroller to safely and reliably switch the higher-voltage loads.
         </p>
+        <p>
+          During the design phase of the switching circuits, dedicated MOSFET gate driver ICs were initially considered because they would have simplified the overall circuit design. However, their higher cost and inclusion of unnecessary peripheral features made them unsuitable for this application. Therefore, the design was ultimately realised using discrete components.
+        </p>
         <image-component tag="image" source="assets\For toolchanger PCB\NChannel Low Side Switching of Electromagnet.png"
           subtitle="Figure 43: N-channel Low Side Switching of Electromagnet circuit"></image-component>
         <p>
@@ -1083,7 +1086,7 @@
           For switching the 12 V supply to the end effector, a high-side switching circuit based on a P-channel MOSFET was used as shown in figure 44. In this case, the MOSFET is placed on the positive supply rail, allowing the load to be disconnected from the 12 V source when required. Because the source terminal of the P-channel MOSFET sits near 12 V during operation, the microcontroller’s 3.3 V logic output alone is insufficient to directly pull the gate to the required level for effective switching. To address this, an NPN transistor was introduced to pull the MOSFET gate toward ground when commanded, producing a sufficiently negative V_GS to turn the P-channel MOSFET on. When the transistor is turned off, the gate is pulled back toward the source potential, turning the MOSFET off. This arrangement allowed the microcontroller to control the 12 V output rail safely using its 3.3 V logic levels.
         </p>
         <p>
-          To enable repeated coupling and decoupling between the robot-side and tool-side control boards, a pogo-pin contact interface was adopted. Spring-loaded pogo pins such as the ones shown in figure 45 below were placed on the tool side, with matching pogo pads on the robot side. Appendix F10 and F11 provide the specifications of the pogo pins used. 
+          To enable repeated coupling and decoupling between the robot-side and tool-side control boards, a pogo-pin contact interface was adopted. Spring-loaded pogo pins such as the ones shown in figure 45 below were placed on the tool side, with matching pogo pads on the robot side. <a href="#Appendix_F">Appendix F10 and F11</a> provide the specifications of the pogo pins used. 
         </p>
         <image-component size ="small" tag="image" source="assets/For toolchanger PCB/Pogo Pin DIP.jpg"
           subtitle="Figure 45: Pogo Pins"></image-component>
@@ -1096,12 +1099,12 @@
           Considering the tight dimensional constraints imposed by the mechanical design of the tool changing system, the control board dimensions were fixed at 30 mm × 40 mm × 10 mm in length, width, and height respectively. Under these constraints, the use of off-the-shelf development boards, prebuilt modules, or prototype perfboard construction was not suitable for the deployed prototype. As a result, a custom printed circuit board was designed in KiCad, based on circuit simulation, calculation, and validation carried out using LTspice and SMath Solver.
         </p>
         <p>
-          The board development was done iteratively, starting with the design and testing of individual circuit sections such as the CAN transceiver interface, the MOSFET switching circuits, and the microcontroller firmware. After validating each section independently, the full circuit was integrated into a single board design, which was then fabricated and assembled for final testing and deployment. Figure 47 shows the iterative prototypes developed during the design process, leading up to the final integrated control board design. See Appendix F13 to F16 for the prototype iterations in more detail. 
+          The board development was done iteratively, starting with the design and testing of individual circuit sections such as the CAN transceiver interface, the MOSFET switching circuits, and the microcontroller firmware. After validating each section independently, the full circuit was integrated into a single board design, which was then fabricated and assembled for final testing and deployment. Figure 47 shows the iterative prototypes developed during the design process, leading up to the final integrated control board design. See <a href="#Appendix_F">appendix F13 to F16</a> for the prototype iterations in more detail . 
         </p>
          <image-component tag="image" source="assets\For toolchanger PCB\Prototype Boards.png"
           subtitle="Figure 47: Iterative Prototypes for Tool Changer Control Board"></image-component>
         <p>
-          The final control board integrates the STM32F103C8T6 microcontroller, the low-side and high-side switching circuits, and an onboard CAN Bus 2.0B transceiver into a single compact design. In the tool-side configuration, the board additionally supports up to six timer-based input/output channels, allowing it to control end effectors with as many as six servos. Figure 48 and Figure 49 below showcase the key components on the board. For the selection of components and calculations, see Appendix F1. 
+          The final control board integrates the STM32F103C8T6 microcontroller, the low-side and high-side switching circuits, and an onboard CAN Bus 2.0B transceiver into a single compact design. In the tool-side configuration, the board additionally supports up to six timer-based input/output channels, allowing it to control end effectors with as many as six servos. Figure 48 and Figure 49 below showcase the key components on the board. For the selection of components and calculations, see <a href="#Appendix_F">Appendix F1</a>. 
         </p>
         <h4>3D Model of the Tool Changer PCB</h4>
          <model-viewer
@@ -1120,7 +1123,7 @@
         <image-component tag="image" source="assets\For toolchanger PCB\Back view annotated.png"
           subtitle="Figure 49: Back View of the Tool Changer Control Board"></image-component>
         <p>
-          Appendix F2 to F8 goes through the board layers in more detail. 
+          <a href="#Appendix_F">Appendix F2 to F8</a> goes through the board layers in more detail. 
         </p>
         <p>
           To validate the fabricated control boards, firmware was first uploaded through the onboard debugger interface, followed by LED tests to confirm basic microcontroller operation. Communication tests were then carried out to verify the CAN circuitry by transmitting signals from the robot-side board to the tool-side board, with onboard debugging LEDs used as visual indicators of successful data exchange. Finally, the MOSFET and transistor switching circuits were tested to confirm correct control of the 12 V supply and the electromagnet, both of which were successfully validated. Figure 50 below shows the testing of the control boards.
@@ -1184,7 +1187,10 @@
       <div id="EE-334">
         <h3>3.3.4 The End Effector Side Unit</h3>
         <p>
-          For the tool side unit shown in figure 56, the primary design considerations involve the mounting of the corresponding steel plate, of which the validation was done from the interim presentation period, with the calculations seen in appendix E alongside the placement of the dowel pins. The corresponding tool changer circuit system is mounted here as well. 
+          For the tool side unit shown in figure 56, the primary design considerations involve the mounting of the corresponding steel plate, of which the validation was done from the interim presentation period, with the calculations seen in appendix E alongside the placement of the dowel pins. A minimum of two dowel pins were incorporated to ensure proper alignment and provide resistance against counter-rotation of the end effector. The corresponding tool changer circuit system is mounted here as well. 
+        </p>
+        <p>
+          
         </p>
         
         <image-component tag="image" source="assets\For grippers\Tool Side of Toolchanger.png"
@@ -1226,6 +1232,9 @@
           The tool changer holder shown in figure 58 was created with the following considerations on the robot's physical approach for docking and undocking alongside the part complexity. 
         </p>
         <p>
+          During the design of the tool holder, several factors were considered which were the space constraints of the mounting, the number of end effectors and accessories to hold and the docking sequence / constraints of the system. According to the datasheet of the robot's no-travel zone and space for mounting, the docking and undocking sequence would need to be conducted vertically. Tool-wise, due to space constraint, 3 docking stations would be needed, 2 for end effectors and 1 for a basket unit to hold the tools for delivery.
+        </p>
+        <p>
           The tool pickup strategy was intentionally designed as a vertical lift followed by linear forward clearance, rather than using an angled holder. This approach decouples load transfer from disengagement, resulting in more predictable tool extraction, reduced sideloading, improved repeatability, and simpler tolerance management. While an angled holder may appear to assist release geometrically, it would also introduce greater dependence on precise alignment and could increase the risk of rubbing, wedging, and inconsistent extraction. The selected method therefore offered a more robust and controllable solution for reliable autonomous tool exchange.
         </p>
         <p>
@@ -1236,7 +1245,7 @@
         <image-component tag="image" source="assets\For grippers\Docking sequence for tool return.png"
           subtitle="Figure 60: Docking Sequence for Tool Return"></image-component>
         <p>
-         The retaining “fingers” of the tool holder were intentionally designed to constrain the tool in the X and Y directions. This was necessary because the end effector behaves as a separate rigid body with respect to the main robotic platform. During AMR motion, especially under sharp angular turning, inertial loading acting on the gripper can generate lateral displacement relative to the holder. Without sufficient constraint, this could result in unintended disengagement of the tool from its storage interface. The addition of X- and Y-axis constraint therefore improves retention security during dynamic operation as shown in figure 61.  
+         The retaining “fingers” of the tool holder were intentionally designed to constrain the tool in the X and Y directions. This was necessary because the end effector behaves as a separate rigid body with respect to the main robotic platform. During AMR motion, especially under sharp angular turning, inertial loading acting on the gripper can generate lateral displacement relative to the holder. Without sufficient constraint, this could result in unintended disengagement of the tool from its storage interface. The addition of X- and Y-axis constraint therefore improves retention security during dynamic operation as shown in figure 61. <a href="#Appendix_E">Appendix E9 and E10 </a> shows the past iterations of the holder design. 
         </p>
         <image-component tag="image" source="assets\For grippers\Holder constrains in X and Y.png"
           subtitle="Figure 61: Holder Constraints in X and Ys"></image-component>
@@ -1485,7 +1494,7 @@
           As shown in figure 75, the screwdriver dataset was grouped into different variation categories to represent real-world conditions such as changes in distance, lighting, screwdriver arrangements, and robot position. For each variation group, images were captured at two locations (Loc 1 and Loc 2), corresponding to the robot arm’s operating positions during inference. The number of images per group were decided based on how frequent each scenario is expected, ensuring the model is better trained on common conditions while still exposed to less frequent cases for robustness.
         </p>
         <p>
-          As the exact robot position was not defined initially, images from group A-C were captured using a stand approximating the expected position. Once the robot's position was finalized, subsequent images (Group D – I) were captured at the actual position under varied real-world conditions (see appendix H1).
+          As the exact robot position was not defined initially, images from group A-C were captured using a stand approximating the expected position. Once the robot's position was finalized, subsequent images (Group D – I) were captured at the actual position under varied real-world conditions (see <a href="#Appendix_H">Appendix H1</a>).
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 11.png"
           subtitle="Figure 75: Variation groups of dataset images"></image-component>
@@ -1528,7 +1537,7 @@
         <image-component tag="image" source="assets\fc2\cv\fig 17.png"
           subtitle="Figure 81: Training configurations"></image-component>
         <p>
-          The test set was used for performance evaluation. The performance comparisons between models are shown in the figure 82 and 83 below. See appendix H2 for definitions of key metrics, and appendix H3 for additional training results.
+          The test set was used for performance evaluation. The performance comparisons between models are shown in the figure 82 and 83 below. See appendix H2 for definitions of key metrics, and <a href="#Appendix_H">appendix H3</a> for additional training results.
         </p>
         <image-component tag="image" source="assets\fc2\cv\fig 18.png"
           subtitle="Figure 82: Performance results"></image-component>
@@ -1587,7 +1596,7 @@
           After the grasp point (cx ,cy ) is determined, a reliable depth value is required to compute the corresponding 3D coordinate.
         </p>
         <p>
-          The depth value Z plays a critical role in 3D coordinate computation (see Appendix H4), as it directly affects the accuracy of the computed X and Y values.
+          The depth value Z plays a critical role in 3D coordinate computation (see <a href="#Appendix_H">appendix H4</a>), as it directly affects the accuracy of the computed X and Y values.
         </p>
         <p>
           However, raw depth data may contain noise or invalid measurements (e.g., zero-depth pixels). Therefore, two stages of filtering to the depth data are applied to improve robustness.
@@ -1629,7 +1638,7 @@
           As the depth frame is aligned to the RGB frame (Section 4.3.1), and the RGB camera intrinsics are used in the deprojection function, the resulting coordinates are expressed relative to the RGB camera optical frame (see figure 91).
         </p>
         <p>
-          Further details on the underlying projection and deprojection model are provided in Appendix H4 - H5.
+          Further details on the underlying projection and deprojection model are provided in <a href="#Appendix_H">Appendix H4 - H5</a>.
         </p>
          <image-component tag="image" source="assets\fc2\cv\fig 27.png"
           subtitle="Figure 91: Frame of coordinates computed"></image-component>
@@ -1668,7 +1677,7 @@
           <image-component tag="image" source="assets\fc2\cv\fig 31.png"
           subtitle="Figure 95: XYZ accuracy test on mallet"></image-component>
         <p>
-          Prior to these validation tests done on the actual deployment scene, some preliminary tests were also conducted to gauge the accuracy of the computed coordinates. Refer to appendix H6 for these tests.
+          Prior to these validation tests done on the actual deployment scene, some preliminary tests were also conducted to gauge the accuracy of the computed coordinates. Refer to <a href="#Appendix_H">Appendix H6</a> for these tests.
         </p>
         <p>
           Below are some videos showing the computer pipeline in action.
@@ -1874,7 +1883,7 @@
         <image-component size = "medium" tag="image" source="assets\software\Sesto inaccuracy.jpg"
           subtitle="Figure 107: Sesto Navigation Inaccuracy"></image-component>
         <p>
-          Based on the datasheet, the Sesto Magnus Lite has a navigation accuracy of ±20 mm, which is consistent with the observed drift during testing. The exact positional readings can be found in Appendix N. This means that even if the AMR successfully reaches the general vicinity of the target location, there is still a possibility that it may be misaligned by up to 20 mm, which can lead to failed grasps if the robot arm relies solely on hardcoded motions based on expected coordinates.
+          Based on the datasheet, the Sesto Magnus Lite has a navigation accuracy of ±20 mm, which is consistent with the observed drift during testing. The exact positional readings can be found in <a href="#Appendix_B">appendix B5</a>. This means that even if the AMR successfully reaches the general vicinity of the target location, there is still a possibility that it may be misaligned by up to 20 mm, which can lead to failed grasps if the robot arm relies solely on hardcoded motions based on expected coordinates.
         </p>
         <p>
           Consideration was placed for the utilisation of a docking marker that the AMR can reference and dock to. However, the placement of the docking marker and low profile design makes it a tripping hazard for people as seen in figure 108. Hence this idea was scrapped. 
@@ -2528,6 +2537,11 @@
       </h3>
       <image-component size="large" tag="image" source="assets/sesto/magsafetysys.png"
           subtitle="Magnus Lite Safety System"></image-component>
+      <h3>
+      B5
+      </h3>
+      <image-component size="large" tag="image" source="assets\sesto\positionaldev.png"
+          subtitle="Magnus Lite Positional Deviation"></image-component>
     </div>
 
     <div id="Appendix_C" class="Appendix_C">
@@ -2633,6 +2647,16 @@
       </h4>
       <image-component size="large" tag="image" source="assets/endeffector/electromagnetcalc.png"
           subtitle="Electromagnet Calculations to find ideal thickness of steel"></image-component>
+      <h4>
+      E9
+      </h4>
+      <image-component size="large" tag="image" source="assets\For grippers\Appendix E9.png"
+          subtitle="Iteration of Tool Holder"></image-component>
+      <h4>
+      E10
+      </h4>
+      <image-component size="large" tag="image" source="assets\For grippers\Appendix E10.png"
+          subtitle="Iteration of Tool Holder 2"></image-component>
     </div>
 
     <div id="Appendix_F" class="Appendix_F">
